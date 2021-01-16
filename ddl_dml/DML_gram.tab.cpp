@@ -390,7 +390,7 @@ YYID (yyi)
 # endif
 
 # ifdef YYSTACK_ALLOC
-   /* Pacify GCC's `empty if-body' warning.  */
+/* Pacify GCC's `empty if-body' warning.  */
 #  define YYSTACK_FREE(Ptr) do { /* empty */; } while (YYID (0))
 #  ifndef YYSTACK_ALLOC_MAXIMUM
     /* The OS might guarantee only one guard page at the bottom of the stack,
@@ -438,8 +438,8 @@ void free (void *); /* INFRINGES ON USER NAME SPACE */
 /* A type that is properly aligned for any stack member.  */
 union yyalloc
 {
-  yytype_int16 yyss_alloc;
-  YYSTYPE yyvs_alloc;
+    yytype_int16 yyss_alloc;
+    YYSTYPE yyvs_alloc;
 };
 
 /* The size of the maximum gap between one aligned stack and the next.  */
@@ -514,41 +514,41 @@ union yyalloc
 
 /* YYTRANSLATE[YYLEX] -- Bison symbol number corresponding to YYLEX.  */
 static const yytype_uint8 yytranslate[] =
-{
-       0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,    76,
-       2,     2,    73,     2,    74,     2,    75,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,    72,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
-      15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
-      25,    26,    27,    28,    29,    30,    31,    32,    33,    34,
-      35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
-      45,    46,    47,    48,    49,    50,    51,    52,    53,    54,
-      55,    56,    57,    58,    59,    60,    61,    62,    63,    64,
-      65,    66,    67,    68,    69,    70,    71
-};
+        {
+                0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,    76,
+                2,     2,    73,     2,    74,     2,    75,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,    72,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+                2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
+                5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
+                15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
+                25,    26,    27,    28,    29,    30,    31,    32,    33,    34,
+                35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
+                45,    46,    47,    48,    49,    50,    51,    52,    53,    54,
+                55,    56,    57,    58,    59,    60,    61,    62,    63,    64,
+                65,    66,    67,    68,    69,    70,    71
+        };
 
 #if YYDEBUG
 /* YYPRHS[YYN] -- Index of the first RHS symbol of rule number YYN in
@@ -563,7 +563,7 @@ static const yytype_uint16 yyprhs[] =
      148,   150,   154,   162,   164,   168,   170,   174,   178,   180,
      182,   186,   188,   190,   191,   194,   196,   198,   200,   202,
      204,   206,   208,   215,   217,   221,   225,   231,   233,   237,
-     238,   242,   246,   249,   251,   253,   255,   260,   264,   270,
+     238,   242,   246,   249,   251,   253,   258,   260,   264,   270,
      279,   281,   285,   289,   293,   298,   302,   306,   310,   316,
      321,   329,   338,   340,   344,   348,   351,   353,   355,   357,
      359,   361,   363
@@ -597,7 +597,7 @@ static const yytype_int8 yyrhs[] =
       -1,    37,   117,   116,    -1,    48,    49,     3,   115,     4,
       -1,    37,    -1,   115,    74,    37,    -1,    -1,   116,    50,
       51,    -1,   116,    48,    49,    -1,   116,    67,    -1,    52,
-      -1,    53,    -1,    54,    -1,    55,     3,    38,     4,    -1,
+      -1,    53,    -1,    54,     3,    38,     4,    -1,    55,    -1,
       47,    58,    37,    -1,    47,    61,    37,    68,    37,    -1,
       47,    61,    37,    68,    37,     3,   120,     4,    -1,    37,
       -1,   120,    74,    37,    -1,    59,    46,    37,    -1,    59,
@@ -622,10 +622,10 @@ static const yytype_uint16 yyrline[] =
      599,   605,   616,   645,   650,   658,   664,   673,   683,   687,
      694,   703,   708,   718,   719,   722,   723,   724,   725,   726,
      727,   728,   734,   743,   747,   754,   762,   776,   786,   800,
-     801,   802,   803,   808,   809,   810,   811,   816,   825,   831,
-     840,   844,   852,   858,   868,   875,   880,   888,   895,   903,
-     912,   918,   927,   933,   942,   950,   957,   961,   965,   969,
-     973,   977,   981
+     801,   802,   803,   807,   808,   809,   810,   815,   824,   830,
+     839,   843,   851,   857,   867,   874,   879,   887,   894,   902,
+     911,   917,   926,   932,   941,   949,   956,   960,   964,   968,
+     972,   976,   980
 };
 #endif
 
@@ -675,145 +675,145 @@ static const yytype_uint16 yytoknum[] =
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
-{
-       0,    77,    78,    78,    78,    78,    78,    78,    79,    80,
-      81,    82,    82,    83,    83,    83,    83,    84,    85,    86,
-      87,    88,    89,    89,    89,    90,    91,    91,    91,    92,
-      92,    93,    94,    94,    95,    96,    96,    96,    96,    97,
-      98,    98,    99,    99,   100,   100,   100,   101,   101,   101,
-     102,   102,   103,   104,   104,   105,   105,   106,   107,   107,
-     108,   109,   109,   110,   110,   111,   111,   111,   111,   111,
-     111,   111,   112,   113,   113,   114,   114,   115,   115,   116,
-     116,   116,   116,   117,   117,   117,   117,   118,   119,   119,
-     120,   120,   121,   121,   122,   123,   123,   123,   123,   123,
-     123,   123,   124,   124,   125,   126,   127,   127,   127,   127,
-     127,   127,   127
-};
+        {
+                0,    77,    78,    78,    78,    78,    78,    78,    79,    80,
+                81,    82,    82,    83,    83,    83,    83,    84,    85,    86,
+                87,    88,    89,    89,    89,    90,    91,    91,    91,    92,
+                92,    93,    94,    94,    95,    96,    96,    96,    96,    97,
+                98,    98,    99,    99,   100,   100,   100,   101,   101,   101,
+                102,   102,   103,   104,   104,   105,   105,   106,   107,   107,
+                108,   109,   109,   110,   110,   111,   111,   111,   111,   111,
+                111,   111,   112,   113,   113,   114,   114,   115,   115,   116,
+                116,   116,   116,   117,   117,   117,   117,   118,   119,   119,
+                120,   120,   121,   121,   122,   123,   123,   123,   123,   123,
+                123,   123,   124,   124,   125,   126,   127,   127,   127,   127,
+                127,   127,   127
+        };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
-{
-       0,     2,     1,     2,     2,     2,     2,     2,     1,     3,
-       3,     1,     2,     1,     1,     1,     1,     2,     2,     1,
-       4,     5,     2,     2,     2,     2,     1,     1,     2,     2,
-       4,     2,     1,     3,     3,     1,     1,     3,     1,     3,
-       1,     3,     1,     2,     1,     3,     4,     1,     4,     2,
-       1,     3,     7,     1,     3,     1,     3,     3,     1,     1,
-       3,     1,     1,     0,     2,     1,     1,     1,     1,     1,
-       1,     1,     6,     1,     3,     3,     5,     1,     3,     0,
-       3,     3,     2,     1,     1,     1,     4,     3,     5,     8,
-       1,     3,     3,     3,     4,     3,     3,     3,     5,     4,
-       7,     8,     1,     3,     3,     2,     1,     1,     1,     1,
-       1,     1,     1
-};
+        {
+                0,     2,     1,     2,     2,     2,     2,     2,     1,     3,
+                3,     1,     2,     1,     1,     1,     1,     2,     2,     1,
+                4,     5,     2,     2,     2,     2,     1,     1,     2,     2,
+                4,     2,     1,     3,     3,     1,     1,     3,     1,     3,
+                1,     3,     1,     2,     1,     3,     4,     1,     4,     2,
+                1,     3,     7,     1,     3,     1,     3,     3,     1,     1,
+                3,     1,     1,     0,     2,     1,     1,     1,     1,     1,
+                1,     1,     6,     1,     3,     3,     5,     1,     3,     0,
+                3,     3,     2,     1,     1,     4,     1,     3,     5,     8,
+                1,     3,     3,     3,     4,     3,     3,     3,     5,     4,
+                7,     8,     1,     3,     3,     2,     1,     1,     1,     1,
+                1,     1,     1
+        };
 
 /* YYDEFACT[STATE-NAME] -- Default reduction number in state STATE-NUM.
    Performed when YYTABLE doesn't specify something else to do.  Zero
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
-{
-      63,     0,     0,     0,     0,     0,     0,     0,     0,     2,
-       0,     0,     0,     8,     0,    13,    14,    15,    19,     0,
-      16,     0,     0,     0,    50,    27,    25,    26,    44,    47,
-       0,     0,     0,    17,     0,    11,    18,     1,     5,     6,
-       3,     4,     0,     0,    23,    24,     0,    22,     0,     0,
-       0,     0,     7,    64,    65,    66,    67,    68,    69,    70,
-      71,    28,     0,     0,     0,    49,     0,     0,     0,     0,
-       9,    10,    12,    31,    32,     0,     0,     0,    29,     0,
-       0,     0,     0,     0,     0,     0,   105,     0,    51,     0,
-      45,     0,     0,    55,    20,     0,     0,   106,   107,   108,
-     109,   110,   111,   112,     0,    39,    40,    42,     0,     0,
-      87,     0,    92,    93,     0,   104,    48,    46,     0,    21,
-       0,     0,    33,     0,    61,    62,     0,    34,    35,    38,
-      36,     0,    43,    30,     0,     0,     0,     0,     0,     0,
-      94,    57,    58,    59,    56,     0,    53,     0,     0,    41,
-       0,     0,     0,    73,    88,     0,     0,     0,     0,     0,
-       0,    52,     0,    37,    60,    83,    84,    85,     0,    79,
-       0,    72,     0,     0,    97,    95,     0,    96,     0,    79,
-      54,     0,    75,     0,    74,    90,     0,     0,     0,     0,
-      99,     0,     0,     0,    82,    77,     0,    89,     0,    98,
-       0,     0,    86,    81,    80,    76,     0,    91,     0,   102,
-       0,    78,     0,   100,     0,   101,   103
-};
+        {
+                63,     0,     0,     0,     0,     0,     0,     0,     0,     2,
+                0,     0,     0,     8,     0,    13,    14,    15,    19,     0,
+                16,     0,     0,     0,    50,    27,    25,    26,    44,    47,
+                0,     0,     0,    17,     0,    11,    18,     1,     5,     6,
+                3,     4,     0,     0,    23,    24,     0,    22,     0,     0,
+                0,     0,     7,    64,    65,    66,    67,    68,    69,    70,
+                71,    28,     0,     0,     0,    49,     0,     0,     0,     0,
+                9,    10,    12,    31,    32,     0,     0,     0,    29,     0,
+                0,     0,     0,     0,     0,     0,   105,     0,    51,     0,
+                45,     0,     0,    55,    20,     0,     0,   106,   107,   108,
+                109,   110,   111,   112,     0,    39,    40,    42,     0,     0,
+                87,     0,    92,    93,     0,   104,    48,    46,     0,    21,
+                0,     0,    33,     0,    61,    62,     0,    34,    35,    38,
+                36,     0,    43,    30,     0,     0,     0,     0,     0,     0,
+                94,    57,    58,    59,    56,     0,    53,     0,     0,    41,
+                0,     0,     0,    73,    88,     0,     0,     0,     0,     0,
+                0,    52,     0,    37,    60,    83,    84,     0,    86,    79,
+                0,    72,     0,     0,    97,    95,     0,    96,     0,    79,
+                54,     0,    75,     0,    74,    90,     0,     0,     0,     0,
+                99,     0,     0,     0,    82,    77,     0,    89,     0,    98,
+                0,     0,    85,    81,    80,    76,     0,    91,     0,   102,
+                0,    78,     0,   100,     0,   101,   103
+        };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int16 yydefgoto[] =
-{
-      -1,     8,     9,    10,    11,    34,    35,    13,    14,    15,
-      16,    17,    18,    19,    26,    47,    44,    73,    74,   127,
-      45,   105,   106,    27,    28,    29,    20,   145,    92,    93,
-     146,   142,   143,    21,    53,    54,   152,   153,   196,   182,
-     169,    55,    56,   186,    57,    58,   140,   210,    59,    60,
-     104
-};
+        {
+                -1,     8,     9,    10,    11,    34,    35,    13,    14,    15,
+                16,    17,    18,    19,    26,    47,    44,    73,    74,   127,
+                45,   105,   106,    27,    28,    29,    20,   145,    92,    93,
+                146,   142,   143,    21,    53,    54,   152,   153,   196,   182,
+                169,    55,    56,   186,    57,    58,   140,   210,    59,    60,
+                104
+        };
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
 #define YYPACT_NINF -142
 static const yytype_int16 yypact[] =
-{
-      35,   -17,    -9,    15,    43,   -13,   103,    24,    63,  -142,
-      25,    26,    27,  -142,    31,  -142,  -142,  -142,    11,   112,
-    -142,    19,   -17,    66,    44,  -142,  -142,  -142,   -21,  -142,
-     107,    84,    86,  -142,    -8,   103,  -142,  -142,  -142,  -142,
-    -142,  -142,    13,    99,  -142,  -142,    10,  -142,     6,    48,
-      78,   -29,  -142,  -142,  -142,  -142,  -142,  -142,  -142,  -142,
-    -142,  -142,    88,    89,    95,  -142,    13,    91,   122,   119,
-    -142,  -142,  -142,  -142,   117,    65,    88,   127,  -142,    96,
-      97,    98,   100,   101,   102,   104,  -142,   132,  -142,    13,
-    -142,   121,   122,    68,  -142,   140,    13,  -142,  -142,  -142,
-    -142,  -142,  -142,  -142,    -3,  -142,    70,   123,    83,   142,
-    -142,    80,  -142,  -142,    36,  -142,  -142,  -142,   -16,  -142,
-      91,   -16,  -142,   127,  -142,  -142,   109,  -142,   113,  -142,
-    -142,    88,  -142,  -142,    56,   114,    47,    87,   -12,   115,
-    -142,  -142,  -142,  -142,  -142,   149,    81,    85,    82,  -142,
-      62,   105,    -2,  -142,   153,   120,   124,   125,    62,   126,
-      62,  -142,   -16,  -142,  -142,  -142,  -142,  -142,   156,  -142,
-     157,  -142,    56,   128,  -142,  -142,   106,  -142,   -19,  -142,
-    -142,   129,   -18,   131,  -142,  -142,     0,    62,   130,   161,
-     -18,   162,   133,   118,  -142,  -142,     1,  -142,   134,  -142,
-     167,   136,  -142,  -142,  -142,  -142,   137,  -142,   136,  -142,
-       2,  -142,     3,  -142,   138,  -142,  -142
-};
+        {
+                35,   -17,    -9,    15,    43,   -13,   103,    24,    63,  -142,
+                25,    26,    27,  -142,    31,  -142,  -142,  -142,    11,   112,
+                -142,    19,   -17,    66,    44,  -142,  -142,  -142,   -21,  -142,
+                107,    84,    86,  -142,    -8,   103,  -142,  -142,  -142,  -142,
+                -142,  -142,    13,    99,  -142,  -142,    10,  -142,     6,    48,
+                78,   -29,  -142,  -142,  -142,  -142,  -142,  -142,  -142,  -142,
+                -142,  -142,    88,    89,    95,  -142,    13,    91,   122,   119,
+                -142,  -142,  -142,  -142,   117,    65,    88,   127,  -142,    96,
+                97,    98,   100,   101,   102,   104,  -142,   132,  -142,    13,
+                -142,   121,   122,    68,  -142,   140,    13,  -142,  -142,  -142,
+                -142,  -142,  -142,  -142,    -3,  -142,    70,   123,    83,   142,
+                -142,    80,  -142,  -142,    36,  -142,  -142,  -142,   -16,  -142,
+                91,   -16,  -142,   127,  -142,  -142,   109,  -142,   113,  -142,
+                -142,    88,  -142,  -142,    56,   114,    47,    87,   -12,   115,
+                -142,  -142,  -142,  -142,  -142,   149,    81,    85,    82,  -142,
+                62,   105,    -2,  -142,   153,   120,   124,   125,    62,   126,
+                62,  -142,   -16,  -142,  -142,  -142,  -142,   156,  -142,  -142,
+                157,  -142,    56,   128,  -142,  -142,   106,  -142,   -19,  -142,
+                -142,   129,   -18,   131,  -142,  -142,     0,    62,   130,   161,
+                -18,   162,   133,   118,  -142,  -142,     1,  -142,   134,  -142,
+                167,   136,  -142,  -142,  -142,  -142,   137,  -142,   136,  -142,
+                2,  -142,     3,  -142,   138,  -142,  -142
+        };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int16 yypgoto[] =
-{
-    -142,  -142,  -142,  -142,  -142,   141,   177,  -142,  -142,  -142,
-    -142,  -142,   -65,  -142,   158,  -142,   -54,    90,  -142,  -142,
-    -142,    50,  -142,   -35,   -39,   -61,  -142,    16,    64,  -142,
-      67,    79,    92,  -142,  -142,  -142,  -142,    17,  -142,     8,
-    -141,  -142,  -142,  -142,  -142,  -142,  -142,   -20,  -142,  -142,
-    -142
-};
+        {
+                -142,  -142,  -142,  -142,  -142,   141,   177,  -142,  -142,  -142,
+                -142,  -142,   -65,  -142,   158,  -142,   -54,    90,  -142,  -142,
+                -142,    50,  -142,   -35,   -39,   -61,  -142,    16,    64,  -142,
+                67,    79,    92,  -142,  -142,  -142,  -142,    17,  -142,     8,
+                -141,  -142,  -142,  -142,  -142,  -142,  -142,   -20,  -142,  -142,
+                -142
+        };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
    positive, shift that token.  If negative, reduce the rule which
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
-{
-     123,    87,   171,    75,   197,   205,   213,   215,    22,    23,
-      64,    78,   108,    77,    94,   107,    65,   177,    42,   179,
-      24,    31,   124,    23,   125,   158,    70,    71,    30,   188,
-     192,    90,   193,    43,    24,   124,    23,   125,   119,    23,
-       1,    85,    86,     2,     3,     4,   199,    24,   189,   194,
-      24,   159,    79,    66,   117,    32,    25,    75,   147,    33,
-     126,    36,     5,    37,    80,   128,    48,    81,     6,    62,
-     107,     7,   172,   126,   198,   206,   214,   214,    49,    50,
-      97,    98,    99,   100,   101,   102,   103,   133,    51,   163,
-      42,    52,    42,   150,    82,   136,   137,    38,    39,    40,
-     138,   139,    65,    41,   151,    43,    83,    43,     1,   155,
-     156,     2,     3,     4,   165,   166,   167,   168,    46,    63,
-      67,    68,    76,    69,    84,    24,    88,    89,    91,    42,
-      95,    96,     1,   109,   110,   111,   116,   112,   113,   114,
-     118,   115,   120,   121,   131,   134,   148,   132,   135,   157,
-      65,   154,   160,   161,   170,   162,   173,   174,   164,   181,
-     183,   175,   176,   178,   201,   185,   202,   191,   195,   204,
-     208,   207,   187,   209,   211,   216,    72,    12,   180,   200,
-      61,   149,   203,   129,   144,   141,   122,   190,   212,   184,
-       0,     0,     0,     0,     0,     0,   130
-};
+        {
+                123,    87,   171,    75,   197,   205,   213,   215,    22,    23,
+                64,    78,   108,    77,    94,   107,    65,   177,    42,   179,
+                24,    31,   124,    23,   125,   158,    70,    71,    30,   188,
+                192,    90,   193,    43,    24,   124,    23,   125,   119,    23,
+                1,    85,    86,     2,     3,     4,   199,    24,   189,   194,
+                24,   159,    79,    66,   117,    32,    25,    75,   147,    33,
+                126,    36,     5,    37,    80,   128,    48,    81,     6,    62,
+                107,     7,   172,   126,   198,   206,   214,   214,    49,    50,
+                97,    98,    99,   100,   101,   102,   103,   133,    51,   163,
+                42,    52,    42,   150,    82,   136,   137,    38,    39,    40,
+                138,   139,    65,    41,   151,    43,    83,    43,     1,   155,
+                156,     2,     3,     4,   165,   166,   167,   168,    46,    63,
+                67,    68,    76,    69,    84,    24,    88,    89,    91,    42,
+                95,    96,     1,   109,   110,   111,   116,   112,   113,   114,
+                118,   115,   120,   121,   131,   134,   148,   132,   135,   157,
+                65,   154,   160,   161,   170,   162,   173,   174,   164,   181,
+                183,   175,   176,   178,   201,   185,   202,   191,   195,   204,
+                208,   207,   187,   209,   211,   216,    72,    12,   180,   200,
+                61,   149,   203,   129,   144,   141,   122,   190,   212,   184,
+                0,     0,     0,     0,     0,     0,   130
+        };
 
 #define yypact_value_is_default(Yystate) \
   (!!((Yystate) == (-142)))
@@ -822,56 +822,56 @@ static const yytype_uint8 yytable[] =
   YYID (0)
 
 static const yytype_int16 yycheck[] =
-{
-       3,    62,     4,    42,     4,     4,     4,     4,    25,    26,
-      31,    46,    77,     3,    68,    76,    37,   158,     7,   160,
-      37,     6,    38,    26,    40,    37,    34,    35,    37,    48,
-      48,    66,    50,    22,    37,    38,    26,    40,    92,    26,
-       5,    70,    71,     8,     9,    10,   187,    37,    67,    67,
-      37,    63,    46,    74,    89,    12,    73,    96,   123,    72,
-      76,    37,    27,     0,    58,   104,    47,    61,    33,     3,
-     131,    36,    74,    76,    74,    74,    74,    74,    59,    60,
-      15,    16,    17,    18,    19,    20,    21,     4,    69,     4,
-       7,    72,     7,    37,    46,    59,    60,    72,    72,    72,
-      64,    65,    37,    72,    48,    22,    58,    22,     5,    62,
-      63,     8,     9,    10,    52,    53,    54,    55,     6,    75,
-      13,    37,    23,    37,    46,    37,    37,    32,    37,     7,
-      11,    14,     5,    37,    37,    37,     4,    37,    37,    37,
-      19,    37,    74,     3,    74,     3,    37,    24,    68,    62,
-      37,    37,    37,     4,    49,    74,     3,    37,    76,     3,
-       3,    37,    37,    37,     3,    37,     4,    38,    37,    51,
-       3,    37,    66,    37,    37,    37,    35,     0,   162,    49,
-      22,   131,    49,   104,   120,   118,    96,   179,   208,   172,
-      -1,    -1,    -1,    -1,    -1,    -1,   104
-};
+        {
+                3,    62,     4,    42,     4,     4,     4,     4,    25,    26,
+                31,    46,    77,     3,    68,    76,    37,   158,     7,   160,
+                37,     6,    38,    26,    40,    37,    34,    35,    37,    48,
+                48,    66,    50,    22,    37,    38,    26,    40,    92,    26,
+                5,    70,    71,     8,     9,    10,   187,    37,    67,    67,
+                37,    63,    46,    74,    89,    12,    73,    96,   123,    72,
+                76,    37,    27,     0,    58,   104,    47,    61,    33,     3,
+                131,    36,    74,    76,    74,    74,    74,    74,    59,    60,
+                15,    16,    17,    18,    19,    20,    21,     4,    69,     4,
+                7,    72,     7,    37,    46,    59,    60,    72,    72,    72,
+                64,    65,    37,    72,    48,    22,    58,    22,     5,    62,
+                63,     8,     9,    10,    52,    53,    54,    55,     6,    75,
+                13,    37,    23,    37,    46,    37,    37,    32,    37,     7,
+                11,    14,     5,    37,    37,    37,     4,    37,    37,    37,
+                19,    37,    74,     3,    74,     3,    37,    24,    68,    62,
+                37,    37,    37,     4,    49,    74,     3,    37,    76,     3,
+                3,    37,    37,    37,     3,    37,     4,    38,    37,    51,
+                3,    37,    66,    37,    37,    37,    35,     0,   162,    49,
+                22,   131,    49,   104,   120,   118,    96,   179,   208,   172,
+                -1,    -1,    -1,    -1,    -1,    -1,   104
+        };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
-{
-       0,     5,     8,     9,    10,    27,    33,    36,    78,    79,
-      80,    81,    83,    84,    85,    86,    87,    88,    89,    90,
-     103,   110,    25,    26,    37,    73,    91,   100,   101,   102,
-      37,     6,    12,    72,    82,    83,    37,     0,    72,    72,
-      72,    72,     7,    22,    93,    97,     6,    92,    47,    59,
-      60,    69,    72,   111,   112,   118,   119,   121,   122,   125,
-     126,    91,     3,    75,    31,    37,    74,    13,    37,    37,
-      34,    35,    82,    94,    95,   101,    23,     3,   100,    46,
-      58,    61,    46,    58,    46,    70,    71,   102,    37,    32,
-     100,    37,   105,   106,    93,    11,    14,    15,    16,    17,
-      18,    19,    20,    21,   127,    98,    99,   102,    89,    37,
-      37,    37,    37,    37,    37,    37,     4,   100,    19,    93,
-      74,     3,    94,     3,    38,    40,    76,    96,   101,   108,
-     109,    74,    24,     4,     3,    68,    59,    60,    64,    65,
-     123,   107,   108,   109,   105,   104,   107,    89,    37,    98,
-      37,    48,   113,   114,    37,    62,    63,    62,    37,    63,
-      37,     4,    74,     4,    76,    52,    53,    54,    55,   117,
-      49,     4,    74,     3,    37,    37,    37,   117,    37,   117,
-     104,     3,   116,     3,   114,    37,   120,    66,    48,    67,
-     116,    38,    48,    50,    67,    37,   115,     4,    74,   117,
-      49,     3,     4,    49,    51,     4,    74,    37,     3,    37,
-     124,    37,   124,     4,    74,     4,    37
-};
+        {
+                0,     5,     8,     9,    10,    27,    33,    36,    78,    79,
+                80,    81,    83,    84,    85,    86,    87,    88,    89,    90,
+                103,   110,    25,    26,    37,    73,    91,   100,   101,   102,
+                37,     6,    12,    72,    82,    83,    37,     0,    72,    72,
+                72,    72,     7,    22,    93,    97,     6,    92,    47,    59,
+                60,    69,    72,   111,   112,   118,   119,   121,   122,   125,
+                126,    91,     3,    75,    31,    37,    74,    13,    37,    37,
+                34,    35,    82,    94,    95,   101,    23,     3,   100,    46,
+                58,    61,    46,    58,    46,    70,    71,   102,    37,    32,
+                100,    37,   105,   106,    93,    11,    14,    15,    16,    17,
+                18,    19,    20,    21,   127,    98,    99,   102,    89,    37,
+                37,    37,    37,    37,    37,    37,     4,   100,    19,    93,
+                74,     3,    94,     3,    38,    40,    76,    96,   101,   108,
+                109,    74,    24,     4,     3,    68,    59,    60,    64,    65,
+                123,   107,   108,   109,   105,   104,   107,    89,    37,    98,
+                37,    48,   113,   114,    37,    62,    63,    62,    37,    63,
+                37,     4,    74,     4,    76,    52,    53,    54,    55,   117,
+                49,     4,    74,     3,    37,    37,    37,   117,    37,   117,
+                104,     3,   116,     3,   114,    37,   120,    66,    48,    67,
+                116,    38,    48,    50,    67,    37,   115,     4,    74,   117,
+                49,     3,     4,    49,    51,     4,    74,    37,     3,    37,
+                124,    37,   124,     4,    74,     4,    37
+        };
 
 #define yyerrok		(yyerrstatus = 0)
 #define yyclearin	(yychar = YYEMPTY)
@@ -892,10 +892,10 @@ static const yytype_uint8 yystos[] =
 
 #define YYFAIL		goto yyerrlab
 #if defined YYFAIL
-  /* This is here to suppress warnings from the GCC cpp's
-     -Wunused-macros.  Normally we don't worry about that warning, but
-     some users do, and we want to make it easy for users to remove
-     YYFAIL uses, which will produce warnings from Bison 2.5.  */
+/* This is here to suppress warnings from the GCC cpp's
+   -Wunused-macros.  Normally we don't worry about that warning, but
+   some users do, and we want to make it easy for users to remove
+   YYFAIL uses, which will produce warnings from Bison 2.5.  */
 #endif
 
 #define YYRECOVERING()  (!!yyerrstatus)
@@ -1376,17 +1376,17 @@ yydestruct (yymsg, yytype, yyvaluep)
     YYSTYPE *yyvaluep;
 #endif
 {
-  YYUSE (yyvaluep);
+    YYUSE (yyvaluep);
 
-  if (!yymsg)
-    yymsg = "Deleting";
-  YY_SYMBOL_PRINT (yymsg, yytype, yyvaluep, yylocationp);
+    if (!yymsg)
+        yymsg = "Deleting";
+    YY_SYMBOL_PRINT (yymsg, yytype, yyvaluep, yylocationp);
 
-  switch (yytype)
+    switch (yytype)
     {
 
-      default:
-        break;
+        default:
+            break;
     }
 }
 
@@ -1461,16 +1461,16 @@ yyparse ()
 
     YYSIZE_T yystacksize;
 
-  int yyn;
-  int yyresult;
-  /* Lookahead token as an internal (translated) token number.  */
-  int yytoken = 0;
-  /* The variables used to return semantic value and location from the
-     action routines.  */
-  YYSTYPE yyval;
+    int yyn;
+    int yyresult;
+    /* Lookahead token as an internal (translated) token number.  */
+    int yytoken = 0;
+    /* The variables used to return semantic value and location from the
+       action routines.  */
+    YYSTYPE yyval;
 
 #if YYERROR_VERBOSE
-  /* Buffer for error messages, and its allocated size.  */
+    /* Buffer for error messages, and its allocated size.  */
   char yymsgbuf[128];
   char *yymsg = yymsgbuf;
   YYSIZE_T yymsg_alloc = sizeof yymsgbuf;
@@ -1478,40 +1478,40 @@ yyparse ()
 
 #define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N))
 
-  /* The number of symbols on the RHS of the reduced rule.
-     Keep to zero when no symbol should be popped.  */
-  int yylen = 0;
+    /* The number of symbols on the RHS of the reduced rule.
+       Keep to zero when no symbol should be popped.  */
+    int yylen = 0;
 
-  yyssp = yyss = yyssa;
-  yyvsp = yyvs = yyvsa;
-  yystacksize = YYINITDEPTH;
+    yyssp = yyss = yyssa;
+    yyvsp = yyvs = yyvsa;
+    yystacksize = YYINITDEPTH;
 
-  YYDPRINTF ((stderr, "Starting parse\n"));
+    YYDPRINTF ((stderr, "Starting parse\n"));
 
-  yystate = 0;
-  yyerrstatus = 0;
-  yynerrs = 0;
-  yychar = YYEMPTY; /* Cause a token to be read.  */
-  goto yysetstate;
+    yystate = 0;
+    yyerrstatus = 0;
+    yynerrs = 0;
+    yychar = YYEMPTY; /* Cause a token to be read.  */
+    goto yysetstate;
 
 /*------------------------------------------------------------.
 | yynewstate -- Push a new state, which is found in yystate.  |
 `------------------------------------------------------------*/
- yynewstate:
-  /* In all cases, when you get here, the value and location stacks
-     have just been pushed.  So pushing a state here evens the stacks.  */
-  yyssp++;
+    yynewstate:
+    /* In all cases, when you get here, the value and location stacks
+       have just been pushed.  So pushing a state here evens the stacks.  */
+    yyssp++;
 
- yysetstate:
-  *yyssp = yystate;
+    yysetstate:
+    *yyssp = yystate;
 
-  if (yyss + yystacksize - 1 <= yyssp)
+    if (yyss + yystacksize - 1 <= yyssp)
     {
-      /* Get the current used size of the three stacks, in elements.  */
-      YYSIZE_T yysize = yyssp - yyss + 1;
+        /* Get the current used size of the three stacks, in elements.  */
+        YYSIZE_T yysize = yyssp - yyss + 1;
 
 #ifdef yyoverflow
-      {
+        {
 	/* Give user a chance to reallocate the stack.  Use copies of
 	   these so that the &'s don't force the real ones into
 	   memory.  */
@@ -1532,1268 +1532,1268 @@ yyparse ()
       }
 #else /* no yyoverflow */
 # ifndef YYSTACK_RELOCATE
-      goto yyexhaustedlab;
+        goto yyexhaustedlab;
 # else
-      /* Extend the stack our own way.  */
-      if (YYMAXDEPTH <= yystacksize)
-	goto yyexhaustedlab;
-      yystacksize *= 2;
-      if (YYMAXDEPTH < yystacksize)
-	yystacksize = YYMAXDEPTH;
+        /* Extend the stack our own way.  */
+        if (YYMAXDEPTH <= yystacksize)
+            goto yyexhaustedlab;
+        yystacksize *= 2;
+        if (YYMAXDEPTH < yystacksize)
+            yystacksize = YYMAXDEPTH;
 
-      {
-	yytype_int16 *yyss1 = yyss;
-	union yyalloc *yyptr =
-	  (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
-	if (! yyptr)
-	  goto yyexhaustedlab;
-	YYSTACK_RELOCATE (yyss_alloc, yyss);
-	YYSTACK_RELOCATE (yyvs_alloc, yyvs);
+        {
+            yytype_int16 *yyss1 = yyss;
+            union yyalloc *yyptr =
+                    (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
+            if (! yyptr)
+                goto yyexhaustedlab;
+            YYSTACK_RELOCATE (yyss_alloc, yyss);
+            YYSTACK_RELOCATE (yyvs_alloc, yyvs);
 #  undef YYSTACK_RELOCATE
-	if (yyss1 != yyssa)
-	  YYSTACK_FREE (yyss1);
-      }
+            if (yyss1 != yyssa)
+                YYSTACK_FREE (yyss1);
+        }
 # endif
 #endif /* no yyoverflow */
 
-      yyssp = yyss + yysize - 1;
-      yyvsp = yyvs + yysize - 1;
+        yyssp = yyss + yysize - 1;
+        yyvsp = yyvs + yysize - 1;
 
-      YYDPRINTF ((stderr, "Stack size increased to %lu\n",
-		  (unsigned long int) yystacksize));
+        YYDPRINTF ((stderr, "Stack size increased to %lu\n",
+                (unsigned long int) yystacksize));
 
-      if (yyss + yystacksize - 1 <= yyssp)
-	YYABORT;
+        if (yyss + yystacksize - 1 <= yyssp)
+            YYABORT;
     }
 
-  YYDPRINTF ((stderr, "Entering state %d\n", yystate));
+    YYDPRINTF ((stderr, "Entering state %d\n", yystate));
 
-  if (yystate == YYFINAL)
-    YYACCEPT;
+    if (yystate == YYFINAL)
+        YYACCEPT;
 
-  goto yybackup;
+    goto yybackup;
 
 /*-----------.
 | yybackup.  |
 `-----------*/
-yybackup:
+    yybackup:
 
-  /* Do appropriate processing given the current state.  Read a
-     lookahead token if we need one and don't already have one.  */
+    /* Do appropriate processing given the current state.  Read a
+       lookahead token if we need one and don't already have one.  */
 
-  /* First try to decide what to do without reference to lookahead token.  */
-  yyn = yypact[yystate];
-  if (yypact_value_is_default (yyn))
-    goto yydefault;
+    /* First try to decide what to do without reference to lookahead token.  */
+    yyn = yypact[yystate];
+    if (yypact_value_is_default (yyn))
+        goto yydefault;
 
-  /* Not known => get a lookahead token if don't already have one.  */
+    /* Not known => get a lookahead token if don't already have one.  */
 
-  /* YYCHAR is either YYEMPTY or YYEOF or a valid lookahead symbol.  */
-  if (yychar == YYEMPTY)
+    /* YYCHAR is either YYEMPTY or YYEOF or a valid lookahead symbol.  */
+    if (yychar == YYEMPTY)
     {
-      YYDPRINTF ((stderr, "Reading a token: "));
-      yychar = YYLEX;
+        YYDPRINTF ((stderr, "Reading a token: "));
+        yychar = YYLEX;
     }
 
-  if (yychar <= YYEOF)
+    if (yychar <= YYEOF)
     {
-      yychar = yytoken = YYEOF;
-      YYDPRINTF ((stderr, "Now at end of input.\n"));
+        yychar = yytoken = YYEOF;
+        YYDPRINTF ((stderr, "Now at end of input.\n"));
     }
-  else
+    else
     {
-      yytoken = YYTRANSLATE (yychar);
-      YY_SYMBOL_PRINT ("Next token is", yytoken, &yylval, &yylloc);
-    }
-
-  /* If the proper action on seeing token YYTOKEN is to reduce or to
-     detect an error, take that action.  */
-  yyn += yytoken;
-  if (yyn < 0 || YYLAST < yyn || yycheck[yyn] != yytoken)
-    goto yydefault;
-  yyn = yytable[yyn];
-  if (yyn <= 0)
-    {
-      if (yytable_value_is_error (yyn))
-        goto yyerrlab;
-      yyn = -yyn;
-      goto yyreduce;
+        yytoken = YYTRANSLATE (yychar);
+        YY_SYMBOL_PRINT ("Next token is", yytoken, &yylval, &yylloc);
     }
 
-  /* Count tokens shifted since error; after three, turn off error
-     status.  */
-  if (yyerrstatus)
-    yyerrstatus--;
+    /* If the proper action on seeing token YYTOKEN is to reduce or to
+       detect an error, take that action.  */
+    yyn += yytoken;
+    if (yyn < 0 || YYLAST < yyn || yycheck[yyn] != yytoken)
+        goto yydefault;
+    yyn = yytable[yyn];
+    if (yyn <= 0)
+    {
+        if (yytable_value_is_error (yyn))
+            goto yyerrlab;
+        yyn = -yyn;
+        goto yyreduce;
+    }
 
-  /* Shift the lookahead token.  */
-  YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
+    /* Count tokens shifted since error; after three, turn off error
+       status.  */
+    if (yyerrstatus)
+        yyerrstatus--;
 
-  /* Discard the shifted token.  */
-  yychar = YYEMPTY;
+    /* Shift the lookahead token.  */
+    YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
 
-  yystate = yyn;
-  YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
-  *++yyvsp = yylval;
-  YY_IGNORE_MAYBE_UNINITIALIZED_END
+    /* Discard the shifted token.  */
+    yychar = YYEMPTY;
 
-  goto yynewstate;
+    yystate = yyn;
+    YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
+    *++yyvsp = yylval;
+    YY_IGNORE_MAYBE_UNINITIALIZED_END
+
+    goto yynewstate;
 
 
 /*-----------------------------------------------------------.
 | yydefault -- do the default action for the current state.  |
 `-----------------------------------------------------------*/
-yydefault:
-  yyn = yydefact[yystate];
-  if (yyn == 0)
-    goto yyerrlab;
-  goto yyreduce;
+    yydefault:
+    yyn = yydefact[yystate];
+    if (yyn == 0)
+        goto yyerrlab;
+    goto yyreduce;
 
 
 /*-----------------------------.
 | yyreduce -- Do a reduction.  |
 `-----------------------------*/
-yyreduce:
-  /* yyn is the number of a rule to reduce with.  */
-  yylen = yyr2[yyn];
+    yyreduce:
+    /* yyn is the number of a rule to reduce with.  */
+    yylen = yyr2[yyn];
 
-  /* If YYLEN is nonzero, implement the default value of the action:
-     `$$ = $1'.
+    /* If YYLEN is nonzero, implement the default value of the action:
+       `$$ = $1'.
 
-     Otherwise, the following line sets YYVAL to garbage.
-     This behavior is undocumented and Bison
-     users should not rely upon it.  Assigning to YYVAL
-     unconditionally makes the parser a bit smaller, and it avoids a
-     GCC warning that YYVAL may be used uninitialized.  */
-  yyval = yyvsp[1-yylen];
+       Otherwise, the following line sets YYVAL to garbage.
+       This behavior is undocumented and Bison
+       users should not rely upon it.  Assigning to YYVAL
+       unconditionally makes the parser a bit smaller, and it avoids a
+       GCC warning that YYVAL may be used uninitialized.  */
+    yyval = yyvsp[1-yylen];
 
 
-  YY_REDUCE_PRINT (yyn);
-  switch (yyn)
+    YY_REDUCE_PRINT (yyn);
+    switch (yyn)
     {
         case 3:
 /* Line 1792 of yacc.c  */
 #line 156 "DML_gram.y"
-    {
-		//此处调用执行函数即可,执行函数将返回错误状态码，需要获取并传入printError函数
-		SqlGlobal::getInstance()->turnPnode2Exec((yyvsp[(1) - (2)].phyNode));
-		YYACCEPT;
-	}
-    break;
+        {
+            //此处调用执行函数即可,执行函数将返回错误状态码，需要获取并传入printError函数
+            SqlGlobal::getInstance()->turnPnode2Exec((yyvsp[(1) - (2)].phyNode));
+            YYACCEPT;
+        }
+            break;
 
-  case 4:
+        case 4:
 /* Line 1792 of yacc.c  */
 #line 162 "DML_gram.y"
-    {
-		YYACCEPT;
-	}
-    break;
+        {
+            YYACCEPT;
+        }
+            break;
 
-  case 5:
+        case 5:
 /* Line 1792 of yacc.c  */
 #line 166 "DML_gram.y"
-    {
-		YYACCEPT;
-	}
-    break;
+        {
+            YYACCEPT;
+        }
+            break;
 
-  case 6:
+        case 6:
 /* Line 1792 of yacc.c  */
 #line 170 "DML_gram.y"
-    {
-		YYACCEPT;
-	}
-    break;
+        {
+            YYACCEPT;
+        }
+            break;
 
-  case 7:
+        case 7:
 /* Line 1792 of yacc.c  */
 #line 174 "DML_gram.y"
-    {
-		YYACCEPT;
-	}
-    break;
+        {
+            YYACCEPT;
+        }
+            break;
 
-  case 9:
+        case 9:
 /* Line 1792 of yacc.c  */
 #line 185 "DML_gram.y"
-    {
-		//dmls内即为各物理计划树根节点
-		if(PhysicalPlan::canFinish(*(yyvsp[(2) - (3)].phyNodes)))
-		{
-			//说明可以完成事务
-			for (PhyPlanNode* root : *(yyvsp[(2) - (3)].phyNodes)) 
-			{
-				//调用执行函数
-				SqlGlobal::getInstance()->turnPnode2Exec(root);
-			}
-		}
-		else
-		{
-			cout<<"违反事务"<<endl;
-		}
-	}
-    break;
+        {
+            //dmls内即为各物理计划树根节点
+            if(PhysicalPlan::canFinish(*(yyvsp[(2) - (3)].phyNodes)))
+            {
+                //说明可以完成事务
+                for (PhyPlanNode* root : *(yyvsp[(2) - (3)].phyNodes))
+                {
+                    //调用执行函数
+                    SqlGlobal::getInstance()->turnPnode2Exec(root);
+                }
+            }
+            else
+            {
+                cout<<"违反事务"<<endl;
+            }
+        }
+            break;
 
-  case 10:
+        case 10:
 /* Line 1792 of yacc.c  */
 #line 205 "DML_gram.y"
-    {
-		cout<<"已取消事务"<<endl;
-	}
-    break;
+        {
+            cout<<"已取消事务"<<endl;
+        }
+            break;
 
-  case 11:
+        case 11:
 /* Line 1792 of yacc.c  */
 #line 212 "DML_gram.y"
-    {	
-		(yyval.phyNodes) = new vector<PhyPlanNode*>;
-		(yyval.phyNodes)->push_back((yyvsp[(1) - (1)].phyNode));
-	}
-    break;
+        {
+            (yyval.phyNodes) = new vector<PhyPlanNode*>;
+            (yyval.phyNodes)->push_back((yyvsp[(1) - (1)].phyNode));
+        }
+            break;
 
-  case 12:
+        case 12:
 /* Line 1792 of yacc.c  */
 #line 217 "DML_gram.y"
-    {
-		(yyvsp[(2) - (2)].phyNodes)->push_back((yyvsp[(1) - (2)].phyNode));
-		(yyval.phyNodes) = (yyvsp[(2) - (2)].phyNodes);
-	}
-    break;
+        {
+            (yyvsp[(2) - (2)].phyNodes)->push_back((yyvsp[(1) - (2)].phyNode));
+            (yyval.phyNodes) = (yyvsp[(2) - (2)].phyNodes);
+        }
+            break;
 
-  case 13:
+        case 13:
 /* Line 1792 of yacc.c  */
 #line 225 "DML_gram.y"
-    {
-		//$$即为物理计划根节点
-		(yyval.phyNode) = (yyvsp[(1) - (1)].phyNode);
-	}
-    break;
+        {
+            //$$即为物理计划根节点
+            (yyval.phyNode) = (yyvsp[(1) - (1)].phyNode);
+        }
+            break;
 
-  case 14:
+        case 14:
 /* Line 1792 of yacc.c  */
 #line 230 "DML_gram.y"
-    {
-		(yyval.phyNode) = (yyvsp[(1) - (1)].phyNode);
-	}
-    break;
+        {
+            (yyval.phyNode) = (yyvsp[(1) - (1)].phyNode);
+        }
+            break;
 
-  case 15:
+        case 15:
 /* Line 1792 of yacc.c  */
 #line 234 "DML_gram.y"
-    {
-		(yyval.phyNode) = (yyvsp[(1) - (1)].phyNode);
-	}
-    break;
+        {
+            (yyval.phyNode) = (yyvsp[(1) - (1)].phyNode);
+        }
+            break;
 
-  case 16:
+        case 16:
 /* Line 1792 of yacc.c  */
 #line 238 "DML_gram.y"
-    {
-		(yyval.phyNode) = (yyvsp[(1) - (1)].phyNode);
-	}
-    break;
+        {
+            (yyval.phyNode) = (yyvsp[(1) - (1)].phyNode);
+        }
+            break;
 
-  case 17:
+        case 17:
 /* Line 1792 of yacc.c  */
 #line 245 "DML_gram.y"
-    {
-		YYACCEPT;
-	}
-    break;
+        {
+            YYACCEPT;
+        }
+            break;
 
-  case 18:
+        case 18:
 /* Line 1792 of yacc.c  */
 #line 252 "DML_gram.y"
-    {
-		string dbName = string((yyvsp[(2) - (2)].strval));//使用的数据库名
-		SqlGlobal::getInstance()->useDB(dbName);
-	}
-    break;
+        {
+            string dbName = string((yyvsp[(2) - (2)].strval));//使用的数据库名
+            SqlGlobal::getInstance()->useDB(dbName);
+        }
+            break;
 
-  case 19:
+        case 19:
 /* Line 1792 of yacc.c  */
 #line 260 "DML_gram.y"
-    {
-		if(!SqlGlobal::getInstance()->preCheck()){
-			//未通过预判断
-			YYACCEPT;
-		}
-		M_DML::Query* query = (yyvsp[(1) - (1)].query);
-		query->showInfo();
+        {
+            if(!SqlGlobal::getInstance()->preCheck()){
+                //未通过预判断
+                YYACCEPT;
+            }
+            M_DML::Query* query = (yyvsp[(1) - (1)].query);
+            query->showInfo();
 
-		
-		SqlGrammer sqlgrammer;
-		sqlgrammer.root = query->transform2Grammer();
-		cout << "-------------------------------"<<endl;
-		sqlgrammer.showInfo();
-		sqlgrammer.optimiza();
-		cout << "-------------------------------"<<endl;
 
-		
-		PhysicalPlan physicalPlan;
-		physicalPlan.root = sqlgrammer.transform2PhysicPlan();
-		physicalPlan.showPlan();
-		
-		(yyval.phyNode) = physicalPlan.root;
+            SqlGrammer sqlgrammer;
+            sqlgrammer.root = query->transform2Grammer();
+            cout << "-------------------------------"<<endl;
+            sqlgrammer.showInfo();
+            sqlgrammer.optimiza();
+            cout << "-------------------------------"<<endl;
 
-		
-		cout<<endl;
-		//YYACCEPT;
-	}
-    break;
 
-  case 20:
+            PhysicalPlan physicalPlan;
+            physicalPlan.root = sqlgrammer.transform2PhysicPlan();
+            physicalPlan.showPlan();
+
+            (yyval.phyNode) = physicalPlan.root;
+
+
+            cout<<endl;
+            //YYACCEPT;
+        }
+            break;
+
+        case 20:
 /* Line 1792 of yacc.c  */
 #line 291 "DML_gram.y"
-    {
-		if(!SqlGlobal::getInstance()->preCheck()){
-			//未通过预判断
-			YYACCEPT;
-		}
+        {
+            if(!SqlGlobal::getInstance()->preCheck()){
+                //未通过预判断
+                YYACCEPT;
+            }
 
-		M_DML::Delete * del = new M_DML::Delete();
-		del->tableName = std::string((yyvsp[(3) - (4)].strval));
-		del->condition = (yyvsp[(4) - (4)].condision);
-		del->showInfo();
-		
-		//$$ = new Delete();
-		//$$->tableName = $3;
-		//$$->condition = $4;
-		//$$->showInfo();
-		
-		SqlGrammer sqlgrammer;
-		//sqlgrammer.root = $$->transform2Grammer();
-		sqlgrammer.root = del->transform2Grammer();
-		cout << "-------------------------------"<<endl;
-		sqlgrammer.showInfo();
-		cout << "-------------------------------"<<endl;
-		
-		PhysicalPlan physicalPlan;
-		physicalPlan.root = sqlgrammer.transform2PhysicPlan();
-		physicalPlan.showPlan();
-		
-		(yyval.phyNode) = physicalPlan.root;
-		
-		cout<<endl;
-		//YYACCEPT;
-	}
-    break;
+            M_DML::Delete * del = new M_DML::Delete();
+            del->tableName = std::string((yyvsp[(3) - (4)].strval));
+            del->condition = (yyvsp[(4) - (4)].condision);
+            del->showInfo();
 
-  case 21:
+            //$$ = new Delete();
+            //$$->tableName = $3;
+            //$$->condition = $4;
+            //$$->showInfo();
+
+            SqlGrammer sqlgrammer;
+            //sqlgrammer.root = $$->transform2Grammer();
+            sqlgrammer.root = del->transform2Grammer();
+            cout << "-------------------------------"<<endl;
+            sqlgrammer.showInfo();
+            cout << "-------------------------------"<<endl;
+
+            PhysicalPlan physicalPlan;
+            physicalPlan.root = sqlgrammer.transform2PhysicPlan();
+            physicalPlan.showPlan();
+
+            (yyval.phyNode) = physicalPlan.root;
+
+            cout<<endl;
+            //YYACCEPT;
+        }
+            break;
+
+        case 21:
 /* Line 1792 of yacc.c  */
 #line 327 "DML_gram.y"
-    {	
-		if(!SqlGlobal::getInstance()->preCheck()){
-			//未通过预判断
-			YYACCEPT;
-		}
+        {
+            if(!SqlGlobal::getInstance()->preCheck()){
+                //未通过预判断
+                YYACCEPT;
+            }
 
-		M_DML::Update* upt = new M_DML::Update();
-		upt->tableName = std::string((yyvsp[(2) - (5)].strval));
-		upt->attr_indexs = *(yyvsp[(4) - (5)].attr_indexs);
-		upt->condition = (yyvsp[(5) - (5)].condision);
-		upt->showInfo();
-		
-		//$$ = new Update();
-		//$$->tableName = $2;
-		//$$->attr_indexs = $4;
-		//$$->condition = $5;
-		//$$->showInfo();
-		
-		SqlGrammer sqlgrammer;
-		//sqlgrammer.root = $$->transform2Grammer();
-		sqlgrammer.root = upt->transform2Grammer();
-		cout << "-------------------------------"<<endl;
-		sqlgrammer.showInfo();
-		cout << "-------------------------------"<<endl;
-		
-		PhysicalPlan physicalPlan;
-		physicalPlan.root = sqlgrammer.transform2PhysicPlan();
-		physicalPlan.showPlan();
-		
-		(yyval.phyNode) = physicalPlan.root;
-		
-		cout<<endl;
-		//YYACCEPT;
-	}
-    break;
+            M_DML::Update* upt = new M_DML::Update();
+            upt->tableName = std::string((yyvsp[(2) - (5)].strval));
+            upt->attr_indexs = *(yyvsp[(4) - (5)].attr_indexs);
+            upt->condition = (yyvsp[(5) - (5)].condision);
+            upt->showInfo();
 
-  case 22:
+            //$$ = new Update();
+            //$$->tableName = $2;
+            //$$->attr_indexs = $4;
+            //$$->condition = $5;
+            //$$->showInfo();
+
+            SqlGrammer sqlgrammer;
+            //sqlgrammer.root = $$->transform2Grammer();
+            sqlgrammer.root = upt->transform2Grammer();
+            cout << "-------------------------------"<<endl;
+            sqlgrammer.showInfo();
+            cout << "-------------------------------"<<endl;
+
+            PhysicalPlan physicalPlan;
+            physicalPlan.root = sqlgrammer.transform2PhysicPlan();
+            physicalPlan.showPlan();
+
+            (yyval.phyNode) = physicalPlan.root;
+
+            cout<<endl;
+            //YYACCEPT;
+        }
+            break;
+
+        case 22:
 /* Line 1792 of yacc.c  */
 #line 365 "DML_gram.y"
-    {
-		(yyval.query) = new M_DML::Query();
-		(yyval.query)->selList = (yyvsp[(1) - (2)].selList);
-		(yyval.query)->fromList = (yyvsp[(2) - (2)].fromList);
-	}
-    break;
+        {
+            (yyval.query) = new M_DML::Query();
+            (yyval.query)->selList = (yyvsp[(1) - (2)].selList);
+            (yyval.query)->fromList = (yyvsp[(2) - (2)].fromList);
+        }
+            break;
 
-  case 23:
+        case 23:
 /* Line 1792 of yacc.c  */
 #line 371 "DML_gram.y"
-    {
-		(yyvsp[(1) - (2)].query)->condition = (yyvsp[(2) - (2)].condision);
-		(yyval.query) = (yyvsp[(1) - (2)].query);
-	}
-    break;
+        {
+            (yyvsp[(1) - (2)].query)->condition = (yyvsp[(2) - (2)].condision);
+            (yyval.query) = (yyvsp[(1) - (2)].query);
+        }
+            break;
 
-  case 24:
+        case 24:
 /* Line 1792 of yacc.c  */
 #line 376 "DML_gram.y"
-    {
-		(yyvsp[(1) - (2)].query)->orderList = (yyvsp[(2) - (2)].orderList);
-		(yyval.query) = (yyvsp[(1) - (2)].query);
-	}
-    break;
+        {
+            (yyvsp[(1) - (2)].query)->orderList = (yyvsp[(2) - (2)].orderList);
+            (yyval.query) = (yyvsp[(1) - (2)].query);
+        }
+            break;
 
-  case 25:
+        case 25:
 /* Line 1792 of yacc.c  */
 #line 385 "DML_gram.y"
-    {
-		(yyval.selList) = (yyvsp[(2) - (2)].selList);
-	}
-    break;
+        {
+            (yyval.selList) = (yyvsp[(2) - (2)].selList);
+        }
+            break;
 
-  case 26:
+        case 26:
 /* Line 1792 of yacc.c  */
 #line 392 "DML_gram.y"
-    {
-		(yyval.selList) = new M_DML::SelList();
-		for(int m=0;m<(yyvsp[(1) - (1)].nameList)->size();m++){
-			M_DML::Attribute* attr = new M_DML::Attribute();
-			M_DML::Name* name = (yyvsp[(1) - (1)].nameList)->at(m);
-			attr->setName(name);
-			(yyval.selList)->addAttribute(attr);
-		}
-	}
-    break;
+        {
+            (yyval.selList) = new M_DML::SelList();
+            for(int m=0;m<(yyvsp[(1) - (1)].nameList)->size();m++){
+                M_DML::Attribute* attr = new M_DML::Attribute();
+                M_DML::Name* name = (yyvsp[(1) - (1)].nameList)->at(m);
+                attr->setName(name);
+                (yyval.selList)->addAttribute(attr);
+            }
+        }
+            break;
 
-  case 27:
+        case 27:
 /* Line 1792 of yacc.c  */
 #line 402 "DML_gram.y"
-    {
-		(yyval.selList) = new M_DML::SelList();
-		M_DML::Attribute* attr = new M_DML::Attribute();
-		attr->attrName = "*";
-		(yyval.selList)->addAttribute(attr);
-	}
-    break;
+        {
+            (yyval.selList) = new M_DML::SelList();
+            M_DML::Attribute* attr = new M_DML::Attribute();
+            attr->attrName = "*";
+            (yyval.selList)->addAttribute(attr);
+        }
+            break;
 
-  case 28:
+        case 28:
 /* Line 1792 of yacc.c  */
 #line 409 "DML_gram.y"
-    {
-        cout<<"distinct，暂不进行处理"<<endl;
-	}
-    break;
+        {
+            cout<<"distinct，暂不进行处理"<<endl;
+        }
+            break;
 
-  case 29:
+        case 29:
 /* Line 1792 of yacc.c  */
 #line 417 "DML_gram.y"
-    {
-		(yyval.fromList) = new M_DML::FromList();
-		for(int m=0;m<(yyvsp[(2) - (2)].nameList)->size();m++){
-			M_DML::Relation* rl = new M_DML::Relation();
-			rl->relationName = (yyvsp[(2) - (2)].nameList)->at(m)->attrName;
-			rl->alias = (yyvsp[(2) - (2)].nameList)->at(m)->alias;
-			(yyval.fromList)->addNode(rl);
-		}
-	}
-    break;
+        {
+            (yyval.fromList) = new M_DML::FromList();
+            for(int m=0;m<(yyvsp[(2) - (2)].nameList)->size();m++){
+                M_DML::Relation* rl = new M_DML::Relation();
+                rl->relationName = (yyvsp[(2) - (2)].nameList)->at(m)->attrName;
+                rl->alias = (yyvsp[(2) - (2)].nameList)->at(m)->alias;
+                (yyval.fromList)->addNode(rl);
+            }
+        }
+            break;
 
-  case 30:
+        case 30:
 /* Line 1792 of yacc.c  */
 #line 427 "DML_gram.y"
-    {
-        cout<<"子查询，暂不进行处理"<<endl;
-	}
-    break;
+        {
+            cout<<"子查询，暂不进行处理"<<endl;
+        }
+            break;
 
-  case 31:
+        case 31:
 /* Line 1792 of yacc.c  */
 #line 435 "DML_gram.y"
-    {
-		(yyval.condision) = (yyvsp[(2) - (2)].condision);
-	}
-    break;
+        {
+            (yyval.condision) = (yyvsp[(2) - (2)].condision);
+        }
+            break;
 
-  case 32:
+        case 32:
 /* Line 1792 of yacc.c  */
 #line 443 "DML_gram.y"
-    {
-        //可能有多个condition
-		(yyval.condision) = (yyvsp[(1) - (1)].condision);
-	}
-    break;
+        {
+            //可能有多个condition
+            (yyval.condision) = (yyvsp[(1) - (1)].condision);
+        }
+            break;
 
-  case 33:
+        case 33:
 /* Line 1792 of yacc.c  */
 #line 448 "DML_gram.y"
-    {
-		M_DML::Condition* condition = new M_DML::Condition();
-		condition->lCnode = (yyvsp[(3) - (3)].condision);
+        {
+            M_DML::Condition* condition = new M_DML::Condition();
+            condition->lCnode = (yyvsp[(3) - (3)].condision);
 
-		condition->soperator = (yyvsp[(2) - (3)].soperator);
-		condition->rCnode = (yyvsp[(1) - (3)].condision);
-		(yyval.condision) = condition;
-	}
-    break;
+            condition->soperator = (yyvsp[(2) - (3)].soperator);
+            condition->rCnode = (yyvsp[(1) - (3)].condision);
+            (yyval.condision) = condition;
+        }
+            break;
 
-  case 34:
+        case 34:
 /* Line 1792 of yacc.c  */
 #line 460 "DML_gram.y"
-    {
-        //【】op【】:a=b
-		M_DML::Condition* condition = new M_DML::Condition();
-		(yyval.condision) = condition;
-		M_DML::Attribute* lattr = new M_DML::Attribute();
-		lattr->setName((yyvsp[(1) - (3)].name));
-		condition->Lattr = lattr;
+        {
+            //【】op【】:a=b
+            M_DML::Condition* condition = new M_DML::Condition();
+            (yyval.condision) = condition;
+            M_DML::Attribute* lattr = new M_DML::Attribute();
+            lattr->setName((yyvsp[(1) - (3)].name));
+            condition->Lattr = lattr;
 
-		int ttype = (yyvsp[(3) - (3)].nodestorage)->type;
-		if(ttype == NUMBER){
-            
-			condition->rNumber = (yyvsp[(3) - (3)].nodestorage)->rNumber;
-            
-		}else if(ttype == PARA_STRING){
-			
-			condition->pString = (yyvsp[(3) - (3)].nodestorage)->pString;
-			
-		}else if(ttype == NAME){
+            int ttype = (yyvsp[(3) - (3)].nodestorage)->type;
+            if(ttype == NUMBER){
 
-			M_DML::Attribute* rattr = new M_DML::Attribute();
-			rattr->setName((yyvsp[(3) - (3)].nodestorage)->name);
-			condition->Rattr = rattr;
-            
-		}else if(ttype == SUBQUERY){
-            //子查询
-            condition->query = (yyvsp[(3) - (3)].nodestorage)->query;
-		}
-		condition->soperator = (yyvsp[(2) - (3)].soperator);
-	}
-    break;
+                condition->rNumber = (yyvsp[(3) - (3)].nodestorage)->rNumber;
 
-  case 35:
+            }else if(ttype == PARA_STRING){
+
+                condition->pString = (yyvsp[(3) - (3)].nodestorage)->pString;
+
+            }else if(ttype == NAME){
+
+                M_DML::Attribute* rattr = new M_DML::Attribute();
+                rattr->setName((yyvsp[(3) - (3)].nodestorage)->name);
+                condition->Rattr = rattr;
+
+            }else if(ttype == SUBQUERY){
+                //子查询
+                condition->query = (yyvsp[(3) - (3)].nodestorage)->query;
+            }
+            condition->soperator = (yyvsp[(2) - (3)].soperator);
+        }
+            break;
+
+        case 35:
 /* Line 1792 of yacc.c  */
 #line 494 "DML_gram.y"
-    {
-        //where a=【】,可为表名,数字，子查询
-		(yyval.nodestorage) = new NodeStorage();
-		(yyval.nodestorage)->name = (yyvsp[(1) - (1)].name);
-		(yyval.nodestorage)->type = NAME;
-	}
-    break;
+        {
+            //where a=【】,可为表名,数字，子查询
+            (yyval.nodestorage) = new NodeStorage();
+            (yyval.nodestorage)->name = (yyvsp[(1) - (1)].name);
+            (yyval.nodestorage)->type = NAME;
+        }
+            break;
 
-  case 36:
+        case 36:
 /* Line 1792 of yacc.c  */
 #line 501 "DML_gram.y"
-    {
-		(yyval.nodestorage) = new NodeStorage();
-		(yyval.nodestorage)->rNumber = (yyvsp[(1) - (1)].rNumber);
-		(yyval.nodestorage)->type = NUMBER;
-	}
-    break;
+        {
+            (yyval.nodestorage) = new NodeStorage();
+            (yyval.nodestorage)->rNumber = (yyvsp[(1) - (1)].rNumber);
+            (yyval.nodestorage)->type = NUMBER;
+        }
+            break;
 
-  case 37:
+        case 37:
 /* Line 1792 of yacc.c  */
 #line 507 "DML_gram.y"
-    {
-		(yyval.nodestorage) = new NodeStorage();
-		(yyval.nodestorage)->query = (yyvsp[(2) - (3)].query);
-		(yyval.nodestorage)->type = SUBQUERY;
+        {
+            (yyval.nodestorage) = new NodeStorage();
+            (yyval.nodestorage)->query = (yyvsp[(2) - (3)].query);
+            (yyval.nodestorage)->type = SUBQUERY;
 
-	}
-    break;
+        }
+            break;
 
-  case 38:
+        case 38:
 /* Line 1792 of yacc.c  */
 #line 514 "DML_gram.y"
-    {
-		(yyval.nodestorage) = new NodeStorage();
-		(yyval.nodestorage)->pString = (yyvsp[(1) - (1)].pString);
-		(yyval.nodestorage)->type = PARA_STRING;
-	}
-    break;
+        {
+            (yyval.nodestorage) = new NodeStorage();
+            (yyval.nodestorage)->pString = (yyvsp[(1) - (1)].pString);
+            (yyval.nodestorage)->type = PARA_STRING;
+        }
+            break;
 
-  case 39:
+        case 39:
 /* Line 1792 of yacc.c  */
 #line 523 "DML_gram.y"
-    {
-		(yyval.orderList) = (yyvsp[(3) - (3)].orderList);
-	}
-    break;
+        {
+            (yyval.orderList) = (yyvsp[(3) - (3)].orderList);
+        }
+            break;
 
-  case 40:
+        case 40:
 /* Line 1792 of yacc.c  */
 #line 530 "DML_gram.y"
-    {
-		//可能有多个排序节点
-		(yyval.orderList) = new M_DML::OrderList();
-		(yyval.orderList)->addOrderNode((yyvsp[(1) - (1)].orderNode));
-	}
-    break;
+        {
+            //可能有多个排序节点
+            (yyval.orderList) = new M_DML::OrderList();
+            (yyval.orderList)->addOrderNode((yyvsp[(1) - (1)].orderNode));
+        }
+            break;
 
-  case 41:
+        case 41:
 /* Line 1792 of yacc.c  */
 #line 536 "DML_gram.y"
-    {
-		(yyvsp[(3) - (3)].orderList)->addOrderNode((yyvsp[(1) - (3)].orderNode));
-		(yyval.orderList) = (yyvsp[(3) - (3)].orderList);
-	}
-    break;
+        {
+            (yyvsp[(3) - (3)].orderList)->addOrderNode((yyvsp[(1) - (3)].orderNode));
+            (yyval.orderList) = (yyvsp[(3) - (3)].orderList);
+        }
+            break;
 
-  case 42:
+        case 42:
 /* Line 1792 of yacc.c  */
 #line 544 "DML_gram.y"
-    {
-		//排序节点,可带rule也可不带
-		(yyval.orderNode) = new M_DML::OrderNode();
-		(yyval.orderNode)->attr.setName((yyvsp[(1) - (1)].name)->attrName,(yyvsp[(1) - (1)].name)->tableName);
-	}
-    break;
+        {
+            //排序节点,可带rule也可不带
+            (yyval.orderNode) = new M_DML::OrderNode();
+            (yyval.orderNode)->attr.setName((yyvsp[(1) - (1)].name)->attrName,(yyvsp[(1) - (1)].name)->tableName);
+        }
+            break;
 
-  case 43:
+        case 43:
 /* Line 1792 of yacc.c  */
 #line 550 "DML_gram.y"
-    {
-		(yyval.orderNode) = new M_DML::OrderNode();
-		(yyval.orderNode)->attr.setName((yyvsp[(1) - (2)].name)->attrName,(yyvsp[(1) - (2)].name)->tableName);
-		(yyval.orderNode)->rule = *(yyvsp[(2) - (2)].text);
-	}
-    break;
+        {
+            (yyval.orderNode) = new M_DML::OrderNode();
+            (yyval.orderNode)->attr.setName((yyvsp[(1) - (2)].name)->attrName,(yyvsp[(1) - (2)].name)->tableName);
+            (yyval.orderNode)->rule = *(yyvsp[(2) - (2)].text);
+        }
+            break;
 
-  case 44:
+        case 44:
 /* Line 1792 of yacc.c  */
 #line 559 "DML_gram.y"
-    {
-		//名字列表
-		(yyval.nameList) = new vector<M_DML::Name*>;
-   		(yyval.nameList)->push_back((yyvsp[(1) - (1)].name));
-   }
-    break;
+        {
+            //名字列表
+            (yyval.nameList) = new vector<M_DML::Name*>;
+            (yyval.nameList)->push_back((yyvsp[(1) - (1)].name));
+        }
+            break;
 
-  case 45:
+        case 45:
 /* Line 1792 of yacc.c  */
 #line 565 "DML_gram.y"
-    {
-		(yyvsp[(3) - (3)].nameList)->push_back((yyvsp[(1) - (3)].name));
-   		(yyval.nameList) = (yyvsp[(3) - (3)].nameList);
-   }
-    break;
+        {
+            (yyvsp[(3) - (3)].nameList)->push_back((yyvsp[(1) - (3)].name));
+            (yyval.nameList) = (yyvsp[(3) - (3)].nameList);
+        }
+            break;
 
-  case 46:
+        case 46:
 /* Line 1792 of yacc.c  */
 #line 570 "DML_gram.y"
-    {
-		M_DML::Name *name = new M_DML::Name();
-		name->attrName = "@natural@";//@natural@作为指示符
-        (yyvsp[(4) - (4)].nameList)->push_back(name);
-        (yyvsp[(4) - (4)].nameList)->push_back((yyvsp[(1) - (4)].name));
-        (yyval.nameList) = (yyvsp[(4) - (4)].nameList);
-   }
-    break;
+        {
+            M_DML::Name *name = new M_DML::Name();
+            name->attrName = "@natural@";//@natural@作为指示符
+            (yyvsp[(4) - (4)].nameList)->push_back(name);
+            (yyvsp[(4) - (4)].nameList)->push_back((yyvsp[(1) - (4)].name));
+            (yyval.nameList) = (yyvsp[(4) - (4)].nameList);
+        }
+            break;
 
-  case 47:
+        case 47:
 /* Line 1792 of yacc.c  */
 #line 581 "DML_gram.y"
-    {
-		(yyval.name) = (yyvsp[(1) - (1)].name);
-	}
-    break;
+        {
+            (yyval.name) = (yyvsp[(1) - (1)].name);
+        }
+            break;
 
-  case 48:
+        case 48:
 /* Line 1792 of yacc.c  */
 #line 585 "DML_gram.y"
-    {
-		M_DML::Name* name = (yyvsp[(3) - (4)].name);
-		name->aggFunc = *(yyvsp[(1) - (4)].text);
-		(yyval.name) = name;
-	}
-    break;
+        {
+            M_DML::Name* name = (yyvsp[(3) - (4)].name);
+            name->aggFunc = *(yyvsp[(1) - (4)].text);
+            (yyval.name) = name;
+        }
+            break;
 
-  case 49:
+        case 49:
 /* Line 1792 of yacc.c  */
 #line 591 "DML_gram.y"
-    {
-		M_DML::Name* name = (yyvsp[(1) - (2)].name);
-		name->alias = std::string((yyvsp[(2) - (2)].strval));
-		(yyval.name) = name;
-	}
-    break;
+        {
+            M_DML::Name* name = (yyvsp[(1) - (2)].name);
+            name->alias = std::string((yyvsp[(2) - (2)].strval));
+            (yyval.name) = name;
+        }
+            break;
 
-  case 50:
+        case 50:
 /* Line 1792 of yacc.c  */
 #line 600 "DML_gram.y"
-    {
-		M_DML::Name* name = new M_DML::Name();
-		name->attrName = std::string((yyvsp[(1) - (1)].strval));
-		(yyval.name) = name;
-	}
-    break;
+        {
+            M_DML::Name* name = new M_DML::Name();
+            name->attrName = std::string((yyvsp[(1) - (1)].strval));
+            (yyval.name) = name;
+        }
+            break;
 
-  case 51:
+        case 51:
 /* Line 1792 of yacc.c  */
 #line 606 "DML_gram.y"
-    {
-		M_DML::Name* name = new M_DML::Name();
-		name->tableName = std::string((yyvsp[(1) - (3)].strval));
-		name->attrName = std::string((yyvsp[(3) - (3)].strval));
+        {
+            M_DML::Name* name = new M_DML::Name();
+            name->tableName = std::string((yyvsp[(1) - (3)].strval));
+            name->attrName = std::string((yyvsp[(3) - (3)].strval));
 
-		(yyval.name) = name;
-	}
-    break;
+            (yyval.name) = name;
+        }
+            break;
 
-  case 52:
+        case 52:
 /* Line 1792 of yacc.c  */
 #line 617 "DML_gram.y"
-    {	
-		if(!SqlGlobal::getInstance()->preCheck()){
-			//未通过预判断
-			YYACCEPT;
-		}
+        {
+            if(!SqlGlobal::getInstance()->preCheck()){
+                //未通过预判断
+                YYACCEPT;
+            }
 
-		M_DML::Insert * insert = new M_DML::Insert();
-		insert->attributes = *(yyvsp[(6) - (7)].values);
-		insert->tableName = std::string((yyvsp[(3) - (7)].strval));
-		insert->showInfo();
-		
-		SqlGrammer sqlgrammer;
-		sqlgrammer.root = insert->transform2Grammer();
-		cout << "-------------------------------"<<endl;
-		sqlgrammer.showInfo();
-		cout << "-------------------------------"<<endl;
-		
-		PhysicalPlan physicalPlan;
-		physicalPlan.root = sqlgrammer.transform2PhysicPlan();
-		physicalPlan.showPlan();
-		
-		(yyval.phyNode) = physicalPlan.root;
+            M_DML::Insert * insert = new M_DML::Insert();
+            insert->attributes = *(yyvsp[(6) - (7)].values);
+            insert->tableName = std::string((yyvsp[(3) - (7)].strval));
+            insert->showInfo();
 
-		cout<<endl;
-	}
-    break;
+            SqlGrammer sqlgrammer;
+            sqlgrammer.root = insert->transform2Grammer();
+            cout << "-------------------------------"<<endl;
+            sqlgrammer.showInfo();
+            cout << "-------------------------------"<<endl;
 
-  case 53:
+            PhysicalPlan physicalPlan;
+            physicalPlan.root = sqlgrammer.transform2PhysicPlan();
+            physicalPlan.showPlan();
+
+            (yyval.phyNode) = physicalPlan.root;
+
+            cout<<endl;
+        }
+            break;
+
+        case 53:
 /* Line 1792 of yacc.c  */
 #line 646 "DML_gram.y"
-    {
-		(yyval.values) = new vector<string>;
-		(yyval.values)->push_back(*(yyvsp[(1) - (1)].text));
-	}
-    break;
+        {
+            (yyval.values) = new vector<string>;
+            (yyval.values)->push_back(*(yyvsp[(1) - (1)].text));
+        }
+            break;
 
-  case 54:
+        case 54:
 /* Line 1792 of yacc.c  */
 #line 651 "DML_gram.y"
-    {
-		(yyvsp[(3) - (3)].values)->push_back(*(yyvsp[(1) - (3)].text));
-		(yyval.values) = (yyvsp[(3) - (3)].values);
-	}
-    break;
+        {
+            (yyvsp[(3) - (3)].values)->push_back(*(yyvsp[(1) - (3)].text));
+            (yyval.values) = (yyvsp[(3) - (3)].values);
+        }
+            break;
 
-  case 55:
+        case 55:
 /* Line 1792 of yacc.c  */
 #line 659 "DML_gram.y"
-    {
-		(yyval.attr_indexs) = new map<string,string>;
-		string **tmp = (yyvsp[(1) - (1)].attr_index);
-		(yyval.attr_indexs)->insert(pair<string, string>(*tmp[0], *tmp[1]));
-	}
-    break;
+        {
+            (yyval.attr_indexs) = new map<string,string>;
+            string **tmp = (yyvsp[(1) - (1)].attr_index);
+            (yyval.attr_indexs)->insert(pair<string, string>(*tmp[0], *tmp[1]));
+        }
+            break;
 
-  case 56:
+        case 56:
 /* Line 1792 of yacc.c  */
 #line 665 "DML_gram.y"
-    {
-		string **tmp = (yyvsp[(1) - (3)].attr_index);
-		(yyvsp[(3) - (3)].attr_indexs)->insert(pair<string,string>(*tmp[0],*tmp[1]));
-		(yyval.attr_indexs) = (yyvsp[(3) - (3)].attr_indexs);
-	}
-    break;
+        {
+            string **tmp = (yyvsp[(1) - (3)].attr_index);
+            (yyvsp[(3) - (3)].attr_indexs)->insert(pair<string,string>(*tmp[0],*tmp[1]));
+            (yyval.attr_indexs) = (yyvsp[(3) - (3)].attr_indexs);
+        }
+            break;
 
-  case 57:
+        case 57:
 /* Line 1792 of yacc.c  */
 #line 674 "DML_gram.y"
-    {		
-		string** tmp = (yyval.attr_index);
-		string* pre = new string((yyvsp[(1) - (3)].strval));
-		tmp[0] = pre;
-		tmp[1] = (yyvsp[(3) - (3)].text);
-	}
-    break;
+        {
+            string** tmp = (yyval.attr_index);
+            string* pre = new string((yyvsp[(1) - (3)].strval));
+            tmp[0] = pre;
+            tmp[1] = (yyvsp[(3) - (3)].text);
+        }
+            break;
 
-  case 58:
+        case 58:
 /* Line 1792 of yacc.c  */
 #line 684 "DML_gram.y"
-    {
-		(yyval.text) = &(yyvsp[(1) - (1)].pString)->parameter;
-	}
-    break;
+        {
+            (yyval.text) = &(yyvsp[(1) - (1)].pString)->parameter;
+        }
+            break;
 
-  case 59:
+        case 59:
 /* Line 1792 of yacc.c  */
 #line 688 "DML_gram.y"
-    {
-		(yyval.text) = &(yyvsp[(1) - (1)].rNumber)->number;
-	}
-    break;
+        {
+            (yyval.text) = &(yyvsp[(1) - (1)].rNumber)->number;
+        }
+            break;
 
-  case 60:
+        case 60:
 /* Line 1792 of yacc.c  */
 #line 695 "DML_gram.y"
-    {
-		M_DML::ParaString* pstring = new M_DML::ParaString();
-		pstring->parameter = "\'" + std::string((yyvsp[(2) - (3)].strval)) +"\'";
-        (yyval.pString) = pstring;
-	}
-    break;
+        {
+            M_DML::ParaString* pstring = new M_DML::ParaString();
+            pstring->parameter = "\'" + std::string((yyvsp[(2) - (3)].strval)) +"\'";
+            (yyval.pString) = pstring;
+        }
+            break;
 
-  case 61:
+        case 61:
 /* Line 1792 of yacc.c  */
 #line 704 "DML_gram.y"
-    {
-		(yyval.rNumber) = new M_DML::Number();
-		(yyval.rNumber)->number = to_string((yyvsp[(1) - (1)].intval));
-	}
-    break;
+        {
+            (yyval.rNumber) = new M_DML::Number();
+            (yyval.rNumber)->number = to_string((yyvsp[(1) - (1)].intval));
+        }
+            break;
 
-  case 62:
+        case 62:
 /* Line 1792 of yacc.c  */
 #line 709 "DML_gram.y"
-    {
-		(yyval.rNumber) = new M_DML::Number();
-		(yyval.rNumber)->number = to_string((yyvsp[(1) - (1)].floatval));
-	}
-    break;
+        {
+            (yyval.rNumber) = new M_DML::Number();
+            (yyval.rNumber)->number = to_string((yyvsp[(1) - (1)].floatval));
+        }
+            break;
 
-  case 72:
+        case 72:
 /* Line 1792 of yacc.c  */
 #line 735 "DML_gram.y"
-    {
-		//if(g_DD:Stmt.createtable->tablename == nullptr)
-		set_node(DDL_SQL_TYPE::DDL_TYPE_CREATE_TABLE);
-		g_DDLStmt.createtable->tablename = (yyvsp[(3) - (6)].strval);
-	}
-    break;
+        {
+            //if(g_DD:Stmt.createtable->tablename == nullptr)
+            set_node(DDL_SQL_TYPE::DDL_TYPE_CREATE_TABLE);
+            g_DDLStmt.createtable->tablename = (yyvsp[(3) - (6)].strval);
+        }
+            break;
 
-  case 73:
+        case 73:
 /* Line 1792 of yacc.c  */
 #line 744 "DML_gram.y"
-    {
-		(yyval.intval) = 1; 
-	}
-    break;
+        {
+            (yyval.intval) = 1;
+        }
+            break;
 
-  case 74:
+        case 74:
 /* Line 1792 of yacc.c  */
 #line 748 "DML_gram.y"
-    {
-		(yyval.intval) = (yyvsp[(1) - (3)].intval) + 1; 
-	}
-    break;
+        {
+            (yyval.intval) = (yyvsp[(1) - (3)].intval) + 1;
+        }
+            break;
 
-  case 75:
+        case 75:
 /* Line 1792 of yacc.c  */
 #line 755 "DML_gram.y"
-    { 
-		ColDef newCol;
-		strcopy((yyvsp[(1) - (3)].strval),newCol.name);
-		newCol.datatype = (yyvsp[(2) - (3)].intval);
-		dividetypes(newCol.constypes,(yyvsp[(3) - (3)].intval));
-		g_DDLStmt.createtable->cols.push_back(newCol);
-	}
-    break;
+        {
+            ColDef newCol;
+            strcopy((yyvsp[(1) - (3)].strval),newCol.name);
+            newCol.datatype = (yyvsp[(2) - (3)].intval);
+            dividetypes(newCol.constypes,(yyvsp[(3) - (3)].intval));
+            g_DDLStmt.createtable->cols.push_back(newCol);
+        }
+            break;
 
-  case 76:
+        case 76:
 /* Line 1792 of yacc.c  */
 #line 763 "DML_gram.y"
-    { 
-		vector<int> temp;
-		divideToNum(temp,(yyvsp[(4) - (5)].intval));
-		for(int i = 0;i < temp.size();i++)
-		{
-			//g_DDLStmt.createtable->cols[temp[i]].constypes.push_back(DDL_CONS_TYPE::DDL_CONS_PRIKEY);
-			int flag = DDL_CONS_TYPE::DDL_CONS_PRIKEY;
-			g_DDLStmt.createtable->cols[temp[i]].constypes.push_back(flag);
-		}
-	}
-    break;
+        {
+            vector<int> temp;
+            divideToNum(temp,(yyvsp[(4) - (5)].intval));
+            for(int i = 0;i < temp.size();i++)
+            {
+                //g_DDLStmt.createtable->cols[temp[i]].constypes.push_back(DDL_CONS_TYPE::DDL_CONS_PRIKEY);
+                int flag = DDL_CONS_TYPE::DDL_CONS_PRIKEY;
+                g_DDLStmt.createtable->cols[temp[i]].constypes.push_back(flag);
+            }
+        }
+            break;
 
-  case 77:
+        case 77:
 /* Line 1792 of yacc.c  */
 #line 777 "DML_gram.y"
-    { 
-		for(int i = 0;i < g_DDLStmt.createtable->cols.size();i++)
-		{
-			if(strcmp(g_DDLStmt.createtable->cols[i].name,(yyvsp[(1) - (1)].strval)) == 0)
-			{
-				(yyval.intval) = pow(2,i);break;
-			}
-		}
-	}
-    break;
+        {
+            for(int i = 0;i < g_DDLStmt.createtable->cols.size();i++)
+            {
+                if(strcmp(g_DDLStmt.createtable->cols[i].name,(yyvsp[(1) - (1)].strval)) == 0)
+                {
+                    (yyval.intval) = pow(2,i);break;
+                }
+            }
+        }
+            break;
 
-  case 78:
+        case 78:
 /* Line 1792 of yacc.c  */
 #line 787 "DML_gram.y"
-    { 
-		for(int i = 0;i < g_DDLStmt.createtable->cols.size();i++)
-		{
-			if(strcmp(g_DDLStmt.createtable->cols[i].name,(yyvsp[(3) - (3)].strval)) == 0)
-			{
-				int temp = pow(2,i);
-				(yyval.intval) = (yyvsp[(1) - (3)].intval) + temp;break;
-			}
-		}
-	}
-    break;
+        {
+            for(int i = 0;i < g_DDLStmt.createtable->cols.size();i++)
+            {
+                if(strcmp(g_DDLStmt.createtable->cols[i].name,(yyvsp[(3) - (3)].strval)) == 0)
+                {
+                    int temp = pow(2,i);
+                    (yyval.intval) = (yyvsp[(1) - (3)].intval) + temp;break;
+                }
+            }
+        }
+            break;
 
-  case 79:
+        case 79:
 /* Line 1792 of yacc.c  */
 #line 800 "DML_gram.y"
-    { (yyval.intval) = 0; }
-    break;
+        { (yyval.intval) = 0; }
+            break;
 
-  case 80:
+        case 80:
 /* Line 1792 of yacc.c  */
 #line 801 "DML_gram.y"
-    { (yyval.intval) = (yyvsp[(1) - (3)].intval) + DDL_CONS_TYPE::DDL_CONS_NOTNULL; }
-    break;
+        { (yyval.intval) = (yyvsp[(1) - (3)].intval) + DDL_CONS_TYPE::DDL_CONS_NOTNULL; }
+            break;
 
-  case 81:
+        case 81:
 /* Line 1792 of yacc.c  */
 #line 802 "DML_gram.y"
-    { (yyval.intval) = (yyvsp[(1) - (3)].intval) + DDL_CONS_TYPE::DDL_CONS_PRIKEY;}
-    break;
+        { (yyval.intval) = (yyvsp[(1) - (3)].intval) + DDL_CONS_TYPE::DDL_CONS_PRIKEY;}
+            break;
 
-  case 82:
+        case 82:
 /* Line 1792 of yacc.c  */
 #line 803 "DML_gram.y"
-    { (yyval.intval) = (yyvsp[(1) - (2)].intval) + DDL_CONS_TYPE::DDL_CONS_UNIQUE;}
-    break;
+        { (yyval.intval) = (yyvsp[(1) - (2)].intval) + DDL_CONS_TYPE::DDL_CONS_UNIQUE;}
+            break;
 
-  case 83:
+        case 83:
+/* Line 1792 of yacc.c  */
+#line 807 "DML_gram.y"
+        { (yyval.intval) = DDL_DATA_TYPE::DDL_INT; }
+            break;
+
+        case 84:
 /* Line 1792 of yacc.c  */
 #line 808 "DML_gram.y"
-    { (yyval.intval) = DDL_DATA_TYPE::DDL_INT; }
-    break;
+        { (yyval.intval) = DDL_DATA_TYPE::DDL_FLOAT; }
+            break;
 
-  case 84:
+        case 85:
 /* Line 1792 of yacc.c  */
 #line 809 "DML_gram.y"
-    { (yyval.intval) = DDL_DATA_TYPE::DDL_FLOAT; }
-    break;
+        { (yyval.intval) = -(yyvsp[(3) - (4)].intval); }
+            break;
 
-  case 85:
+        case 86:
 /* Line 1792 of yacc.c  */
 #line 810 "DML_gram.y"
-    { (yyval.intval) = DDL_DATA_TYPE::DDL_STRING; }
-    break;
+        { (yyval.intval) = DDL_DATA_TYPE::DDL_VARCHAR; }
+            break;
 
-  case 86:
+        case 87:
 /* Line 1792 of yacc.c  */
-#line 811 "DML_gram.y"
-    { (yyval.intval) = -(yyvsp[(3) - (4)].intval); }
-    break;
+#line 816 "DML_gram.y"
+        {
+            set_node(DDL_SQL_TYPE::DDL_TYPE_CREATE_DATABASE);
+            strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.createdatabase->databasename);
+        }
+            break;
 
-  case 87:
+        case 88:
 /* Line 1792 of yacc.c  */
-#line 817 "DML_gram.y"
-    {
-			set_node(DDL_SQL_TYPE::DDL_TYPE_CREATE_DATABASE);
-			strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.createdatabase->databasename);
-		}
-    break;
+#line 825 "DML_gram.y"
+        {
+            set_node(DDL_SQL_TYPE::DDL_TYPE_CREATE_INDEX);
+            strcopy((yyvsp[(3) - (5)].strval),g_DDLStmt.createindex->indexname);
+            strcopy((yyvsp[(5) - (5)].strval),g_DDLStmt.createindex->tablename);
+        }
+            break;
 
-  case 88:
+        case 89:
 /* Line 1792 of yacc.c  */
-#line 826 "DML_gram.y"
-    {
-				set_node(DDL_SQL_TYPE::DDL_TYPE_CREATE_INDEX);
-				strcopy((yyvsp[(3) - (5)].strval),g_DDLStmt.createindex->indexname);
-				strcopy((yyvsp[(5) - (5)].strval),g_DDLStmt.createindex->tablename);
-			}
-    break;
+#line 831 "DML_gram.y"
+        {
+            set_node(DDL_SQL_TYPE::DDL_TYPE_CREATE_INDEX);
+            strcopy((yyvsp[(3) - (8)].strval),g_DDLStmt.createindex->indexname);
+            strcopy((yyvsp[(5) - (8)].strval),g_DDLStmt.createindex->tablename);
+        }
+            break;
 
-  case 89:
+        case 90:
 /* Line 1792 of yacc.c  */
-#line 832 "DML_gram.y"
-    {
-				set_node(DDL_SQL_TYPE::DDL_TYPE_CREATE_INDEX);
-				strcopy((yyvsp[(3) - (8)].strval),g_DDLStmt.createindex->indexname);
-				strcopy((yyvsp[(5) - (8)].strval),g_DDLStmt.createindex->tablename);
-			}
-    break;
+#line 840 "DML_gram.y"
+        {
+            g_DDLStmt.createindex->colnames.push_back((yyvsp[(1) - (1)].strval));
+        }
+            break;
 
-  case 90:
+        case 91:
 /* Line 1792 of yacc.c  */
-#line 841 "DML_gram.y"
-    {
-				g_DDLStmt.createindex->colnames.push_back((yyvsp[(1) - (1)].strval));
-			}
-    break;
+#line 844 "DML_gram.y"
+        {
+            g_DDLStmt.createindex->colnames.push_back((yyvsp[(3) - (3)].strval));
+        }
+            break;
 
-  case 91:
+        case 92:
 /* Line 1792 of yacc.c  */
-#line 845 "DML_gram.y"
-    { 
-				g_DDLStmt.createindex->colnames.push_back((yyvsp[(3) - (3)].strval));
-			}
-    break;
+#line 852 "DML_gram.y"
+        {
+            set_node(DDL_SQL_TYPE::DDL_TYPE_DROP);
+            g_DDLStmt.dropstmt->dropType = DROPTYPE::TABLE;
+            strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.dropstmt->dropname);
+        }
+            break;
 
-  case 92:
+        case 93:
 /* Line 1792 of yacc.c  */
-#line 853 "DML_gram.y"
-    {
-			set_node(DDL_SQL_TYPE::DDL_TYPE_DROP);
-			g_DDLStmt.dropstmt->dropType = DROPTYPE::TABLE;
-			strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.dropstmt->dropname);
-		}
-    break;
+#line 858 "DML_gram.y"
+        {
+            set_node(DDL_SQL_TYPE::DDL_TYPE_DROP);
+            g_DDLStmt.dropstmt->dropType = DROPTYPE::DATABASE;
+            strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.dropstmt->dropname);
+        }
+            break;
 
-  case 93:
+        case 94:
 /* Line 1792 of yacc.c  */
-#line 859 "DML_gram.y"
-    {
-			set_node(DDL_SQL_TYPE::DDL_TYPE_DROP);
-			g_DDLStmt.dropstmt->dropType = DROPTYPE::DATABASE;
-			strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.dropstmt->dropname);
-		}
-    break;
+#line 868 "DML_gram.y"
+        {
+            set_node(DDL_SQL_TYPE::DDL_TYPE_ALTER);
+            strcopy((yyvsp[(3) - (4)].strval),g_DDLStmt.alterstmt->tablename);
+        }
+            break;
 
-  case 94:
+        case 95:
 /* Line 1792 of yacc.c  */
-#line 869 "DML_gram.y"
-    {
-			set_node(DDL_SQL_TYPE::DDL_TYPE_ALTER);
-			strcopy((yyvsp[(3) - (4)].strval),g_DDLStmt.alterstmt->tablename);
-		}
-    break;
+#line 875 "DML_gram.y"
+        {
+            g_DDLStmt.alterstmt->altertype = ALTERTYPE::DROP_CONSTRAINT;
+            strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.alterstmt->constraintname);
+        }
+            break;
 
-  case 95:
+        case 96:
 /* Line 1792 of yacc.c  */
-#line 876 "DML_gram.y"
-    {
-			g_DDLStmt.alterstmt->altertype = ALTERTYPE::DROP_CONSTRAINT;
-			strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.alterstmt->constraintname);
-		}
-    break;
+#line 880 "DML_gram.y"
+        {
+            g_DDLStmt.alterstmt->altertype = ALTERTYPE::ADD_COL;
+            ColDef newCol;
+            strcopy((yyvsp[(2) - (3)].strval),newCol.name);
+            newCol.datatype = (yyvsp[(3) - (3)].intval);
+            g_DDLStmt.alterstmt->cols.push_back(newCol);
+        }
+            break;
 
-  case 96:
+        case 97:
 /* Line 1792 of yacc.c  */
-#line 881 "DML_gram.y"
-    {
-			g_DDLStmt.alterstmt->altertype = ALTERTYPE::ADD_COL;
-			ColDef newCol;
-			strcopy((yyvsp[(2) - (3)].strval),newCol.name);
-			newCol.datatype = (yyvsp[(3) - (3)].intval);
-			g_DDLStmt.alterstmt->cols.push_back(newCol);
-		}
-    break;
+#line 888 "DML_gram.y"
+        {
+            g_DDLStmt.alterstmt->altertype = ALTERTYPE::DROP_COL;
+            ColDef newCol;
+            strcopy((yyvsp[(3) - (3)].strval),newCol.name);
+            g_DDLStmt.alterstmt->cols.push_back(newCol);
+        }
+            break;
 
-  case 97:
+        case 98:
 /* Line 1792 of yacc.c  */
-#line 889 "DML_gram.y"
-    {
-			g_DDLStmt.alterstmt->altertype = ALTERTYPE::DROP_COL;
-			ColDef newCol;
-			strcopy((yyvsp[(3) - (3)].strval),newCol.name);
-			g_DDLStmt.alterstmt->cols.push_back(newCol);
-		}
-    break;
+#line 895 "DML_gram.y"
+        {
+            g_DDLStmt.alterstmt->altertype = ALTERTYPE::ALTER_COL;
+            ColDef newCol;
+            strcopy((yyvsp[(3) - (5)].strval),newCol.name);
+            newCol.datatype = (yyvsp[(5) - (5)].intval);
+            g_DDLStmt.alterstmt->cols.push_back(newCol);
+        }
+            break;
 
-  case 98:
+        case 99:
 /* Line 1792 of yacc.c  */
-#line 896 "DML_gram.y"
-    {
-			g_DDLStmt.alterstmt->altertype = ALTERTYPE::ALTER_COL;
-			ColDef newCol;
-			strcopy((yyvsp[(3) - (5)].strval),newCol.name);
-			newCol.datatype = (yyvsp[(5) - (5)].intval);
-			g_DDLStmt.alterstmt->cols.push_back(newCol);
-		}
-    break;
+#line 903 "DML_gram.y"
+        {
+            g_DDLStmt.alterstmt->altertype = ALTERTYPE::MODIFY_COL;
+            g_DDLStmt.alterstmt->modifytype = (yyvsp[(4) - (4)].intval);
+            ColDef newCol;
+            strcopy((yyvsp[(2) - (4)].strval),newCol.name);
+            newCol.datatype = (yyvsp[(3) - (4)].intval);
+            g_DDLStmt.alterstmt->cols.push_back(newCol);
+        }
+            break;
 
-  case 99:
+        case 100:
 /* Line 1792 of yacc.c  */
-#line 904 "DML_gram.y"
-    {
-			g_DDLStmt.alterstmt->altertype = ALTERTYPE::MODIFY_COL;
-			g_DDLStmt.alterstmt->modifytype = (yyvsp[(4) - (4)].intval);
-			ColDef newCol;
-			strcopy((yyvsp[(2) - (4)].strval),newCol.name);
-			newCol.datatype = (yyvsp[(3) - (4)].intval);
-			g_DDLStmt.alterstmt->cols.push_back(newCol);
-		}
-    break;
+#line 912 "DML_gram.y"
+        {
+            g_DDLStmt.alterstmt->altertype = ALTERTYPE::ADD_CONSTRAINT;
+            strcopy((yyvsp[(3) - (7)].strval),g_DDLStmt.alterstmt->constraintname);
+            g_DDLStmt.alterstmt->constrainttype = DDL_CONS_TYPE::DDL_CONS_UNIQUE;
+        }
+            break;
 
-  case 100:
+        case 101:
 /* Line 1792 of yacc.c  */
-#line 913 "DML_gram.y"
-    {
-			g_DDLStmt.alterstmt->altertype = ALTERTYPE::ADD_CONSTRAINT;
-			strcopy((yyvsp[(3) - (7)].strval),g_DDLStmt.alterstmt->constraintname);
-			g_DDLStmt.alterstmt->constrainttype = DDL_CONS_TYPE::DDL_CONS_UNIQUE;
-		}
-    break;
+#line 918 "DML_gram.y"
+        {
+            g_DDLStmt.alterstmt->altertype = ALTERTYPE::ADD_CONSTRAINT;
+            strcopy((yyvsp[(3) - (8)].strval),g_DDLStmt.alterstmt->constraintname);
+            g_DDLStmt.alterstmt->constrainttype = DDL_CONS_TYPE::DDL_CONS_PRIKEY;
+        }
+            break;
 
-  case 101:
+        case 102:
 /* Line 1792 of yacc.c  */
-#line 919 "DML_gram.y"
-    {
-			g_DDLStmt.alterstmt->altertype = ALTERTYPE::ADD_CONSTRAINT;
-			strcopy((yyvsp[(3) - (8)].strval),g_DDLStmt.alterstmt->constraintname);
-			g_DDLStmt.alterstmt->constrainttype = DDL_CONS_TYPE::DDL_CONS_PRIKEY;
-		}
-    break;
+#line 927 "DML_gram.y"
+        {
+            ColDef newCol;
+            strcopy((yyvsp[(1) - (1)].strval),newCol.name);
+            g_DDLStmt.alterstmt->cols.push_back(newCol);
+        }
+            break;
 
-  case 102:
+        case 103:
 /* Line 1792 of yacc.c  */
-#line 928 "DML_gram.y"
-    {
-			ColDef newCol;
-			strcopy((yyvsp[(1) - (1)].strval),newCol.name);
-			g_DDLStmt.alterstmt->cols.push_back(newCol);
-		}
-    break;
+#line 933 "DML_gram.y"
+        {
+            ColDef newCol;
+            strcopy((yyvsp[(3) - (3)].strval),newCol.name);
+            g_DDLStmt.alterstmt->cols.push_back(newCol);
+        }
+            break;
 
-  case 103:
+        case 104:
 /* Line 1792 of yacc.c  */
-#line 934 "DML_gram.y"
-    {
-			ColDef newCol;
-			strcopy((yyvsp[(3) - (3)].strval),newCol.name);
-			g_DDLStmt.alterstmt->cols.push_back(newCol);
-		}
-    break;
+#line 942 "DML_gram.y"
+        {
+            set_node(DDL_SQL_TYPE::DDL_TYPE_OPEN_DB);
+            strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.opendbstmt->dbName);
+        }
+            break;
 
-  case 104:
+        case 105:
 /* Line 1792 of yacc.c  */
-#line 943 "DML_gram.y"
-    {
-		set_node(DDL_SQL_TYPE::DDL_TYPE_OPEN_DB);
-		strcopy((yyvsp[(3) - (3)].strval),g_DDLStmt.opendbstmt->dbName);
-	}
-    break;
+#line 950 "DML_gram.y"
+        {
+            set_node(DDL_SQL_TYPE::DDL_TYPE_CONNECT_RESET);
+        }
+            break;
 
-  case 105:
+        case 106:
 /* Line 1792 of yacc.c  */
-#line 951 "DML_gram.y"
-    {
-		set_node(DDL_SQL_TYPE::DDL_TYPE_CONNECT_RESET);
-	}
-    break;
+#line 957 "DML_gram.y"
+        {
+            (yyval.soperator) = (yyvsp[(1) - (1)].soperator);
+        }
+            break;
 
-  case 106:
+        case 107:
 /* Line 1792 of yacc.c  */
-#line 958 "DML_gram.y"
-    {
-		(yyval.soperator) = (yyvsp[(1) - (1)].soperator);
-	}
-    break;
+#line 961 "DML_gram.y"
+        {
+            (yyval.soperator) = (yyvsp[(1) - (1)].soperator);
+        }
+            break;
 
-  case 107:
+        case 108:
 /* Line 1792 of yacc.c  */
-#line 962 "DML_gram.y"
-    {
-		(yyval.soperator) = (yyvsp[(1) - (1)].soperator);
-	}
-    break;
+#line 965 "DML_gram.y"
+        {
+            (yyval.soperator) = (yyvsp[(1) - (1)].soperator);
+        }
+            break;
 
-  case 108:
+        case 109:
 /* Line 1792 of yacc.c  */
-#line 966 "DML_gram.y"
-    {
-		(yyval.soperator) = (yyvsp[(1) - (1)].soperator);
-	}
-    break;
+#line 969 "DML_gram.y"
+        {
+            (yyval.soperator) = (yyvsp[(1) - (1)].soperator);
+        }
+            break;
 
-  case 109:
+        case 110:
 /* Line 1792 of yacc.c  */
-#line 970 "DML_gram.y"
-    {
-		(yyval.soperator) = (yyvsp[(1) - (1)].soperator);
-	}
-    break;
+#line 973 "DML_gram.y"
+        {
+            (yyval.soperator) = (yyvsp[(1) - (1)].soperator);
+        }
+            break;
 
-  case 110:
+        case 111:
 /* Line 1792 of yacc.c  */
-#line 974 "DML_gram.y"
-    {
-		(yyval.soperator) = (yyvsp[(1) - (1)].soperator);
-	}
-    break;
+#line 977 "DML_gram.y"
+        {
+            (yyval.soperator) = (yyvsp[(1) - (1)].soperator);
+        }
+            break;
 
-  case 111:
+        case 112:
 /* Line 1792 of yacc.c  */
-#line 978 "DML_gram.y"
-    {
-		(yyval.soperator) = (yyvsp[(1) - (1)].soperator);
-	}
-    break;
-
-  case 112:
-/* Line 1792 of yacc.c  */
-#line 982 "DML_gram.y"
-    {
-		(yyval.soperator) = (yyvsp[(1) - (1)].soperator);
-	}
-    break;
+#line 981 "DML_gram.y"
+        {
+            (yyval.soperator) = (yyvsp[(1) - (1)].soperator);
+        }
+            break;
 
 
 /* Line 1792 of yacc.c  */
 #line 2745 "DML_gram.tab.cpp"
-      default: break;
+        default: break;
     }
-  /* User semantic actions sometimes alter yychar, and that requires
-     that yytoken be updated with the new translation.  We take the
-     approach of translating immediately before every use of yytoken.
-     One alternative is translating here after every semantic action,
-     but that translation would be missed if the semantic action invokes
-     YYABORT, YYACCEPT, or YYERROR immediately after altering yychar or
-     if it invokes YYBACKUP.  In the case of YYABORT or YYACCEPT, an
-     incorrect destructor might then be invoked immediately.  In the
-     case of YYERROR or YYBACKUP, subsequent parser actions might lead
-     to an incorrect destructor call or verbose syntax error message
-     before the lookahead is translated.  */
-  YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
+    /* User semantic actions sometimes alter yychar, and that requires
+       that yytoken be updated with the new translation.  We take the
+       approach of translating immediately before every use of yytoken.
+       One alternative is translating here after every semantic action,
+       but that translation would be missed if the semantic action invokes
+       YYABORT, YYACCEPT, or YYERROR immediately after altering yychar or
+       if it invokes YYBACKUP.  In the case of YYABORT or YYACCEPT, an
+       incorrect destructor might then be invoked immediately.  In the
+       case of YYERROR or YYBACKUP, subsequent parser actions might lead
+       to an incorrect destructor call or verbose syntax error message
+       before the lookahead is translated.  */
+    YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
 
-  YYPOPSTACK (yylen);
-  yylen = 0;
-  YY_STACK_PRINT (yyss, yyssp);
+    YYPOPSTACK (yylen);
+    yylen = 0;
+    YY_STACK_PRINT (yyss, yyssp);
 
-  *++yyvsp = yyval;
+    *++yyvsp = yyval;
 
-  /* Now `shift' the result of the reduction.  Determine what state
-     that goes to, based on the state we popped back to and the rule
-     number reduced by.  */
+    /* Now `shift' the result of the reduction.  Determine what state
+       that goes to, based on the state we popped back to and the rule
+       number reduced by.  */
 
-  yyn = yyr1[yyn];
+    yyn = yyr1[yyn];
 
-  yystate = yypgoto[yyn - YYNTOKENS] + *yyssp;
-  if (0 <= yystate && yystate <= YYLAST && yycheck[yystate] == *yyssp)
-    yystate = yytable[yystate];
-  else
-    yystate = yydefgoto[yyn - YYNTOKENS];
+    yystate = yypgoto[yyn - YYNTOKENS] + *yyssp;
+    if (0 <= yystate && yystate <= YYLAST && yycheck[yystate] == *yyssp)
+        yystate = yytable[yystate];
+    else
+        yystate = yydefgoto[yyn - YYNTOKENS];
 
-  goto yynewstate;
+    goto yynewstate;
 
 
 /*------------------------------------.
 | yyerrlab -- here on detecting error |
 `------------------------------------*/
-yyerrlab:
-  /* Make sure we have latest lookahead translation.  See comments at
-     user semantic actions for why this is necessary.  */
-  yytoken = yychar == YYEMPTY ? YYEMPTY : YYTRANSLATE (yychar);
+    yyerrlab:
+    /* Make sure we have latest lookahead translation.  See comments at
+       user semantic actions for why this is necessary.  */
+    yytoken = yychar == YYEMPTY ? YYEMPTY : YYTRANSLATE (yychar);
 
-  /* If not already recovering from an error, report this error.  */
-  if (!yyerrstatus)
+    /* If not already recovering from an error, report this error.  */
+    if (!yyerrstatus)
     {
-      ++yynerrs;
+        ++yynerrs;
 #if ! YYERROR_VERBOSE
-      yyerror (YY_("syntax error"));
+        yyerror (YY_("syntax error"));
 #else
-# define YYSYNTAX_ERROR yysyntax_error (&yymsg_alloc, &yymsg, \
+        # define YYSYNTAX_ERROR yysyntax_error (&yymsg_alloc, &yymsg, \
                                         yyssp, yytoken)
       {
         char const *yymsgp = YY_("syntax error");
@@ -2828,179 +2828,179 @@ yyerrlab:
 
 
 
-  if (yyerrstatus == 3)
+    if (yyerrstatus == 3)
     {
-      /* If just tried and failed to reuse lookahead token after an
-	 error, discard it.  */
+        /* If just tried and failed to reuse lookahead token after an
+       error, discard it.  */
 
-      if (yychar <= YYEOF)
-	{
-	  /* Return failure if at end of input.  */
-	  if (yychar == YYEOF)
-	    YYABORT;
-	}
-      else
-	{
-	  yydestruct ("Error: discarding",
-		      yytoken, &yylval);
-	  yychar = YYEMPTY;
-	}
+        if (yychar <= YYEOF)
+        {
+            /* Return failure if at end of input.  */
+            if (yychar == YYEOF)
+                YYABORT;
+        }
+        else
+        {
+            yydestruct ("Error: discarding",
+                        yytoken, &yylval);
+            yychar = YYEMPTY;
+        }
     }
 
-  /* Else will try to reuse lookahead token after shifting the error
-     token.  */
-  goto yyerrlab1;
+    /* Else will try to reuse lookahead token after shifting the error
+       token.  */
+    goto yyerrlab1;
 
 
 /*---------------------------------------------------.
 | yyerrorlab -- error raised explicitly by YYERROR.  |
 `---------------------------------------------------*/
-yyerrorlab:
+    yyerrorlab:
 
-  /* Pacify compilers like GCC when the user code never invokes
-     YYERROR and the label yyerrorlab therefore never appears in user
-     code.  */
-  if (/*CONSTCOND*/ 0)
-     goto yyerrorlab;
+    /* Pacify compilers like GCC when the user code never invokes
+       YYERROR and the label yyerrorlab therefore never appears in user
+       code.  */
+    if (/*CONSTCOND*/ 0)
+        goto yyerrorlab;
 
-  /* Do not reclaim the symbols of the rule which action triggered
-     this YYERROR.  */
-  YYPOPSTACK (yylen);
-  yylen = 0;
-  YY_STACK_PRINT (yyss, yyssp);
-  yystate = *yyssp;
-  goto yyerrlab1;
+    /* Do not reclaim the symbols of the rule which action triggered
+       this YYERROR.  */
+    YYPOPSTACK (yylen);
+    yylen = 0;
+    YY_STACK_PRINT (yyss, yyssp);
+    yystate = *yyssp;
+    goto yyerrlab1;
 
 
 /*-------------------------------------------------------------.
 | yyerrlab1 -- common code for both syntax error and YYERROR.  |
 `-------------------------------------------------------------*/
-yyerrlab1:
-  yyerrstatus = 3;	/* Each real token shifted decrements this.  */
+    yyerrlab1:
+    yyerrstatus = 3;	/* Each real token shifted decrements this.  */
 
-  for (;;)
+    for (;;)
     {
-      yyn = yypact[yystate];
-      if (!yypact_value_is_default (yyn))
-	{
-	  yyn += YYTERROR;
-	  if (0 <= yyn && yyn <= YYLAST && yycheck[yyn] == YYTERROR)
-	    {
-	      yyn = yytable[yyn];
-	      if (0 < yyn)
-		break;
-	    }
-	}
+        yyn = yypact[yystate];
+        if (!yypact_value_is_default (yyn))
+        {
+            yyn += YYTERROR;
+            if (0 <= yyn && yyn <= YYLAST && yycheck[yyn] == YYTERROR)
+            {
+                yyn = yytable[yyn];
+                if (0 < yyn)
+                    break;
+            }
+        }
 
-      /* Pop the current state because it cannot handle the error token.  */
-      if (yyssp == yyss)
-	YYABORT;
+        /* Pop the current state because it cannot handle the error token.  */
+        if (yyssp == yyss)
+            YYABORT;
 
 
-      yydestruct ("Error: popping",
-		  yystos[yystate], yyvsp);
-      YYPOPSTACK (1);
-      yystate = *yyssp;
-      YY_STACK_PRINT (yyss, yyssp);
+        yydestruct ("Error: popping",
+                    yystos[yystate], yyvsp);
+        YYPOPSTACK (1);
+        yystate = *yyssp;
+        YY_STACK_PRINT (yyss, yyssp);
     }
 
-  YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
-  *++yyvsp = yylval;
-  YY_IGNORE_MAYBE_UNINITIALIZED_END
+    YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
+    *++yyvsp = yylval;
+    YY_IGNORE_MAYBE_UNINITIALIZED_END
 
 
-  /* Shift the error token.  */
-  YY_SYMBOL_PRINT ("Shifting", yystos[yyn], yyvsp, yylsp);
+    /* Shift the error token.  */
+    YY_SYMBOL_PRINT ("Shifting", yystos[yyn], yyvsp, yylsp);
 
-  yystate = yyn;
-  goto yynewstate;
+    yystate = yyn;
+    goto yynewstate;
 
 
 /*-------------------------------------.
 | yyacceptlab -- YYACCEPT comes here.  |
 `-------------------------------------*/
-yyacceptlab:
-  yyresult = 0;
-  goto yyreturn;
+    yyacceptlab:
+    yyresult = 0;
+    goto yyreturn;
 
 /*-----------------------------------.
 | yyabortlab -- YYABORT comes here.  |
 `-----------------------------------*/
-yyabortlab:
-  yyresult = 1;
-  goto yyreturn;
+    yyabortlab:
+    yyresult = 1;
+    goto yyreturn;
 
 #if !defined yyoverflow || YYERROR_VERBOSE
 /*-------------------------------------------------.
 | yyexhaustedlab -- memory exhaustion comes here.  |
 `-------------------------------------------------*/
-yyexhaustedlab:
-  yyerror (YY_("memory exhausted"));
-  yyresult = 2;
-  /* Fall through.  */
+    yyexhaustedlab:
+    yyerror (YY_("memory exhausted"));
+    yyresult = 2;
+    /* Fall through.  */
 #endif
 
-yyreturn:
-  if (yychar != YYEMPTY)
+    yyreturn:
+    if (yychar != YYEMPTY)
     {
-      /* Make sure we have latest lookahead translation.  See comments at
-         user semantic actions for why this is necessary.  */
-      yytoken = YYTRANSLATE (yychar);
-      yydestruct ("Cleanup: discarding lookahead",
-                  yytoken, &yylval);
+        /* Make sure we have latest lookahead translation.  See comments at
+           user semantic actions for why this is necessary.  */
+        yytoken = YYTRANSLATE (yychar);
+        yydestruct ("Cleanup: discarding lookahead",
+                    yytoken, &yylval);
     }
-  /* Do not reclaim the symbols of the rule which action triggered
-     this YYABORT or YYACCEPT.  */
-  YYPOPSTACK (yylen);
-  YY_STACK_PRINT (yyss, yyssp);
-  while (yyssp != yyss)
+    /* Do not reclaim the symbols of the rule which action triggered
+       this YYABORT or YYACCEPT.  */
+    YYPOPSTACK (yylen);
+    YY_STACK_PRINT (yyss, yyssp);
+    while (yyssp != yyss)
     {
-      yydestruct ("Cleanup: popping",
-		  yystos[*yyssp], yyvsp);
-      YYPOPSTACK (1);
+        yydestruct ("Cleanup: popping",
+                    yystos[*yyssp], yyvsp);
+        YYPOPSTACK (1);
     }
 #ifndef yyoverflow
-  if (yyss != yyssa)
-    YYSTACK_FREE (yyss);
+    if (yyss != yyssa)
+        YYSTACK_FREE (yyss);
 #endif
 #if YYERROR_VERBOSE
-  if (yymsg != yymsgbuf)
+    if (yymsg != yymsgbuf)
     YYSTACK_FREE (yymsg);
 #endif
-  /* Make sure YYID is used.  */
-  return YYID (yyresult);
+    /* Make sure YYID is used.  */
+    return YYID (yyresult);
 }
 
 
 /* Line 2055 of yacc.c  */
-#line 987 "DML_gram.y"
+#line 986 "DML_gram.y"
 
 
 /*DML*/
 
 int parser_dml_sql(string sql){
 
-	yy_switch_to_buffer(yy_scan_string(sql.c_str()));
-	if(yyparse())
-		return -1;
-	else{
-		return 1;
-	}
+    yy_switch_to_buffer(yy_scan_string(sql.c_str()));
+    if(yyparse())
+        return -1;
+    else{
+        return 1;
+    }
 }
 
 string getInputSql(){
-	//获取输入的sql语句
-	string sql;
-	getline(cin, sql);
+    //获取输入的sql语句
+    string sql;
+    getline(cin, sql);
     while (sql.empty()) {
         getline(cin, sql);
     }
-	while (sql.back() != ';') {
-		string tmp;
-		getline(cin, tmp);
-		sql += " " + tmp;
-	}
-	return sql;
+    while (sql.back() != ';') {
+        string tmp;
+        getline(cin, tmp);
+        sql += " " + tmp;
+    }
+    return sql;
 }
 
 /* DDL */
@@ -3013,66 +3013,66 @@ int parser_ddl_sql(string sql){
     delete g_DDLStmt.createtable;
     delete g_DDLStmt.dropstmt;
     delete g_DDLStmt.alterstmt;
-	delete g_DDLStmt.opendbstmt;
+    delete g_DDLStmt.opendbstmt;
     g_DDLStmt.stmttype = 0;
 
-	//在解析之前，先申请空间
-	g_DDLStmt.createtable = new CreateTableStmt;
-	g_DDLStmt.createdatabase = new CreateDatabaseStmt;
-	g_DDLStmt.createindex = new CreateIndex;
-	g_DDLStmt.dropstmt = new DropStmt;
-	g_DDLStmt.alterstmt = new AlterStmt;
-	g_DDLStmt.opendbstmt = new OpenDBStmt;
+    //在解析之前，先申请空间
+    g_DDLStmt.createtable = new CreateTableStmt;
+    g_DDLStmt.createdatabase = new CreateDatabaseStmt;
+    g_DDLStmt.createindex = new CreateIndex;
+    g_DDLStmt.dropstmt = new DropStmt;
+    g_DDLStmt.alterstmt = new AlterStmt;
+    g_DDLStmt.opendbstmt = new OpenDBStmt;
 
-	yy_switch_to_buffer(yy_scan_string(sql.c_str()));
-	if(yyparse())
-		return -1;
-	else{
-		return 1;
-	}
+    yy_switch_to_buffer(yy_scan_string(sql.c_str()));
+    if(yyparse())
+        return -1;
+    else{
+        return 1;
+    }
 }
 
 //为g_DDLStmt申请结点空间,好像我已经把申请空间放外边了，直接全申请了，这个已经鸡肋了
 void set_node(int type){
-	g_DDLStmt.stmttype = type;
-	//switch(type){
-	//	case DDL_TYPE_CREATE_TABLE:
-	//		//g_DDLStmt.createtable = new CreateTableStmt;  直接在外面申请所有的空间
-	//		break;
-	//	case DDL_TYPE_CREATE_DATABASE:
-	//		break；
-	//	default:
-	//		cout<<"申请结点空间时出错"<<endl;break;
-	//}
+    g_DDLStmt.stmttype = type;
+    //switch(type){
+    //	case DDL_TYPE_CREATE_TABLE:
+    //		//g_DDLStmt.createtable = new CreateTableStmt;  直接在外面申请所有的空间
+    //		break;
+    //	case DDL_TYPE_CREATE_DATABASE:
+    //		break；
+    //	default:
+    //		cout<<"申请结点空间时出错"<<endl;break;
+    //}
 }
 
 //将一个数据类型和拆分成一个个类型
 void dividetypes(vector<int>& v,int sum){
-	//首先将num转换成二进制
+    //首先将num转换成二进制
     vector<int> binaryint;
     while(1){
         binaryint.push_back((sum%2));
         if(sum/2 == 0) break;
         else sum = sum/2;
     }
-	//得到了二进制的倒序
-	for(int i = 0;i < binaryint.size();i++){
-		if(binaryint[i] == 0) continue;
-		v.push_back(pow(2,i));
-	}
+    //得到了二进制的倒序
+    for(int i = 0;i < binaryint.size();i++){
+        if(binaryint[i] == 0) continue;
+        v.push_back(pow(2,i));
+    }
 }
 
 void divideToNum(vector<int>& v,int sum){
-	//首先将num转换成二进制
+    //首先将num转换成二进制
     vector<int> binaryint;
     while(1){
         binaryint.push_back((sum%2));
         if(sum/2 == 0) break;
         else sum = sum/2;
     }
-	//得到了二进制的倒序
-	for(int i = 0;i < binaryint.size();i++){
-		if(binaryint[i] == 0) continue;
-		v.push_back(i);
-	}
+    //得到了二进制的倒序
+    for(int i = 0;i < binaryint.size();i++){
+        if(binaryint[i] == 0) continue;
+        v.push_back(i);
+    }
 }

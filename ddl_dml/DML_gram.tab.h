@@ -43,79 +43,79 @@ extern int yydebug;
 /* Tokens.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-   /* Put the tokens into the symbol table, so that GDB and other debuggers
-      know about them.  */
-   enum yytokentype {
-     LF = 258,
-     RF = 259,
-     ST = 260,
-     FM = 261,
-     WH = 262,
-     UPT = 263,
-     DEL = 264,
-     IST = 265,
-     VAL = 266,
-     INTO = 267,
-     SET = 268,
-     WHSPLIT = 269,
-     T_LT = 270,
-     T_LE = 271,
-     T_GT = 272,
-     T_GE = 273,
-     T_EQ = 274,
-     T_NE = 275,
-     IN = 276,
-     ORDER = 277,
-     BY = 278,
-     ORTYPE = 279,
-     DISTINCT = 280,
-     AGGRET = 281,
-     EXIT = 282,
-     NUMBER = 283,
-     PARA_STRING = 284,
-     SUBQUERY = 285,
-     NATURAL = 286,
-     DML_JOIN = 287,
-     MULTI = 288,
-     EXEC = 289,
-     DISCARD = 290,
-     USE = 291,
-     NAME = 292,
-     INTNUM = 293,
-     BOOL = 294,
-     APPROXNUM = 295,
-     DDL_OR = 296,
-     XOR = 297,
-     ANDOP = 298,
-     COMPARISON = 299,
-     SHIFT = 300,
-     TABLE = 301,
-     CREATE = 302,
-     PRIMARY = 303,
-     KEY = 304,
-     NOT = 305,
-     NULLX = 306,
-     INT_DDL = 307,
-     FLOAT_DDL = 308,
-     STRING_DDL = 309,
-     VARCHAR_DDL = 310,
-     REAL = 311,
-     TEXT = 312,
-     DATABASE = 313,
-     DROP = 314,
-     ALTER = 315,
-     INDEX = 316,
-     COLUMN = 317,
-     CONSTRAINT = 318,
-     ADD = 319,
-     MODIFY = 320,
-     TYPE = 321,
-     UNIQUE = 322,
-     ON = 323,
-     CONNECT = 324,
-     TO = 325,
-     RESET = 326
-   };
+/* Put the tokens into the symbol table, so that GDB and other debuggers
+   know about them.  */
+enum yytokentype {
+    LF = 258,
+    RF = 259,
+    ST = 260,
+    FM = 261,
+    WH = 262,
+    UPT = 263,
+    DEL = 264,
+    IST = 265,
+    VAL = 266,
+    INTO = 267,
+    SET = 268,
+    WHSPLIT = 269,
+    T_LT = 270,
+    T_LE = 271,
+    T_GT = 272,
+    T_GE = 273,
+    T_EQ = 274,
+    T_NE = 275,
+    IN = 276,
+    ORDER = 277,
+    BY = 278,
+    ORTYPE = 279,
+    DISTINCT = 280,
+    AGGRET = 281,
+    EXIT = 282,
+    NUMBER = 283,
+    PARA_STRING = 284,
+    SUBQUERY = 285,
+    NATURAL = 286,
+    DML_JOIN = 287,
+    MULTI = 288,
+    EXEC = 289,
+    DISCARD = 290,
+    USE = 291,
+    NAME = 292,
+    INTNUM = 293,
+    BOOL = 294,
+    APPROXNUM = 295,
+    DDL_OR = 296,
+    XOR = 297,
+    ANDOP = 298,
+    COMPARISON = 299,
+    SHIFT = 300,
+    TABLE = 301,
+    CREATE = 302,
+    PRIMARY = 303,
+    KEY = 304,
+    NOT = 305,
+    NULLX = 306,
+    INT_DDL = 307,
+    FLOAT_DDL = 308,
+    STRING_DDL = 309,
+    VARCHAR_DDL = 310,
+    REAL = 311,
+    TEXT = 312,
+    DATABASE = 313,
+    DROP = 314,
+    ALTER = 315,
+    INDEX = 316,
+    COLUMN = 317,
+    CONSTRAINT = 318,
+    ADD = 319,
+    MODIFY = 320,
+    TYPE = 321,
+    UNIQUE = 322,
+    ON = 323,
+    CONNECT = 324,
+    TO = 325,
+    RESET = 326
+};
 #endif
 
 
@@ -125,45 +125,45 @@ typedef union YYSTYPE
 /* Line 2058 of yacc.c  */
 #line 27 "DML_gram.y"
 
-	M_DML::Attribute *attribute;
-	M_DML::OrderNode *orderNode;
-	M_DML::Relation *relation;
-	M_DML::Operator *soperator;
-	M_DML::SelList	*selList;
-	M_DML::FromList *fromList;
-	M_DML::Condition *condision;
-	M_DML::OrderList *orderList;
-	M_DML::GroupList *groupList;
-	M_DML::Query *query;
-	M_DML::Number* rNumber;
-	M_DML::ParaString* pString;
-	
-	M_DML::Name* name;
+    M_DML::Attribute *attribute;
+    M_DML::OrderNode *orderNode;
+    M_DML::Relation *relation;
+    M_DML::Operator *soperator;
+    M_DML::SelList	*selList;
+    M_DML::FromList *fromList;
+    M_DML::Condition *condision;
+    M_DML::OrderList *orderList;
+    M_DML::GroupList *groupList;
+    M_DML::Query *query;
+    M_DML::Number* rNumber;
+    M_DML::ParaString* pString;
+
+    M_DML::Name* name;
     vector<M_DML::Name*>* nameList;
-    
-	string* text;
-	int type;
-	
-	M_DML::Insert* insert;
-	vector<string>* values;
-	
-	M_DML::Delete* del;
-	
-	M_DML::Update* upd;
-	string* attr_index[2];
-	map<string, string>* attr_indexs;
 
-	PhyPlanNode* phyNode;
-	vector<PhyPlanNode*>* phyNodes; 
+    string* text;
+    int type;
 
-	NodeStorage* nodestorage;
+    M_DML::Insert* insert;
+    vector<string>* values;
 
-	/* ddl */
-	int					intval;
-	double				floatval;
-	char*				strval;
-	int					subtok;
-	CreateTableStmt*	createtablestmt;
+    M_DML::Delete* del;
+
+    M_DML::Update* upd;
+    string* attr_index[2];
+    map<string, string>* attr_indexs;
+
+    PhyPlanNode* phyNode;
+    vector<PhyPlanNode*>* phyNodes;
+
+    NodeStorage* nodestorage;
+
+    /* ddl */
+    int					intval;
+    double				floatval;
+    char*				strval;
+    int					subtok;
+    CreateTableStmt*	createtablestmt;
 
 
 /* Line 2058 of yacc.c  */

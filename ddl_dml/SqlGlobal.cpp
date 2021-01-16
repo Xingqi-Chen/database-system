@@ -91,12 +91,25 @@ vector<string> SqlGlobal::getAttribute(string tableName)
 
 bool SqlGlobal::hasIndex(string tablename, string attribute)
 {
+#ifdef DML_TEST
 	if (tablename == "A" && attribute == "b")
 		return true;
 	else if (tablename == "A" && attribute == "c")
 		return true;
 	else
-		return false;
+	    return false;
+#else
+    /*tablename = "student";
+    attribute = "id";*/
+    cout<<tablename<<" "<<attribute<<endl;
+    int result = ddl_mgr->indexExists(tablename.c_str(),attribute.c_str());
+    cout<<"index:";
+    cout<<result<<endl;
+    if(result == 0)
+        return true;
+    else
+        return false;
+#endif
 }
 
 void SqlGlobal::printError(int rc)

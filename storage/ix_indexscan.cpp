@@ -29,13 +29,18 @@ RC IX_IndexScan::openScan(const IX_IndexHandle &indexHandle, CompOp compOp, void
     this->currentPage = IX_NO_PAGE;
     this->overflowPos = -1;
     this->keyPos = -1;
+    cout<<111<<endl;
     // 获取第一个符合条件的索引项
     int rootPage = indexHandle.indexHeader.rootPage;
+
     if(rootPage == IX_NO_PAGE) {
+        cout<<111<<endl;
         currentPage = IX_NO_PAGE;
         keyPos = -1;
     }
+
     else if((rc = getFirstEntry(indexHandle.indexHeader.rootPage, currentPage, keyPos))) {
+
         return rc;
     }
     return 0;       // ok
@@ -59,7 +64,7 @@ RC IX_IndexScan::getFirstEntry(PageNum nodePage, PageNum &rFirstEntryPage, int &
     char *nodeData;
     // 获取该页
     if((rc = pfFH.getThisPage(nodePage, nodePageHandle)) ||
-       (rc = nodePageHandle.getData(nodeData))) {
+            (rc = nodePageHandle.getData(nodeData))) {
         return rc;
     }
     IX_NodeHeader *nodeHeader = (IX_NodeHeader*)nodeData;
@@ -87,7 +92,7 @@ RC IX_IndexScan::getFirstEntry(PageNum nodePage, PageNum &rFirstEntryPage, int &
         }
 
     }
-        // 如果不是叶节点, 循环找到第一个符合条件的interval, 递归重新执行该方法
+    // 如果不是叶节点, 循环找到第一个符合条件的interval, 递归重新执行该方法
     else if(nodeHeader->type == ROOT || nodeHeader->type == NODE){
         if(indexHandle.indexHeader.attrType == INT) {
             PageNum nextPage;
@@ -136,7 +141,7 @@ IX_IndexScan::getFirstIntFromLeaf(PageNum nodePage, PageNum &rFirstEntryPage, in
     PageHandle nodeHandle;
     char *nodeData;
     if((rc = indexHandle.pfFH.getThisPage(nodePage, nodeHandle)) ||
-       (rc = nodeHandle.getData(nodeData))) {
+            (rc = nodeHandle.getData(nodeData))) {
         return rc;
     }
     IX_NodeHeader *nodeHeader = (IX_NodeHeader*)nodeData;
@@ -169,27 +174,27 @@ IX_IndexScan::getFirstIntFromLeaf(PageNum nodePage, PageNum &rFirstEntryPage, in
     }
     //////////////////////////
     int bFound = FALSE; // 标记是否找到
-    for (int i = 0; i < numberKeys; ++i) {
-        // 判断当前位置的索引key值是否符合条件
-        // 找到符合条件的索引项, 返回
+        for (int i = 0; i < numberKeys; ++i) {
+            // 判断当前位置的索引key值是否符合条件
+            // 找到符合条件的索引项, 返回
 
-        if (rv == "") {//rv为空，只和左值比较
-            if (matchIntervall(atoi(lv.c_str()), keyArray[i])) {
-                rFirstEntryPage = nodePage;
-                rKeyPos = i;
-                bFound = TRUE;
-                break;
-            }
+            if (rv == "") {//rv为空，只和左值比较
+                if (matchIntervall(atoi(lv.c_str()), keyArray[i])) {
+                    rFirstEntryPage = nodePage;
+                    rKeyPos = i;
+                    bFound = TRUE;
+                    break;
+                }
 
-        } else {
-            if (matchInterval(atoi(lv.c_str()), atoi(rv.c_str()), keyArray[i])) {
-                rFirstEntryPage = nodePage;
-                rKeyPos = i;
-                bFound = TRUE;
-                break;
+            } else {
+                if (matchInterval(atoi(lv.c_str()), atoi(rv.c_str()), keyArray[i])) {
+                    rFirstEntryPage = nodePage;
+                    rKeyPos = i;
+                    bFound = TRUE;
+                    break;
+                }
             }
         }
-    }
 
     // 释放nodePage
     if((rc = indexHandle.pfFH.unpinPage(nodePage))) {
@@ -389,34 +394,34 @@ RC IX_IndexScan::getIntervalFromNode(IX_NodeHeader *nodeHeader, PageNum &nextPag
     char *valueData = keyData + indexHandle.indexHeader.attrLength * indexHandle.indexHeader.degree;
     int *keyArray = (int*)keyData;
     IX_NodeValue *valueArray = (IX_NodeValue*)valueData;
-    int val = *static_cast<int *>(value);
-    int bFound = FALSE;
-    // 寻找val值所在的区间
-    int numberKeys = nodeHeader->numberKeys;
-    // 判断第一个区间
-    if (val < keyArray[0]) {
-        nextPage = valueArray[0].nextPage;
-        bFound = TRUE;
-    }
-        // 判断最后一个区间, 最后一个区间 nuumberKeys - 1
-    else if (val >= keyArray[numberKeys - 1] && rv == "" || compOp == NO_OP) {
-        nextPage = valueArray[numberKeys].nextPage;
-        bFound = TRUE;
-    }
-        // 判断中间(numberKeys - 1)个区间, 返回nextPage
-    else {
-        for (int i = 1; i < numberKeys; ++i) {
-            if (matchInterval(keyArray[i - 1], keyArray[i], val)) {
-                nextPage = valueArray[i].nextPage;
-                bFound = TRUE;
-                break;
+        int val = *static_cast<int *>(value);
+        int bFound = FALSE;
+        // 寻找val值所在的区间
+        int numberKeys = nodeHeader->numberKeys;
+        // 判断第一个区间
+        if (val < keyArray[0]) {
+            nextPage = valueArray[0].nextPage;
+            bFound = TRUE;
+        }
+            // 判断最后一个区间, 最后一个区间 nuumberKeys - 1
+        else if (val >= keyArray[numberKeys - 1] && rv == "" || compOp == NO_OP) {
+            nextPage = valueArray[numberKeys].nextPage;
+            bFound = TRUE;
+        }
+            // 判断中间(numberKeys - 1)个区间, 返回nextPage
+        else {
+            for (int i = 1; i < numberKeys; ++i) {
+                if (matchInterval(keyArray[i - 1], keyArray[i], val)) {
+                    nextPage = valueArray[i].nextPage;
+                    bFound = TRUE;
+                    break;
+                }
             }
         }
-    }
-    if (bFound == FALSE) {
-        currentPage = IX_NO_PAGE;
-        keyPos = -1;
-    }
+        if (bFound == FALSE) {
+            currentPage = IX_NO_PAGE;
+            keyPos = -1;
+        }
     return 0;
 }
 RC IX_IndexScan::getIntervalFromNodeF(IX_NodeHeader *nodeHeader, PageNum &nextPage) {
@@ -509,10 +514,12 @@ RC IX_IndexScan::getNextEntry(RID &rid) {
     if(!isOpen) {
         return IX_SCAN_CLOSED;
     }
+    /*
     // 查看是否还有页能够遍历
     if(currentPage == IX_NO_PAGE) {
         return IX_EOF;
     }
+     */
     int rc;
 
     // 查看当前是否处于溢出块
@@ -538,7 +545,7 @@ RC IX_IndexScan::getNextEntry(RID &rid) {
             return rc;
         }
     }
-        // 不是溢出块, 返回下一个符合条件的索引位置
+    // 不是溢出块, 返回下一个符合条件的索引位置
     else {
         AttrType attrType = indexHandle.indexHeader.attrType;
         if(attrType == INT) {
@@ -571,43 +578,43 @@ RC IX_IndexScan::getNextIntEntry(RID &rid) {
     int intVal = *static_cast<int*>(value);
     // 如果当前位置的值符合条件, 则直接返回rid, 并换到下一个位置
 
-    if (matchInterval(atoi(lv.c_str()), atoi(rv.c_str()), keyArray[keyPos]) && rv != "") {
-        //if(matchIndex(keyArray[keyPos], intVal)) {
-        char *valueData = keyData + indexHandle.indexHeader.attrLength * indexHandle.indexHeader.degree;
-        IX_NodeValue *valueArray = (IX_NodeValue *) valueData;
-        rid = valueArray[keyPos].rid;
-        // 释放原pageMemento页
-        if ((rc = indexHandle.pfFH.unpinPage(pageMemento))) {
-            return rc;
+        if (matchInterval(atoi(lv.c_str()), atoi(rv.c_str()), keyArray[keyPos]) && rv != "") {
+            //if(matchIndex(keyArray[keyPos], intVal)) {
+            char *valueData = keyData + indexHandle.indexHeader.attrLength * indexHandle.indexHeader.degree;
+            IX_NodeValue *valueArray = (IX_NodeValue *) valueData;
+            rid = valueArray[keyPos].rid;
+            // 释放原pageMemento页
+            if ((rc = indexHandle.pfFH.unpinPage(pageMemento))) {
+                return rc;
+            }
+            // 切换到下一个位置
+            if ((rc = justifyNextPos())) {
+                return rc;
+            }
+        } else if (matchIntervall(atoi(lv.c_str()), keyArray[keyPos]) && rv == "") {
+            //if(matchIndex(keyArray[keyPos], intVal)) {
+            char *valueData = keyData + indexHandle.indexHeader.attrLength * indexHandle.indexHeader.degree;
+            IX_NodeValue *valueArray = (IX_NodeValue *) valueData;
+            rid = valueArray[keyPos].rid;
+            // 释放原pageMemento页
+            if ((rc = indexHandle.pfFH.unpinPage(pageMemento))) {
+                return rc;
+            }
+            // 切换到下一个位置
+            if ((rc = justifyNextPos())) {
+                return rc;
+            }
         }
-        // 切换到下一个位置
-        if ((rc = justifyNextPos())) {
-            return rc;
-        }
-    } else if (matchIntervall(atoi(lv.c_str()), keyArray[keyPos]) && rv == "") {
-        //if(matchIndex(keyArray[keyPos], intVal)) {
-        char *valueData = keyData + indexHandle.indexHeader.attrLength * indexHandle.indexHeader.degree;
-        IX_NodeValue *valueArray = (IX_NodeValue *) valueData;
-        rid = valueArray[keyPos].rid;
-        // 释放原pageMemento页
-        if ((rc = indexHandle.pfFH.unpinPage(pageMemento))) {
-            return rc;
-        }
-        // 切换到下一个位置
-        if ((rc = justifyNextPos())) {
-            return rc;
-        }
-    }
 
-        // 如果不符合条件, 由于索引key是有序的, 所以不需要继续查找了, 直接返回
-    else {
-        // 先释放页
-        if ((rc = indexHandle.pfFH.unpinPage(pageMemento))) {
-            return rc;
+            // 如果不符合条件, 由于索引key是有序的, 所以不需要继续查找了, 直接返回
+        else {
+            // 先释放页
+            if ((rc = indexHandle.pfFH.unpinPage(pageMemento))) {
+                return rc;
+            }
+            currentPage = IX_NO_PAGE;
+            return IX_EOF;
         }
-        currentPage = IX_NO_PAGE;
-        return IX_EOF;
-    }
     return 0;
 }
 RC IX_IndexScan::getNextIntEntryF(RID &rid) {
@@ -774,7 +781,7 @@ RC IX_IndexScan::justifyNextPos() {
             }
         }
     }
-        // 如果没有处于溢出块, 则调整keyPos++, 并判断是否越界
+    // 如果没有处于溢出块, 则调整keyPos++, 并判断是否越界
     else {
         IX_NodeHeader *nodeHeader = (IX_NodeHeader*)pData;
         ++keyPos;

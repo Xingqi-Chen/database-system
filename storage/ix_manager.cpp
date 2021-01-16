@@ -83,11 +83,12 @@ RC IX_Manager::openIndex(const char *fileName, int indexNo, IX_IndexHandle &inde
     PageNum pageNum;
     // 获取first page: header页
     if((rc = pfFH.getFirstPage(pageHandle)) ||
-       (rc = pageHandle.getData(pData)) ||
-       (rc = pageHandle.getPageNum(pageNum))) {
+            (rc = pageHandle.getData(pData)) ||
+            (rc = pageHandle.getPageNum(pageNum))) {
         return rc;
     }
     indexHandle.indexHeader = *(IX_FileHeader*)pData;
+    indexHandle.indexHeader.rootPage = 1;
     indexHandle.pfFH = pfFH;
     indexHandle.isOpen = TRUE;
     indexHandle.bHeaderModified = FALSE;
@@ -115,8 +116,8 @@ RC IX_Manager::closeIndex(IX_IndexHandle &indexHandle) {
         char *pData;
         PageNum pageNum;
         if((rc = indexHandle.pfFH.getFirstPage(pageHandle)) ||
-           (rc = pageHandle.getData(pData)) ||
-           (rc = pageHandle.getPageNum(pageNum))) {
+                (rc = pageHandle.getData(pData)) ||
+                (rc = pageHandle.getPageNum(pageNum))) {
             return rc;
         }
         // 写回数据

@@ -38,6 +38,7 @@ public:
     // 插入索引项
     RC insertEntry(void *pData, const RID &rid);
     RC deleteEntry(void *pData, const RID &rid);
+    IX_FileHeader indexHeader{};    // 索引文件的header页中保存的数据, 类似于rmFileHeader
 private:
     RC insertRootPage(void *data, const RID &rid);                                  // 创建索引根项并且插入数据
     RC insertRootLeaf(void *data, const RID &rid);                                  // 向索引根页插入一条索引项
@@ -61,7 +62,7 @@ private:
     PF_FileHandle pfFH;
     int isOpen;
     int bHeaderModified;
-    IX_FileHeader indexHeader{};    // 索引文件的header页中保存的数据, 类似于rmFileHeader
+
 private:
     template <typename T>
     bool matchInterval(T lVal, T rVal, T givenValue) const;
@@ -118,13 +119,14 @@ private:
     int isOpen;                 // 记录是否被开启
     CompOp compOp;              // 比较的符号
     IX_IndexHandle indexHandle; // 用于处理索引项的handle
-    PageNum currentPage;        // 记录当前的页号
     int keyPos;                 // 记录当前扫描到的索引key值在当前页的下标
     int overflowPos;            // 记录当前扫描的索引key在溢出块中的位置
     int inOverflow;             // 记录扫描的块是否是溢出块
     void *value;                // 比较的数值（左值）
+public:
     string lv;
     string rv;
+    PageNum currentPage;        // 记录当前的页号
 private:
     template <typename T>
     bool matchIndex(T keyValue, T givenValue) const;
@@ -137,16 +139,12 @@ private:
 };
 
 
-#define IX_FILE_CLOSED      (START_IX_WARN + 0)     // 文件已经关闭
+#define IX_FILE_CLOSED      (START_IX_WARN + 0)
 #define IX_RID_EXISTED      (START_IX_WARN + 1)     // 已经存在的索引rid
 #define IX_RID_FULL         (START_IX_WARN + 2)     // 溢出块插满
 #define IX_SCAN_CLOSED      (START_IX_WARN + 3)     // indexScan关闭
 #define IX_EOF              (START_IX_WARN + 4)     // 扫描到索引文件的end
 #define IX_UNKONWN_ATTRTYPE (START_IX_WARN + 5)     // 未知的属性类型
 #define IX_NOT_FOUND        (START_IX_WARN + 6)     // 索引项未找到
-#define IX_LASTWARN         IX_NOT_FOUND
-
-#define IX_UNIX             (START_IX_ERR - 0)      // 未知错误
-#define IX_LASTERROR        IX_UNIX
 
 #endif //MYDATABASE_IX_H
