@@ -83,8 +83,8 @@ RC IX_Manager::openIndex(const char *fileName, int indexNo, IX_IndexHandle &inde
     PageNum pageNum;
     // 获取first page: header页
     if((rc = pfFH.getFirstPage(pageHandle)) ||
-            (rc = pageHandle.getData(pData)) ||
-            (rc = pageHandle.getPageNum(pageNum))) {
+       (rc = pageHandle.getData(pData)) ||
+       (rc = pageHandle.getPageNum(pageNum))) {
         return rc;
     }
     indexHandle.indexHeader = *(IX_FileHeader*)pData;
@@ -115,16 +115,12 @@ RC IX_Manager::closeIndex(IX_IndexHandle &indexHandle) {
         char *pData;
         PageNum pageNum;
         if((rc = indexHandle.pfFH.getFirstPage(pageHandle)) ||
-                (rc = pageHandle.getData(pData)) ||
-                (rc = pageHandle.getPageNum(pageNum))) {
+           (rc = pageHandle.getData(pData)) ||
+           (rc = pageHandle.getPageNum(pageNum))) {
             return rc;
         }
         // 写回数据
         memcpy(pData, (char*)&indexHandle.indexHeader, sizeof(IX_FileHeader));
-        // 修改bug: 增加markDirty
-        if((rc = indexHandle.pfFH.markDirty(pageNum))) {
-            return rc;
-        }
         if((rc = indexHandle.pfFH.unpinPage(pageNum))) {
             return rc;
         }
@@ -142,6 +138,17 @@ string IX_Manager::generateIndexFileName(const char *fileName, int indexNo) {
     stringstream ss;
     ss << fileName << "_" << indexNo;
     return ss.str();
+}
+
+bool IX_Manager::hasIndex(string tablename, string attribute) {
+    string ss;
+    ss = tablename + "_" + attribute;
+    if (FILE *file = fopen(ss.c_str(), "r")) {
+        fclose(file);
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // calculateDegree: 计算页种能容纳的结点数量

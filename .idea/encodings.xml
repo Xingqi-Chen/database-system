@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ddl_dml/ConnectorOptimizer.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/ConnectorOptimizer.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/DDL_public.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/Node.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/PhysicalPlan.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/PhysicalPlan.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/SqlGlobal.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/SqlGlobal.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/SqlGrammer.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/Transaction.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/Translator.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/Translator.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/basicFlow.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/basicFlow.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/redisClient.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/watchedFlow.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ddl_dml/watchedFlow.h" charset="GBK" />
+  </component>
+</project>

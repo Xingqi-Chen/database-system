@@ -80,20 +80,21 @@ public:
                  IX_IndexHandle &indexHandle);
     RC closeIndex(IX_IndexHandle &indexHandle);
     RC destroyIndex(const char *fileName, int indexNo);
+    bool hasIndex(string tablename,string attribute);
 private:
     static string generateIndexFileName(const char *fileName, int indexNo);
     static int calculateDegree(int attrLength);
     PF_Manager *pfManager;
 };
 
-// 索引扫描器: 输入检索条件, 通过调用getNextScan获取所有符合条件的索引项
+// 索引扫描器: 输入检索条件, 通过调用getNextScan获取所有符合条件的索引项,（添加了左右边界）
 class IX_IndexScan {
 public:
     IX_IndexScan();
     ~IX_IndexScan();
     RC openScan(const IX_IndexHandle &indexHandle,
                 CompOp compOp,
-                void *value);
+                void *value,string lv,string rv);
     RC closeScan();
     RC getNextEntry(RID &rid);
 private:
@@ -101,10 +102,16 @@ private:
     RC getFirstEntry(PageNum nodePage, PageNum &rFirstEntryPage, int &rKeyPos);
     // 从叶节点中获取第一个满足条件的项(int)
     RC getFirstIntFromLeaf(PageNum nodePage, PageNum &rFirstEntryPage, int &rKeyPos);
+    RC getFirstIntFromLeafF(PageNum nodePage, PageNum &rFirstEntryPage, int &rKeyPos);
+    RC getFirstIntFromLeafS(PageNum nodePage, PageNum &rFirstEntryPage, int &rKeyPos);
     // 找到符合条件节点所在的区间
     RC getIntervalFromNode(IX_NodeHeader *nodeHeader, PageNum &nextPage);
+    RC getIntervalFromNodeF(IX_NodeHeader *nodeHeader, PageNum &nextPage);
+    RC getIntervalFromNodeS(IX_NodeHeader *nodeHeader, PageNum &nextPage);
     // 从当前位置开始(currentPage, keyPos), 查找到第一个符合条件的keyPos, 并返回rid
     RC getNextIntEntry(RID &rid);
+    RC getNextIntEntryF(RID &rid);
+    RC getNextIntEntryS(RID &rid);
     // 切换到下一个位置
     RC justifyNextPos();
 private:
@@ -115,13 +122,18 @@ private:
     int keyPos;                 // 记录当前扫描到的索引key值在当前页的下标
     int overflowPos;            // 记录当前扫描的索引key在溢出块中的位置
     int inOverflow;             // 记录扫描的块是否是溢出块
-    void *value;                // 比较的数值
+    void *value;                // 比较的数值（左值）
+    string lv;
+    string rv;
 private:
     template <typename T>
     bool matchIndex(T keyValue, T givenValue) const;
 
     template <typename T>
     bool matchInterval(T lVal, T rVal, T givenValue) const;
+
+    template <typename T>
+    bool matchIntervall(T lVal, T givenValue) const;
 };
 
 

@@ -7,8 +7,6 @@
 #include <ctime>
 #include "../storage/pf.h"
 #include "../storage/rm.h"
-#include "../storage/rm_error.h"
-#include "../storage/pf_error.h"
 #include "../error_message/all_error.h"
 
 using namespace std;

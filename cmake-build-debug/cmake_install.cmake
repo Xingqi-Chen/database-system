@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Administrator/CLionProjects/MyDatabase
+# Install script for directory: E:/cdatabase/beta
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Administrator/CLionProjects/MyDatabase/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/cdatabase/beta/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

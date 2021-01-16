@@ -13,11 +13,23 @@
 #include "../storage/pf.h"
 #include "../sql/dml.h"
 #include "../sql/ddl.h"
-#include "../error_message/all_error.h"
+
+#include "../execute/Executor.h"
+#include "../execute/Execute_Global.h"
+#include "../execute/Execute_extend.h"
+#include "../execute/ProcessFunc.h"
+#include "../execute/StateNode.h"
+
+#include "../ddl_dml/Node.h"
+#include "../ddl_dml/SqlGlobal.h"
+#include "../ddl_dml/Translator.h"
+#include "../ddl_dml/DDL_public.h"
+#include "../ddl_dml/DML_gram.tab.h"
+
 
 using namespace std;
 
-const int studentCount = 10000;
+const int studentCount = 5;
 const int nameSize = MAXNAME;
 
 struct Student {
@@ -37,22 +49,35 @@ RC Test5();
 RC Test6();
 RC Test7();
 RC Test8();
+RC Test9();
+RC Test10();
+RC Test11();
+RC Test12();
+
+RC Test_DML();
+
 RC InsertData(DML_Manager &dmlManager, char *relName);
 RC VertifyData(DDL_Manager &ddlManager, RM_FileHandle &rmFileHandle, char *relName);
 RC CreateTable(DDL_Manager &ddlManager, char *relName);
 RC CreateDatabase();
+
+int parser_ddl_sql(string sql);
+extern DDLStmt g_DDLStmt;
+
+string getInputSql();
 int main() {
-    srand(time(nullptr));
+    /*srand(time(nullptr));
     int rc;
     if((rc = Test8())) {
-        PrintError(rc);
-    }
+        RM_PrintError(rc);
+    }*/
+    Test_DML();
     return 0;
 }
 
 bool compare(Student &student, int id) {
     return student.height != students[id].height ||
-            student.weight != students[id].weight || strcmp(student.name, students[id].name);
+           student.weight != students[id].weight || strcmp(student.name, students[id].name);
 }
 
 // 随机生成size大小的字符串
@@ -64,16 +89,16 @@ void generateStr(char str[], int size) {
 }
 
 RC CreateDatabase() {
-    char command[30] = ".\\dbcreate testdb";
+    char command[30] = ".\\dbcreate bank";
     system(command);
     return 0;
 }
 
 RC DeleteDatabase() {
-    if(chdir("..") < 0) {
-        cerr << "chdir error!\n";
-        return 0;
-    }
+    //if(chdir("..") < 0) {
+    //    cerr << "chdir error!\n";
+    //    return 0;
+    //}
     char command[30] = "rd /s /q testdb";
     system(command);
     return 0;
@@ -125,32 +150,6 @@ RC InsertData2(DML_Manager &dmlManager, char *relName) {
         values[3].value = (void*)&(students[i].height);
         values[3].type = FLOAT;
         if(dmlManager.insert(relName, 4, values)) {
-            delete [] values;
-            return rc;
-        }
-    }
-    cout << "Insert Data Successfully!\n";
-    return 0;
-}
-
-RC InsertDataWithSameID(DML_Manager &dmlManager, char *relName) {
-    int rc;
-    cout << "insert " << studentCount << " records..\n";
-    for(int i = 0; i < 10000; ++i) {
-        students[i].id = rand() % 10000 + 1;
-        generateStr(students[i].name, nameSize);
-        students[i].weight = rand() % 249 + 1;
-        students[i].height = rand() % 249 + 1;
-        Value *values = new Value[4];
-        values[0].value = (void*)&(students[i].id);
-        values[0].type = INT;
-        values[1].value = (void*)(students[i].name);
-        values[1].type = STRING;
-        values[2].value = (void*)&(students[i].weight);
-        values[2].type = FLOAT;
-        values[3].value = (void*)&(students[i].height);
-        values[3].type = FLOAT;
-        if((rc = dmlManager.insert(relName, 4, values))) {
             delete [] values;
             return rc;
         }
@@ -273,9 +272,9 @@ RC VertifyDataWithIndex(DDL_Manager &ddlManager, IX_Manager &ixManager, RM_FileH
         return rc;
     }
     IX_IndexScan indexScan;
-    if((rc = indexScan.openScan(ixIndexHandle, NO_OP, (void*)&rc))) {
-        return rc;
-    }
+//    if((rc = indexScan.openScan(ixIndexHandle, NO_OP, (void*)&rc))) {
+//        return rc;
+//    }
     RID rid;
     RM_Record rec;
     int k = 0;
@@ -312,44 +311,6 @@ RC VertifyDataWithIndex(DDL_Manager &ddlManager, IX_Manager &ixManager, RM_FileH
         cout << "Vertify Data With Index Successfully!\n";
     }
     return 0;   // ok
-}
-
-RC getAttrIDCount(DDL_Manager &ddlManager, RM_FileHandle &rmFileHandle) {
-    int rc;
-    vector<int> idVals;
-    RM_FileScan rmScan;
-    if((rc = rmScan.openScan(rmFileHandle, INT, 4, 0, NO_OP, (void*)&rc))) {
-        return rc;
-    }
-    RM_Record rec;
-    // 扫描表中的数据，并和保存到数组中的数据做比较验证
-    while((rc = rmScan.getNextRec(rec)) == 0) {
-        char *pData;
-        if((rc = rec.getData(pData))) {
-            return rc;
-        }
-        Student student;
-        student.id = *(int*)(pData);
-        int flag = 0;
-        for(int &tmp : idVals) {
-            if(tmp == student.id) {
-                flag = 1;
-                break;
-            }
-        }
-        if(!flag) {
-            idVals.emplace_back(student.id);
-        }
-    }
-    if((rc = rmScan.closeScan())) {
-        return rc;
-    }
-//    for(int &tmp : idVals) {
-//        cout << tmp << " ";
-//    }
-//    cout << "\n";
-    cout << "right id count: " << idVals.size() << "\n";
-    return 0; // ok
 }
 
 // 测试创建表操作, 查看数据字典是否正确存储
@@ -401,24 +362,28 @@ RC Test2() {
     DML_Manager dmlManager(rmManager, ddlManager, ixManager);
     char dbName[MAXNAME + 1] = "testdb";
     char relName[MAXNAME + 1] = "student";
-    // 创建数据库
-    if((rc = CreateDatabase())) {
-        return rc;
-    }
+//    // 创建数据库
+//    if((rc = CreateDatabase())) {
+//        return rc;
+//    }
     // 打开数据库
     if((rc = ddlManager.openDb(dbName))) {
         return rc;
     }
-    // 创建表
-    if((rc = CreateTable(ddlManager, relName))) {
-        return rc;
-    }
-    // 向表中插入数据
-    if((rc = InsertData(dmlManager, relName))) {
-        return rc;
-    }
-    // 输出数据字典
-    if((rc = ddlManager.printDataDic())) {
+//    // 创建表
+//    if((rc = CreateTable(ddlManager, relName))) {
+//        return rc;
+//    }
+//    // 向表中插入数据
+//    if((rc = InsertData(dmlManager, relName))) {
+//        return rc;
+//    }
+//    // 输出数据字典
+//    if((rc = ddlManager.printDataDic())) {
+//        return rc;
+//    }
+    if((rc = CreateIndex(ddlManager, relName, "id")) ||
+       (rc = CreateIndex(ddlManager, relName, "weight"))) {
         return rc;
     }
     cout << "****************************************\n";
@@ -458,21 +423,21 @@ RC Test3() {
     DML_Manager dmlManager(rmManager, ddlManager, ixManager);
     char dbName[MAXNAME + 1] = "testdb";
     char relName[MAXNAME + 1] = "student";
-    // 创建数据库
-    if((rc = CreateDatabase())) {
-        return rc;
-    }
+//    // 创建数据库
+//    if((rc = CreateDatabase())) {
+//        return rc;
+//    }
     // 打开数据库
     if((rc = ddlManager.openDb(dbName))) {
         return rc;
     }
-    // 创建表
-    if((rc = CreateTable(ddlManager, relName))) {
-        return rc;
-    }
+//    // 创建表
+//    if((rc = CreateTable(ddlManager, relName))) {
+//        return rc;
+//    }
     // 在表上创建索引
     if((rc = CreateIndex(ddlManager, relName, "id")) ||
-            (rc = CreateIndex(ddlManager, relName, "weight"))) {
+       (rc = CreateIndex(ddlManager, relName, "weight"))) {
         return rc;
     }
     // 验证索引
@@ -480,10 +445,10 @@ RC Test3() {
        (rc = VertifyIndex(ddlManager, relName, "weight", 2))) {
         return rc;
     }
-    // 删除索引
-    if((rc = DeleteIndex(ddlManager, relName, "id"))) {
-        return rc;
-    }
+//    // 删除索引
+//    if((rc = DeleteIndex(ddlManager, relName, "id"))) {
+//        return rc;
+//    }
     // 验证是否被正确删除
     if((rc = ddlManager.indexExists(relName, "id")) == DDL_INDEX_NOT_EXISTS) {
         cout << "index is deleted right\n";
@@ -496,10 +461,10 @@ RC Test3() {
     if((rc = ddlManager.closeDb())) {
         return rc;
     }
-    // 删除数据库
-    if((rc = DeleteDatabase())) {
-        return rc;
-    }
+//    // 删除数据库
+//    if((rc = DeleteDatabase())) {
+//        return rc;
+//    }
     cout << "Test3 done1\n";
     return 0;   // ok
 }
@@ -596,9 +561,9 @@ RC Test5() {
     if((rc = ddlManager.closeDb())) {
         return rc;
     }
-    if((rc = DeleteDatabase())) {
-        return rc;
-    }
+//    if((rc = DeleteDatabase())) {
+//        return rc;
+//    }
     cout << "Test5 done!\n";
     return 0;
 }
@@ -713,70 +678,298 @@ RC Test7() {
     return 0;
 }
 
-// Test8: 测试新增的方法：
-RC Test8() {
-    cout << "Test8 starts....\n";
-    int rc;
+// 测试顺序遍历正常进行
+RC Test8()
+{
+    RC rc;
     PF_Manager pfManager;
     RM_Manager rmManager(pfManager);
     IX_Manager ixManager(pfManager);
     DDL_Manager ddlManager(rmManager, ixManager);
     DML_Manager dmlManager(rmManager, ddlManager, ixManager);
-    char dbName[MAXNAME + 1] = "testdb";
-    char relName[MAXNAME + 1] = "student";
-    // 创建数据库
-    if((rc = CreateDatabase())) {
-        return rc;
-    }
+    char dbName[MAXNAME + 1] = "testdb";        // 创建数据库的名称
+    char relName[MAXNAME + 1] = "student";      // 创建表的名称
+
     // 打开数据库
     if((rc = ddlManager.openDb(dbName))) {
         return rc;
     }
-    // 创建表
-    if((rc = CreateTable(ddlManager, relName))) {
+    // 输出表内容
+    if((rc = ddlManager.printAllData(relName, 3))) {
         return rc;
     }
-    // 向表中插入数据
-    if((rc = InsertDataWithSameID(dmlManager, relName))) {
+    cout << "-----------------------" << endl;
+
+    // 创建节点
+    GlobalState *gstate = new GlobalState(&rmManager, &ddlManager, &ixManager, &dmlManager);
+    SeqScanPlanStateNode *scan = new SeqScanPlanStateNode(gstate);
+    vector<string> paras;
+    paras.push_back("student");
+    scan->addParameters(paras);
+    vector<string> adds;
+    adds.push_back("weight > 100");
+    adds.push_back("OR");
+    adds.push_back("height < 100");
+    scan->addAdditions(adds);
+
+    scan->show();
+    cout << "-----------------" << endl;
+    while (true)
+    {
+        scan->Run();
+        gstate->show();
+        if (gstate->getRecord() == NULL)
+            break;
+    }
+}
+
+RC Test9() {
+    RC rc;
+    PF_Manager pfManager;
+    RM_Manager rmManager(pfManager);
+    IX_Manager ixManager(pfManager);
+    DDL_Manager ddlManager(rmManager, ixManager);
+    DML_Manager dmlManager(rmManager, ddlManager, ixManager);
+    char dbName[MAXNAME + 1] = "testdb";        // 创建数据库的名称
+    char relName[MAXNAME + 1] = "student";      // 创建表的名称
+
+    // 打开数据库
+    if ((rc = ddlManager.openDb(dbName))) {
         return rc;
     }
-    // 输出各个方法的信息
-    int blockNum;
-    int tupleNum;
-    if((rc = ddlManager.getRelBlockNum(relName, blockNum))) {
+    // 输出表内容
+    if ((rc = ddlManager.printAllData(relName, 3))) {
         return rc;
     }
-    if((rc = ddlManager.getRelTupleNum(relName, tupleNum))) {
+    cout << "-----------------------" << endl;
+
+    GlobalState *gstate = new GlobalState(&rmManager, &ddlManager, &ixManager, &dmlManager);
+
+    // 创建遍历节点1
+    SeqScanPlanStateNode *scan1 = new SeqScanPlanStateNode(gstate);
+    vector<string> paras;
+    paras.push_back("student");
+    scan1->addParameters(paras);
+    vector<string> adds;
+    adds.push_back("weight > 100");
+    adds.push_back("OR");
+    adds.push_back("height < 100");
+    scan1->addAdditions(adds);
+
+    // 创建遍历节点2
+    paras.clear();
+    adds.clear();
+    SeqScanPlanStateNode *scan2 = new SeqScanPlanStateNode(gstate);
+    paras.push_back("student_0");
+    scan2->addParameters(paras);
+    adds.push_back("weight > 100");
+    scan2->addAdditions(adds);
+
+    cout << "创建连接节点" << endl;
+    // 创建连接节点
+    paras.clear();
+    adds.clear();
+    JoinPlanStateNode *join = new JoinPlanStateNode(gstate);
+    paras.push_back("student");
+    paras.push_back("student_0");
+    join->addParameters(paras);
+    adds.push_back("student.id = student_0.id");
+    join->addAdditions(adds);
+    join->init(NULL, scan1, scan2);
+
+    cout << "-----------------" << endl;
+    while (true)
+    {
+        join->Run();
+        gstate->show();
+        if (gstate->getRecord() == NULL)
+            break;
+    }
+}
+
+// 测试索引遍历
+RC Test10()
+{
+    RC rc;
+    PF_Manager pfManager;
+    RM_Manager rmManager(pfManager);
+    IX_Manager ixManager(pfManager);
+    DDL_Manager ddlManager(rmManager, ixManager);
+    DML_Manager dmlManager(rmManager, ddlManager, ixManager);
+    char dbName[MAXNAME + 1] = "testdb";        // 创建数据库的名称
+    char relName[MAXNAME + 1] = "student";      // 创建表的名称
+
+    // 打开数据库
+    if ((rc = ddlManager.openDb(dbName))) {
         return rc;
     }
-    int idCount, nameCount, weightCount, heightCount;
-    if((rc = ddlManager.getAttrDiffNum(relName, "id", idCount)) ||
-            (rc = ddlManager.getAttrDiffNum(relName, "name", nameCount)) ||
-            (rc = ddlManager.getAttrDiffNum(relName, "weight", weightCount)) ||
-            (rc = ddlManager.getAttrDiffNum(relName, "height", heightCount))) {
+    // 输出表内容
+    if ((rc = ddlManager.printAllData(relName, 3))) {
         return rc;
     }
-    RM_FileHandle rmFileHandle;
-    if((rc = rmManager.openFile(relName, rmFileHandle))) {
+    cout << "-----------------------" << endl;
+
+    GlobalState *gstate = new GlobalState(&rmManager, &ddlManager, &ixManager, &dmlManager);
+
+    // 创建索引遍历节点
+    IndexScanPlanStateNode* scan = new IndexScanPlanStateNode(gstate);
+    vector<string> paras;
+    paras.push_back("student");
+    paras.push_back("id");
+    scan->addParameters(paras);
+    vector<string> adds;
+    adds.push_back("id < 100");
+    adds.push_back("OR");
+    adds.push_back("height < 100");
+    scan->addAdditions(adds);
+
+    cout << "-----------------" << endl;
+    while (true)
+    {
+        scan->Run();
+        gstate->show();
+        if (gstate->getRecord() == NULL)
+            break;
+    }
+}
+
+// 测试select + join输出情况
+RC Test11()
+{
+    RC rc;
+    PF_Manager pfManager;
+    RM_Manager rmManager(pfManager);
+    IX_Manager ixManager(pfManager);
+    DDL_Manager ddlManager(rmManager, ixManager);
+    DML_Manager dmlManager(rmManager, ddlManager, ixManager);
+    char dbName[MAXNAME + 1] = "testdb";        // 创建数据库的名称
+    char relName[MAXNAME + 1] = "student";      // 创建表的名称
+
+    // 打开数据库
+    if ((rc = ddlManager.openDb(dbName))) {
         return rc;
     }
-    if((rc = getAttrIDCount(ddlManager, rmFileHandle))) {
+//    // 输出表内容
+//    if ((rc = ddlManager.printAllData(relName, 3))) {
+//        return rc;
+//    }
+    cout << "-----------------------" << endl;
+
+    GlobalState *gstate = new GlobalState(&rmManager, &ddlManager, &ixManager, &dmlManager);
+
+    // 创建遍历节点1
+    SeqScanPlanStateNode *scan1 = new SeqScanPlanStateNode(gstate);
+    vector<string> paras;
+    paras.push_back("student");
+    scan1->addParameters(paras);
+    vector<string> adds;
+    adds.push_back("weight > 100");
+    adds.push_back("OR");
+    adds.push_back("height < 100");
+    scan1->addAdditions(adds);
+
+    // 创建遍历节点2
+    paras.clear();
+    adds.clear();
+    SeqScanPlanStateNode *scan2 = new SeqScanPlanStateNode(gstate);
+    paras.push_back("student_0");
+    scan2->addParameters(paras);
+    adds.push_back("weight > 100");
+    scan2->addAdditions(adds);
+
+    cout << "创建连接节点" << endl;
+    // 创建连接节点
+    paras.clear();
+    adds.clear();
+    JoinPlanStateNode *join = new JoinPlanStateNode(gstate);
+    paras.push_back("student");
+    paras.push_back("student_0");
+    join->addParameters(paras);
+//    adds.push_back("student.id = student_0.id");
+//    join->addAdditions(adds);
+    join->init(NULL, scan1, scan2);
+
+    // 创建select节点
+    paras.clear();
+    adds.clear();
+    SelectPlanStateNode* select = new SelectPlanStateNode(gstate);
+    paras.push_back("student");
+    paras.push_back("student_0");
+    select->addParameters(paras);
+    adds.push_back("student.id");
+    adds.push_back("student_0.weight");
+    adds.push_back("student_0.height");
+    select->addAdditions(adds);
+    select->left = join;
+
+    select->Run();
+}
+
+// 测试物化节点是否能正常运行
+RC Test12()
+{
+    RC rc;
+    PF_Manager pfManager;
+    RM_Manager rmManager(pfManager);
+    IX_Manager ixManager(pfManager);
+    DDL_Manager ddlManager(rmManager, ixManager);
+    DML_Manager dmlManager(rmManager, ddlManager, ixManager);
+    char dbName[MAXNAME + 1] = "testdb";        // 创建数据库的名称
+    char relName[MAXNAME + 1] = "student";      // 创建表的名称
+
+    // 打开数据库
+    if((rc = ddlManager.openDb(dbName))) {
         return rc;
     }
-    if((rc = rmManager.closeFile(rmFileHandle))) {
+    // 输出表内容
+    if((rc = ddlManager.printAllData(relName, 3))) {
         return rc;
     }
-    cout << "Relation Block Number:" << blockNum << "\n";
-    cout << "Relation Tuple Number: " << tupleNum << "\n";
-    cout << "id count: " << idCount << "\n";
-    cout << "name count: " << nameCount << "\n";
-    cout << "weight count: " << weightCount << "\n";
-    cout << "height count: " << heightCount << "\n";
-    if((rc = ddlManager.closeDb())) {
-        return rc;
+    cout << "-----------------------" << endl;
+
+    // 创建遍历节点
+    GlobalState *gstate = new GlobalState(&rmManager, &ddlManager, &ixManager, &dmlManager);
+    SeqScanPlanStateNode *scan = new SeqScanPlanStateNode(gstate);
+    vector<string> paras;
+    paras.push_back("student");
+    scan->addParameters(paras);
+    vector<string> adds;
+    adds.push_back("weight > 100");
+    adds.push_back("OR");
+    adds.push_back("height < 100");
+    scan->addAdditions(adds);
+
+    // 创建物化节点
+    paras.clear();
+    adds.clear();
+    MeterializationPlanStateNode* max = new MeanPlanStateNode(gstate);
+    paras.push_back("student");
+    max->addParameters(paras);
+    adds.push_back("id");
+    max->addAdditions(adds);
+    max->left = scan;
+
+    // 创建select节点
+    paras.clear();
+    adds.clear();
+    SelectPlanStateNode* select = new SelectPlanStateNode(gstate);
+    paras.push_back("student");
+    select->addParameters(paras);
+    adds.push_back("*");
+    select->addAdditions(adds);
+    select->left = max;
+
+    select->Run();
+}
+
+RC Test_DML(){
+    string sql;
+    extern SqlGlobal* sg;
+    while (!sg->exit)
+    {
+        cout << "sql> ";
+        sql = getInputSql();
+        int result = parser_ddl_sql(sql);
+        g_DDLStmt.transform();
     }
-    if((rc = DeleteDatabase())) {
-        return rc;
-    }
-    return 0; // ok
 }

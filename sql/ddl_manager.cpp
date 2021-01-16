@@ -52,6 +52,7 @@ RC DDL_Manager::openDb(const char *dbName) {
 // - 将relcat和attrcat缓冲区的内容写回到文件中(运行过程中需要读取)
 RC DDL_Manager::createTable(const char *relName, const int attrCount, AttrInfo *attributes) {
     if(!bDbOpen) {
+        cout<<"no open";
         return DDL_DATABASE_NOT_OPEN;
     }
     // 计算recordSize

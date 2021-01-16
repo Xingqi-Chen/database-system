@@ -1,0 +1,3 @@
+"E:\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\concurrent_test.dir/objects.a
+E:\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\ar.exe cr CMakeFiles\concurrent_test.dir/objects.a @CMakeFiles\concurrent_test.dir\objects1.rsp
+E:\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\concurrent_test.dir/objects.a -Wl,--no-whole-archive  -o concurrent_test.exe -Wl,--out-implib,libconcurrent_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\concurrent_test.dir\linklibs.rsp
