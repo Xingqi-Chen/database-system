@@ -111,6 +111,6 @@ void basicFlow::discardCommand()
 		return;
 	}
 	discardTransaction();
-	basicFlow:: ~basicFlow();
+//	basicFlow:: ~basicFlow();
 	cout << "事务取消" << endl;
 }

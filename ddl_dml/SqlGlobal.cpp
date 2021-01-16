@@ -135,6 +135,7 @@ void SqlGlobal::turnPnode2Exec(PhyPlanNode* root)
 
 	executor->ExecutorRun();
 	executor->ExecutorEnd();
+	delete executor;
 #endif
 	printError(errCode);
 }

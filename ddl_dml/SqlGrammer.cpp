@@ -170,9 +170,11 @@ PhyPlanNode* GrammerNode::transFmConnector()
 
 PhyPlanNode* GrammerNode::transFmDelete()
 {
-	PhyPlanNode* pnode = new PhyPlanNode();
-	pnode->methodName = "DELETE";
-	return pnode;
+    PhyPlanNode* pnode = new PhyPlanNode();
+    pnode->methodName = "DELETE";
+    string tableName = SqlGrammer::getDUnodeName(this);//删除的表名
+    pnode->addParameter(tableName);
+    return pnode;
 }
 
 PhyPlanNode* GrammerNode::transFmInsert()
@@ -188,12 +190,20 @@ PhyPlanNode* GrammerNode::transFmInsert()
 
 PhyPlanNode* GrammerNode::transFmUpdate()
 {
-	PhyPlanNode* pnode = new PhyPlanNode();
-	pnode->methodName = "UPDATE";
-	for (string attr_index : infos) {
-		pnode->addParameter(attr_index);
-	}
-	return pnode;
+    PhyPlanNode* pnode = new PhyPlanNode();
+    pnode->methodName = "UPDATE";
+    string tableName = SqlGrammer::getDUnodeName(this);//更新的表名
+    pnode->addParameter(tableName);
+    for (int m = 0;m < infos.size();m += 2) {
+        string attr = infos.at(m);//属性名
+        string num = infos.at(m + 1);//值
+        pnode->addAddition(attr + " = " + num);
+    }
+    /*for (string attr_index : infos) {
+        pnode->addAddition(attr_index);
+    }*/
+
+    return pnode;
 }
 
 void SqlGrammer::bacLoopTree(GrammerNode* node)
@@ -705,6 +715,24 @@ string SqlGrammer::findAttrSource(string attrName, vector<string>& tableNames)
 		return blongTableName;
 	}
 	return "";
+}
+
+string SqlGrammer::getDUnodeName(GrammerNode *gnode) {
+    queue<GrammerNode*> gqueue;
+    gqueue.push(gnode);
+    while (!gqueue.empty()) {
+        GrammerNode* target = gqueue.front();
+        gqueue.pop();
+        if (target->left)
+            gqueue.push(target->left);
+        if (target->right)
+            gqueue.push(target->right);
+
+        if (target->type == GrammerParameter::FROM) {
+            return target->infos[0];
+        }
+    }
+    return "";
 }
 
 void GrammerParameter::initMap()

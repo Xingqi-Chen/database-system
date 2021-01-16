@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cstring>
 #include "StateNode.h"
 #include "Execute_extend.h"
 #include "ProcessFunc.h"
@@ -238,12 +239,13 @@ void InsertPlanStateNode::Run()
         }
         else if (values[idx].type == STRING)
         {
-            values[idx].value = (void*)this->getAdditions()[i].c_str();
+            values[idx].value = (void*)this->getAdditions()[i].substr(1,this->getAdditions()[i].size()-2).c_str();
         }
         else if (values[idx].type == VARCHAR)
         {
-            values[idx].value = (void*)this->getAdditions()[i].c_str();
+            values[idx].value = (void*)this->getAdditions()[i].substr(1,this->getAdditions()[i].size()-2).c_str();
         }
+
 
         // 插入具体数据
         idx++;
@@ -291,9 +293,9 @@ void DeletePlanStateNode::Run()
 			RID rid;
 			record->record->getRid(rid);
 			rm_fh.deleteRec(rid);
-            this->gstate->manager->closeFile(rm_fh);
 		}
 	}
+    this->gstate->manager->closeFile(rm_fh);
 }
 
 void DeletePlanStateNode::show()
@@ -337,16 +339,14 @@ void UpdatePlanStateNode::Run()
                 // 复制到指定空间
                 char* data;
                 this->gstate->getRecord()->record->getData(data);
-                cout << *(int*)(data+attrinfo.offset) << endl;
                 memcpy(data + attrinfo.offset, (char*)(value.value), attrinfo.attrLength);
                 this->gstate->getRecord()->record->getData(data);
-                cout << *(int*)(data+attrinfo.offset) << endl;
             }
 			// 修改数据，但不更改rid，然后在表文件中修改记录
 			rm_fh.updateRec(*(record->record));
-            this->gstate->manager->closeFile(rm_fh);
 		}
 	}
+    this->gstate->manager->closeFile(rm_fh);
 }
 
 void UpdatePlanStateNode::show()

@@ -418,9 +418,17 @@ void constraintEqual(PlanStateNode* psn, string s, AttrcatRecord &attrinfo, Valu
     else if (value.type == INT)
         value.value = (void*)(new float(atof(v.c_str())));
     else if (value.type == STRING)
-        value.value = (void*)(v.substr(1, v.size()-2).c_str());
+    {
+        char *temvalue = new char[v.size()];
+        strcpy(temvalue, v.substr(1, v.size()-2).c_str());
+        value.value = (void*)temvalue;
+    }
     else if (value.type == STRING)
-        value.value = (void*)(v.substr(1, v.size()-2).c_str());
+    {
+        char *temvalue = new char[v.size()];
+        strcpy(temvalue, v.substr(1, v.size()-2).c_str());
+        value.value = (void*)temvalue;
+    }
 }
 
 void dfs_show(PlanStateNode * psn_now)

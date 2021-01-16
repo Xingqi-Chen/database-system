@@ -58,6 +58,7 @@ public:
 	void optimiza();//优化表达式树
 
 	static string getTableName(GrammerNode* projectNode,string attribute);//获取投影所对应的表名
+    static string getDUnodeName(GrammerNode* gnode);//获取delete与update根节点作用的表名
 
 private:
 	void bacLoopTree(GrammerNode* node);//后根遍历树输出信息
