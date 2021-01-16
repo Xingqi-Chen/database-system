@@ -188,7 +188,9 @@ public:
 
 			break;
 		case DDL_SQL_TYPE::DDL_TYPE_CREATE_DATABASE:
-			
+#ifndef DML_TEST
+		    SqlGlobal::getInstance()->ddl_mgr->createDb(createdatabase->databasename);
+#endif
 			cout << "创建数据库语句" << endl;
 			cout << "数据库名称:" << createdatabase->databasename << endl;
 
@@ -223,7 +225,9 @@ public:
 
 				cout << "删除表名：" << dropstmt->dropname << endl; break;
 			case DROPTYPE::DATABASE:
-				
+#ifndef DML_TEST
+                    SqlGlobal::getInstance()->ddl_mgr->destroyDb(dropstmt->dropname);
+#endif // !DML_TEST
 				cout << "删除数据库名：" << dropstmt->dropname << endl; break;
 			default:
 				break;

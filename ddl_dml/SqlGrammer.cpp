@@ -108,45 +108,45 @@ PhyPlanNode* GrammerNode::transFmOrder()
 
 PhyPlanNode* GrammerNode::transFmProject()
 {
-    PhyPlanNode* ppnode = new PhyPlanNode();
-    ppnode->methodName = "SELECT";
-    for (string attr : infos) {
-        //attr为每一个属性
-        int position = attr.find('@');//判断是否有聚集函数
-        string agg = "";//聚集函数,若没有则为空字符串
-        string attribute = attr;//投影属性
-        //string tableName;//表名
-        if (position < attr.size()) {
-            //说明有聚集函数
-            vector<string> tmp;
-            Translator::getTranslator()->split(attr, tmp, '@');
-            attribute = tmp[0];
-            agg = tmp[1];
-        }
-        if (attr.find('.') >= attr.size()) {
-            //不为a.b类型
-            string tmpTableName = SqlGrammer::getTableName(this, attribute);
-            if (tmpTableName != "") {
-                attribute = tmpTableName + "." + attribute;
-                ppnode->addParameter(tmpTableName);
-            }
-
-            /*if (tmpTableName != "") {
-                tableName = tmpTableName;
-                ppnode->addParameter(tableName);
-            }*/
-        }
-        /*if (attribute == "*")
-            ppnode->addAddition("*");
-        else*/
-        //ppnode->addAddition(attribute);
-        if (agg != "")
-        {
-            attribute = agg + "(" + attribute + ")";
-        }
-        ppnode->addAddition(attribute);
-    }
-    return ppnode;
+	PhyPlanNode* ppnode = new PhyPlanNode();
+	ppnode->methodName = "SELECT";
+	for (string attr : infos) {
+		//attr为每一个属性
+		int position = attr.find('@');//判断是否有聚集函数
+		string agg = "";//聚集函数,若没有则为空字符串
+		string attribute = attr;//投影属性
+		//string tableName;//表名
+		if (position < attr.size()) {
+			//说明有聚集函数
+			vector<string> tmp;
+			Translator::getTranslator()->split(attr, tmp, '@');
+			attribute = tmp[0];
+			agg = tmp[1];
+		}
+		if (attr.find('.') >= attr.size()) {
+			//不为a.b类型
+			string tmpTableName = SqlGrammer::getTableName(this, attribute);
+			if (tmpTableName != "") {
+				attribute = tmpTableName + "." + attribute;
+				ppnode->addParameter(tmpTableName);
+			}
+				
+			/*if (tmpTableName != "") {
+				tableName = tmpTableName;
+				ppnode->addParameter(tableName);
+			}*/
+		}
+		/*if (attribute == "*")
+			ppnode->addAddition("*");
+		else*/
+			//ppnode->addAddition(attribute);
+			if (agg != "") 
+			{
+				attribute = agg + "(" + attribute + ")";
+			}
+			ppnode->addAddition(attribute);
+	}
+	return ppnode;
 }
 
 PhyPlanNode* GrammerNode::transFmConnector()
@@ -177,12 +177,13 @@ PhyPlanNode* GrammerNode::transFmDelete()
 
 PhyPlanNode* GrammerNode::transFmInsert()
 {
-	PhyPlanNode* pnode = new PhyPlanNode();
-	pnode->methodName = "INSERT";
-	for (string info : infos) {
-		pnode->addParameter(info);
-	}
-	return pnode;
+    PhyPlanNode* pnode = new PhyPlanNode();
+    pnode->methodName = "INSERT";
+    pnode->addParameter(infos.at(0));
+    for (int m = 1;m < infos.size();m++) {
+        pnode->addAddition(infos.at(m));
+    }
+    return pnode;
 }
 
 PhyPlanNode* GrammerNode::transFmUpdate()

@@ -89,9 +89,8 @@ void generateStr(char str[], int size) {
 }
 
 RC CreateDatabase() {
-    char command[30] = ".\\dbcreate bank";
-    system(command);
-    return 0;
+    char command[30] = ".\\dbcreate tdb";
+    return system(command);
 }
 
 RC DeleteDatabase() {

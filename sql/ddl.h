@@ -74,6 +74,8 @@ class DDL_Manager {
 public:
     DDL_Manager(RM_Manager &_rmManager, IX_Manager &_ixManager);
     ~DDL_Manager();
+    RC createDb(const char *dbName);                // 创建数据库
+    RC destroyDb(const char *dbName);               // 删除数据库
     RC openDb(const char *dbName);                  // 打开一个数据库
     RC closeDb();                                   // 关闭数据库
     RC createTable(const char *relName,             // 表名

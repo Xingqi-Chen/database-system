@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "E:/cdatabase/beta/storage/attrfilehandle.cpp" "E:/cdatabase/beta/cmake-build-debug/CMakeFiles/dbcreate.dir/storage/attrfilehandle.cpp.obj"
   "E:/cdatabase/beta/storage/bufhashtable.cpp" "E:/cdatabase/beta/cmake-build-debug/CMakeFiles/dbcreate.dir/storage/bufhashtable.cpp.obj"
   "E:/cdatabase/beta/storage/bufmgr.cpp" "E:/cdatabase/beta/cmake-build-debug/CMakeFiles/dbcreate.dir/storage/bufmgr.cpp.obj"
+  "E:/cdatabase/beta/storage/ix_indexhandle.cpp" "E:/cdatabase/beta/cmake-build-debug/CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj"
+  "E:/cdatabase/beta/storage/ix_indexscan.cpp" "E:/cdatabase/beta/cmake-build-debug/CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj"
   "E:/cdatabase/beta/storage/ix_manager.cpp" "E:/cdatabase/beta/cmake-build-debug/CMakeFiles/dbcreate.dir/storage/ix_manager.cpp.obj"
   "E:/cdatabase/beta/storage/pagehandle.cpp" "E:/cdatabase/beta/cmake-build-debug/CMakeFiles/dbcreate.dir/storage/pagehandle.cpp.obj"
   "E:/cdatabase/beta/storage/pf_filehandle.cpp" "E:/cdatabase/beta/cmake-build-debug/CMakeFiles/dbcreate.dir/storage/pf_filehandle.cpp.obj"

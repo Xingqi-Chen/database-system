@@ -55,6 +55,24 @@ CMakeFiles/dbcreate.dir/storage/bufmgr.cpp.obj: ../storage/bufmgr.h
 CMakeFiles/dbcreate.dir/storage/bufmgr.cpp.obj: ../storage/pf.h
 CMakeFiles/dbcreate.dir/storage/bufmgr.cpp.obj: ../storage/pf_internal.h
 
+CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj: ../global.h
+CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj: ../parser.h
+CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj: ../storage/ix.h
+CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj: ../storage/ix_indexhandle.cpp
+CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj: ../storage/ix_internal.h
+CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj: ../storage/pf.h
+CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj: ../storage/rid.h
+CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj: ../storage/rm.h
+
+CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj: ../global.h
+CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj: ../parser.h
+CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj: ../storage/ix.h
+CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj: ../storage/ix_indexscan.cpp
+CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj: ../storage/ix_internal.h
+CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj: ../storage/pf.h
+CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj: ../storage/rid.h
+CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj: ../storage/rm.h
+
 CMakeFiles/dbcreate.dir/storage/ix_manager.cpp.obj: ../global.h
 CMakeFiles/dbcreate.dir/storage/ix_manager.cpp.obj: ../parser.h
 CMakeFiles/dbcreate.dir/storage/ix_manager.cpp.obj: ../storage/ix.h

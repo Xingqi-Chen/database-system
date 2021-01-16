@@ -55,6 +55,24 @@ CMakeFiles/dbcreate.dir/storage/bufmgr.cpp.obj
  E:/cdatabase/beta/storage/bufmgr.h
  E:/cdatabase/beta/storage/pf.h
  E:/cdatabase/beta/storage/pf_internal.h
+CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj
+ E:/cdatabase/beta/global.h
+ E:/cdatabase/beta/parser.h
+ E:/cdatabase/beta/storage/ix.h
+ E:/cdatabase/beta/storage/ix_indexhandle.cpp
+ E:/cdatabase/beta/storage/ix_internal.h
+ E:/cdatabase/beta/storage/pf.h
+ E:/cdatabase/beta/storage/rid.h
+ E:/cdatabase/beta/storage/rm.h
+CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj
+ E:/cdatabase/beta/global.h
+ E:/cdatabase/beta/parser.h
+ E:/cdatabase/beta/storage/ix.h
+ E:/cdatabase/beta/storage/ix_indexscan.cpp
+ E:/cdatabase/beta/storage/ix_internal.h
+ E:/cdatabase/beta/storage/pf.h
+ E:/cdatabase/beta/storage/rid.h
+ E:/cdatabase/beta/storage/rm.h
 CMakeFiles/dbcreate.dir/storage/ix_manager.cpp.obj
  E:/cdatabase/beta/global.h
  E:/cdatabase/beta/parser.h
