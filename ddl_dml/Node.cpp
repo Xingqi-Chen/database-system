@@ -465,7 +465,7 @@ GrammerNode* M_DML::Query::transform2GrammerWithSimple()
 
 GrammerNode* M_DML::Query::solveConnect(GrammerNode* root)
 {	
-	cout << endl << "Solve Connect" << endl;
+	//cout << endl << "Solve Connect" << endl;
 	queue<GrammerNode*> gqueue;
 	gqueue.push(root);
 	GrammerNode* father = nullptr;
@@ -529,7 +529,7 @@ GrammerNode* M_DML::Query::solveConnect(GrammerNode* root)
 		if (target->right)
 			gqueue.push(target->right);
 	}
-	cout << endl << "solve finish" << endl;
+	//cout << endl << "solve finish" << endl;
 	return root;
 }
 

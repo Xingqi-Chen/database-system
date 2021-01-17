@@ -208,7 +208,7 @@ PhyPlanNode* GrammerNode::transFmUpdate()
 
 void SqlGrammer::bacLoopTree(GrammerNode* node)
 {
-	cout << endl;
+	//cout << endl;
 	if (node->left == NULL && node->right == NULL) {
 		node->showInfo();
 		return;
@@ -219,7 +219,7 @@ void SqlGrammer::bacLoopTree(GrammerNode* node)
 	if (node->right != NULL) {
 		bacLoopTree(node->right);
 	}
-	node->showInfo();
+	//node->showInfo();
 }
 
 void SqlGrammer::showInfo()
@@ -236,8 +236,8 @@ void SqlGrammer::optimiza()
 {
 	optimizeConnect();//优化connect
 	optimizeSelect();//优化select
-	cout << endl << "优化完毕:" << endl;
-	showInfo();
+	//cout << endl << "优化完毕:" << endl;
+	//showInfo();
 }
 
 string SqlGrammer::getTableName(GrammerNode* projectNode, string attribute)
@@ -287,7 +287,7 @@ PhyPlanNode* SqlGrammer::copyFromGrammer(GrammerNode* gnode)
 
 void SqlGrammer::optimizeSelect()
 {
-	cout <<endl<< "查询优化----选择后移" << endl;
+	//cout <<endl<< "查询优化----选择后移" << endl;
 	queue<GrammerNode*> nodeQueue;
 	nodeQueue.push(root);
 	while (!nodeQueue.empty()) {
@@ -482,7 +482,7 @@ void SqlGrammer::optimizeConnect()
 	queue<string>tableName;
 	for (ConnectorNode* cnode : *best) {
 		tableName.push(cnode->tableName);
-		cout << cnode->tableName << " ";
+		//cout << cnode->tableName << " ";
 	}
 	updateConnectOrder(conRoot, tableName);//更新连接顺序
 }

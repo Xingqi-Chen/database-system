@@ -1818,25 +1818,25 @@ yyparse ()
                 YYACCEPT;
             }
             M_DML::Query* query = (yyvsp[(1) - (1)].query);
-            query->showInfo();
+            //query->showInfo();
 
 
             SqlGrammer sqlgrammer;
             sqlgrammer.root = query->transform2Grammer();
-            cout << "-------------------------------"<<endl;
-            sqlgrammer.showInfo();
+            //cout << "-------------------------------"<<endl;
+            //sqlgrammer.showInfo();
             sqlgrammer.optimiza();
-            cout << "-------------------------------"<<endl;
+            //cout << "-------------------------------"<<endl;
 
 
             PhysicalPlan physicalPlan;
             physicalPlan.root = sqlgrammer.transform2PhysicPlan();
-            physicalPlan.showPlan();
+            //physicalPlan.showPlan();
 
             (yyval.phyNode) = physicalPlan.root;
 
 
-            cout<<endl;
+            //cout<<endl;
             //YYACCEPT;
         }
             break;
@@ -1853,7 +1853,7 @@ yyparse ()
             M_DML::Delete * del = new M_DML::Delete();
             del->tableName = std::string((yyvsp[(3) - (4)].strval));
             del->condition = (yyvsp[(4) - (4)].condision);
-            del->showInfo();
+            //del->showInfo();
 
             //$$ = new Delete();
             //$$->tableName = $3;
@@ -1863,9 +1863,9 @@ yyparse ()
             SqlGrammer sqlgrammer;
             //sqlgrammer.root = $$->transform2Grammer();
             sqlgrammer.root = del->transform2Grammer();
-            cout << "-------------------------------"<<endl;
-            sqlgrammer.showInfo();
-            cout << "-------------------------------"<<endl;
+            //cout << "-------------------------------"<<endl;
+            //sqlgrammer.showInfo();
+            //cout << "-------------------------------"<<endl;
 
             PhysicalPlan physicalPlan;
             physicalPlan.root = sqlgrammer.transform2PhysicPlan();
@@ -1873,7 +1873,7 @@ yyparse ()
 
             (yyval.phyNode) = physicalPlan.root;
 
-            cout<<endl;
+            //cout<<endl;
             //YYACCEPT;
         }
             break;
@@ -1902,17 +1902,17 @@ yyparse ()
             SqlGrammer sqlgrammer;
             //sqlgrammer.root = $$->transform2Grammer();
             sqlgrammer.root = upt->transform2Grammer();
-            cout << "-------------------------------"<<endl;
-            sqlgrammer.showInfo();
-            cout << "-------------------------------"<<endl;
+            //cout << "-------------------------------"<<endl;
+            //sqlgrammer.showInfo();
+            //cout << "-------------------------------"<<endl;
 
             PhysicalPlan physicalPlan;
             physicalPlan.root = sqlgrammer.transform2PhysicPlan();
-            physicalPlan.showPlan();
+            //physicalPlan.showPlan();
 
             (yyval.phyNode) = physicalPlan.root;
 
-            cout<<endl;
+            //cout<<endl;
             //YYACCEPT;
         }
             break;
@@ -2258,9 +2258,9 @@ yyparse ()
 
             SqlGrammer sqlgrammer;
             sqlgrammer.root = insert->transform2Grammer();
-            cout << "-------------------------------"<<endl;
-            sqlgrammer.showInfo();
-            cout << "-------------------------------"<<endl;
+            //cout << "-------------------------------"<<endl;
+            //sqlgrammer.showInfo();
+            //cout << "-------------------------------"<<endl;
 
             PhysicalPlan physicalPlan;
             physicalPlan.root = sqlgrammer.transform2PhysicPlan();
