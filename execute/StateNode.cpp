@@ -199,14 +199,14 @@ void GlobalState::show_0(Record *record)
 
 void InsertPlanStateNode::Run()
 {
-	// TO DO
-	// 打开对应的表文件句柄rm_fh，然后插入一条记录
-	// 假设additions属性，第一个元素为表名称，第二个元素为插入的记录
-	// rid为插入后记录的id
-	RM_FileHandle rm_fh;
-	this->gstate->manager->openFile(this->getParameters()[0].c_str(), rm_fh);
+    // TO DO
+    // 打开对应的表文件句柄rm_fh，然后插入一条记录
+    // 假设additions属性，第一个元素为表名称，第二个元素为插入的记录
+    // rid为插入后记录的id
+    RM_FileHandle rm_fh;
+    this->gstate->manager->openFile(this->getParameters()[0].c_str(), rm_fh);
 
-	// 获取表的信息
+    // 获取表的信息
     RelcatRecord relInfo;
     this->gstate->manager_ddl->getRelInfo(this->getParameters()[0].c_str(), relInfo);
     vector<string> attrNames;
@@ -239,11 +239,15 @@ void InsertPlanStateNode::Run()
         }
         else if (values[idx].type == STRING)
         {
-            values[idx].value = (void*)this->getAdditions()[i].substr(1,this->getAdditions()[i].size()-2).c_str();
+            char* temvalue = new char[this->getAdditions()[i].size()-2];
+            strcpy(temvalue, this->getAdditions()[i].substr(1,this->getAdditions()[i].size()-2).c_str());
+            values[idx].value = (void*)temvalue;
         }
         else if (values[idx].type == VARCHAR)
         {
-            values[idx].value = (void*)this->getAdditions()[i].substr(1,this->getAdditions()[i].size()-2).c_str();
+            char* temvalue = new char[this->getAdditions()[i].size()-2];
+            strcpy(temvalue, this->getAdditions()[i].substr(1,this->getAdditions()[i].size()-2).c_str());
+            values[idx].value = (void*)temvalue;
         }
 
 

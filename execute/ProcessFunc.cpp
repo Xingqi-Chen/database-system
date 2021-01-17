@@ -548,8 +548,13 @@ void Record_Show(PlanStateNode* psn, Record* record)
                     }
                     else if (attrInfo.attrType == VARCHAR)
                     {
+                        /*sprintf(format, "%%-%ds  ", format_len);
+                        printf(format, data + attrInfo.offset);*/
                         sprintf(format, "%%-%ds  ", format_len);
-                        printf(format, data + attrInfo.offset);
+                        RM_VarLenAttr *varLenAttr = (RM_VarLenAttr*)(data + attrInfo.offset);
+                        char *pval = nullptr;
+                        manager->getVarAttrVal(attrInfo.relName, varLenAttr, pval);
+                        printf(format, pval);
                     }
                 }
             }
@@ -580,34 +585,36 @@ void getRelatedOperator(string op, CompOp & compOp)
 
 void getRelatedValue(string val, Value & value, AttrcatRecord attrinfo)
 {
-	value.type = attrinfo.attrType;
-	if (attrinfo.attrType == INT)
-	{
-		int* temval = new int(atoi(val.c_str()));
-		value.type = INT;
-		value.value = (void*)temval;
-	}
-	else if (attrinfo.attrType == FLOAT)
-	{
-		float* temval = new float(atof(val.c_str()));
-        value.type = FLOAT;
-		value.value = (void*)temval;
-	}
-	else if (attrinfo.attrType == STRING)
-	{
-		string* temval = new string(val.substr(1, val.size() - 2));
-        value.type = STRING;
-		value.value = (void*)temval;
-	}
-	else if (attrinfo.attrType == VARCHAR)
-	{
-		string* temval = new string(val.substr(1, val.size() - 2));
-        value.type = VARCHAR;
-		value.value = (void*)temval;
-	}
-	else
+    value.type = attrinfo.attrType;
+    if (attrinfo.attrType == INT)
     {
-	    cout << "解析时无法识别" << endl;
+        int* temval = new int(atoi(val.c_str()));
+        value.type = INT;
+        value.value = (void*)temval;
+    }
+    else if (attrinfo.attrType == FLOAT)
+    {
+        float* temval = new float(atof(val.c_str()));
+        value.type = FLOAT;
+        value.value = (void*)temval;
+    }
+    else if (attrinfo.attrType == STRING)
+    {
+        char* temval = new char(val.size() - 2);
+        strcpy(temval, val.substr(1, val.size() - 2).c_str());
+        value.type = STRING;
+        value.value = (void*)temval;
+    }
+    else if (attrinfo.attrType == VARCHAR)
+    {
+        char* temval = new char(val.size() - 2);
+        strcpy(temval, val.substr(1, val.size() - 2).c_str());
+        value.type = STRING;
+        value.value = (void*)temval;
+    }
+    else
+    {
+        cout << "解析时无法识别" << endl;
     }
 }
 

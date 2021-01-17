@@ -285,6 +285,19 @@ sql_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/build
 .PHONY : sql_test/fast
 
+#=============================================================================
+# Target rules for targets named demo
+
+# Build rule for target.
+demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 demo
+.PHONY : demo
+
+# fast build rule for target.
+demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/build
+.PHONY : demo/fast
+
 atomic/RWLock.obj: atomic/RWLock.cpp.obj
 
 .PHONY : atomic/RWLock.obj
@@ -300,6 +313,7 @@ atomic/RWLock.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\concurrent_test.dir\build.make CMakeFiles/concurrent_test.dir/atomic/RWLock.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/atomic/RWLock.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/atomic/RWLock.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/atomic/RWLock.cpp.obj
 .PHONY : atomic/RWLock.cpp.obj
 
 atomic/RWLock.i: atomic/RWLock.cpp.i
@@ -317,6 +331,7 @@ atomic/RWLock.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\concurrent_test.dir\build.make CMakeFiles/concurrent_test.dir/atomic/RWLock.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/atomic/RWLock.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/atomic/RWLock.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/atomic/RWLock.cpp.i
 .PHONY : atomic/RWLock.cpp.i
 
 atomic/RWLock.s: atomic/RWLock.cpp.s
@@ -334,6 +349,7 @@ atomic/RWLock.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\concurrent_test.dir\build.make CMakeFiles/concurrent_test.dir/atomic/RWLock.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/atomic/RWLock.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/atomic/RWLock.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/atomic/RWLock.cpp.s
 .PHONY : atomic/RWLock.cpp.s
 
 dbcreate.obj: dbcreate.cpp.obj
@@ -398,6 +414,7 @@ ddl_dml/ConnectorOptimizer.obj: ddl_dml/ConnectorOptimizer.cpp.obj
 ddl_dml/ConnectorOptimizer.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/ConnectorOptimizer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/ConnectorOptimizer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/ConnectorOptimizer.cpp.obj
 .PHONY : ddl_dml/ConnectorOptimizer.cpp.obj
 
 ddl_dml/ConnectorOptimizer.i: ddl_dml/ConnectorOptimizer.cpp.i
@@ -408,6 +425,7 @@ ddl_dml/ConnectorOptimizer.i: ddl_dml/ConnectorOptimizer.cpp.i
 ddl_dml/ConnectorOptimizer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/ConnectorOptimizer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/ConnectorOptimizer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/ConnectorOptimizer.cpp.i
 .PHONY : ddl_dml/ConnectorOptimizer.cpp.i
 
 ddl_dml/ConnectorOptimizer.s: ddl_dml/ConnectorOptimizer.cpp.s
@@ -418,6 +436,7 @@ ddl_dml/ConnectorOptimizer.s: ddl_dml/ConnectorOptimizer.cpp.s
 ddl_dml/ConnectorOptimizer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/ConnectorOptimizer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/ConnectorOptimizer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/ConnectorOptimizer.cpp.s
 .PHONY : ddl_dml/ConnectorOptimizer.cpp.s
 
 ddl_dml/DML_gram.flex.obj: ddl_dml/DML_gram.flex.cpp.obj
@@ -428,6 +447,7 @@ ddl_dml/DML_gram.flex.obj: ddl_dml/DML_gram.flex.cpp.obj
 ddl_dml/DML_gram.flex.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/DML_gram.flex.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/DML_gram.flex.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/DML_gram.flex.cpp.obj
 .PHONY : ddl_dml/DML_gram.flex.cpp.obj
 
 ddl_dml/DML_gram.flex.i: ddl_dml/DML_gram.flex.cpp.i
@@ -438,6 +458,7 @@ ddl_dml/DML_gram.flex.i: ddl_dml/DML_gram.flex.cpp.i
 ddl_dml/DML_gram.flex.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/DML_gram.flex.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/DML_gram.flex.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/DML_gram.flex.cpp.i
 .PHONY : ddl_dml/DML_gram.flex.cpp.i
 
 ddl_dml/DML_gram.flex.s: ddl_dml/DML_gram.flex.cpp.s
@@ -448,6 +469,7 @@ ddl_dml/DML_gram.flex.s: ddl_dml/DML_gram.flex.cpp.s
 ddl_dml/DML_gram.flex.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/DML_gram.flex.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/DML_gram.flex.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/DML_gram.flex.cpp.s
 .PHONY : ddl_dml/DML_gram.flex.cpp.s
 
 ddl_dml/DML_gram.tab.obj: ddl_dml/DML_gram.tab.cpp.obj
@@ -458,6 +480,7 @@ ddl_dml/DML_gram.tab.obj: ddl_dml/DML_gram.tab.cpp.obj
 ddl_dml/DML_gram.tab.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/DML_gram.tab.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/DML_gram.tab.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/DML_gram.tab.cpp.obj
 .PHONY : ddl_dml/DML_gram.tab.cpp.obj
 
 ddl_dml/DML_gram.tab.i: ddl_dml/DML_gram.tab.cpp.i
@@ -468,6 +491,7 @@ ddl_dml/DML_gram.tab.i: ddl_dml/DML_gram.tab.cpp.i
 ddl_dml/DML_gram.tab.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/DML_gram.tab.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/DML_gram.tab.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/DML_gram.tab.cpp.i
 .PHONY : ddl_dml/DML_gram.tab.cpp.i
 
 ddl_dml/DML_gram.tab.s: ddl_dml/DML_gram.tab.cpp.s
@@ -478,6 +502,7 @@ ddl_dml/DML_gram.tab.s: ddl_dml/DML_gram.tab.cpp.s
 ddl_dml/DML_gram.tab.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/DML_gram.tab.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/DML_gram.tab.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/DML_gram.tab.cpp.s
 .PHONY : ddl_dml/DML_gram.tab.cpp.s
 
 ddl_dml/Main.obj: ddl_dml/Main.cpp.obj
@@ -515,6 +540,7 @@ ddl_dml/Node.obj: ddl_dml/Node.cpp.obj
 ddl_dml/Node.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/Node.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/Node.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/Node.cpp.obj
 .PHONY : ddl_dml/Node.cpp.obj
 
 ddl_dml/Node.i: ddl_dml/Node.cpp.i
@@ -525,6 +551,7 @@ ddl_dml/Node.i: ddl_dml/Node.cpp.i
 ddl_dml/Node.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/Node.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/Node.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/Node.cpp.i
 .PHONY : ddl_dml/Node.cpp.i
 
 ddl_dml/Node.s: ddl_dml/Node.cpp.s
@@ -535,6 +562,7 @@ ddl_dml/Node.s: ddl_dml/Node.cpp.s
 ddl_dml/Node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/Node.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/Node.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/Node.cpp.s
 .PHONY : ddl_dml/Node.cpp.s
 
 ddl_dml/PhysicalPlan.obj: ddl_dml/PhysicalPlan.cpp.obj
@@ -545,6 +573,7 @@ ddl_dml/PhysicalPlan.obj: ddl_dml/PhysicalPlan.cpp.obj
 ddl_dml/PhysicalPlan.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/PhysicalPlan.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/PhysicalPlan.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/PhysicalPlan.cpp.obj
 .PHONY : ddl_dml/PhysicalPlan.cpp.obj
 
 ddl_dml/PhysicalPlan.i: ddl_dml/PhysicalPlan.cpp.i
@@ -555,6 +584,7 @@ ddl_dml/PhysicalPlan.i: ddl_dml/PhysicalPlan.cpp.i
 ddl_dml/PhysicalPlan.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/PhysicalPlan.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/PhysicalPlan.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/PhysicalPlan.cpp.i
 .PHONY : ddl_dml/PhysicalPlan.cpp.i
 
 ddl_dml/PhysicalPlan.s: ddl_dml/PhysicalPlan.cpp.s
@@ -565,6 +595,7 @@ ddl_dml/PhysicalPlan.s: ddl_dml/PhysicalPlan.cpp.s
 ddl_dml/PhysicalPlan.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/PhysicalPlan.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/PhysicalPlan.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/PhysicalPlan.cpp.s
 .PHONY : ddl_dml/PhysicalPlan.cpp.s
 
 ddl_dml/SqlGlobal.obj: ddl_dml/SqlGlobal.cpp.obj
@@ -575,6 +606,7 @@ ddl_dml/SqlGlobal.obj: ddl_dml/SqlGlobal.cpp.obj
 ddl_dml/SqlGlobal.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/SqlGlobal.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/SqlGlobal.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/SqlGlobal.cpp.obj
 .PHONY : ddl_dml/SqlGlobal.cpp.obj
 
 ddl_dml/SqlGlobal.i: ddl_dml/SqlGlobal.cpp.i
@@ -585,6 +617,7 @@ ddl_dml/SqlGlobal.i: ddl_dml/SqlGlobal.cpp.i
 ddl_dml/SqlGlobal.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/SqlGlobal.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/SqlGlobal.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/SqlGlobal.cpp.i
 .PHONY : ddl_dml/SqlGlobal.cpp.i
 
 ddl_dml/SqlGlobal.s: ddl_dml/SqlGlobal.cpp.s
@@ -595,6 +628,7 @@ ddl_dml/SqlGlobal.s: ddl_dml/SqlGlobal.cpp.s
 ddl_dml/SqlGlobal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/SqlGlobal.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/SqlGlobal.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/SqlGlobal.cpp.s
 .PHONY : ddl_dml/SqlGlobal.cpp.s
 
 ddl_dml/SqlGrammer.obj: ddl_dml/SqlGrammer.cpp.obj
@@ -605,6 +639,7 @@ ddl_dml/SqlGrammer.obj: ddl_dml/SqlGrammer.cpp.obj
 ddl_dml/SqlGrammer.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/SqlGrammer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/SqlGrammer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/SqlGrammer.cpp.obj
 .PHONY : ddl_dml/SqlGrammer.cpp.obj
 
 ddl_dml/SqlGrammer.i: ddl_dml/SqlGrammer.cpp.i
@@ -615,6 +650,7 @@ ddl_dml/SqlGrammer.i: ddl_dml/SqlGrammer.cpp.i
 ddl_dml/SqlGrammer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/SqlGrammer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/SqlGrammer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/SqlGrammer.cpp.i
 .PHONY : ddl_dml/SqlGrammer.cpp.i
 
 ddl_dml/SqlGrammer.s: ddl_dml/SqlGrammer.cpp.s
@@ -625,6 +661,7 @@ ddl_dml/SqlGrammer.s: ddl_dml/SqlGrammer.cpp.s
 ddl_dml/SqlGrammer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/SqlGrammer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/SqlGrammer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/SqlGrammer.cpp.s
 .PHONY : ddl_dml/SqlGrammer.cpp.s
 
 ddl_dml/Transaction.obj: ddl_dml/Transaction.cpp.obj
@@ -635,6 +672,7 @@ ddl_dml/Transaction.obj: ddl_dml/Transaction.cpp.obj
 ddl_dml/Transaction.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/Transaction.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/Transaction.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/Transaction.cpp.obj
 .PHONY : ddl_dml/Transaction.cpp.obj
 
 ddl_dml/Transaction.i: ddl_dml/Transaction.cpp.i
@@ -645,6 +683,7 @@ ddl_dml/Transaction.i: ddl_dml/Transaction.cpp.i
 ddl_dml/Transaction.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/Transaction.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/Transaction.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/Transaction.cpp.i
 .PHONY : ddl_dml/Transaction.cpp.i
 
 ddl_dml/Transaction.s: ddl_dml/Transaction.cpp.s
@@ -655,6 +694,7 @@ ddl_dml/Transaction.s: ddl_dml/Transaction.cpp.s
 ddl_dml/Transaction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/Transaction.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/Transaction.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/Transaction.cpp.s
 .PHONY : ddl_dml/Transaction.cpp.s
 
 ddl_dml/Translator.obj: ddl_dml/Translator.cpp.obj
@@ -665,6 +705,7 @@ ddl_dml/Translator.obj: ddl_dml/Translator.cpp.obj
 ddl_dml/Translator.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/Translator.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/Translator.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/Translator.cpp.obj
 .PHONY : ddl_dml/Translator.cpp.obj
 
 ddl_dml/Translator.i: ddl_dml/Translator.cpp.i
@@ -675,6 +716,7 @@ ddl_dml/Translator.i: ddl_dml/Translator.cpp.i
 ddl_dml/Translator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/Translator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/Translator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/Translator.cpp.i
 .PHONY : ddl_dml/Translator.cpp.i
 
 ddl_dml/Translator.s: ddl_dml/Translator.cpp.s
@@ -685,6 +727,7 @@ ddl_dml/Translator.s: ddl_dml/Translator.cpp.s
 ddl_dml/Translator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/Translator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/Translator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/Translator.cpp.s
 .PHONY : ddl_dml/Translator.cpp.s
 
 ddl_dml/basicFlow.obj: ddl_dml/basicFlow.cpp.obj
@@ -695,6 +738,7 @@ ddl_dml/basicFlow.obj: ddl_dml/basicFlow.cpp.obj
 ddl_dml/basicFlow.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/basicFlow.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/basicFlow.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/basicFlow.cpp.obj
 .PHONY : ddl_dml/basicFlow.cpp.obj
 
 ddl_dml/basicFlow.i: ddl_dml/basicFlow.cpp.i
@@ -705,6 +749,7 @@ ddl_dml/basicFlow.i: ddl_dml/basicFlow.cpp.i
 ddl_dml/basicFlow.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/basicFlow.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/basicFlow.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/basicFlow.cpp.i
 .PHONY : ddl_dml/basicFlow.cpp.i
 
 ddl_dml/basicFlow.s: ddl_dml/basicFlow.cpp.s
@@ -715,6 +760,7 @@ ddl_dml/basicFlow.s: ddl_dml/basicFlow.cpp.s
 ddl_dml/basicFlow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/basicFlow.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/basicFlow.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/basicFlow.cpp.s
 .PHONY : ddl_dml/basicFlow.cpp.s
 
 ddl_dml/redisClient.obj: ddl_dml/redisClient.cpp.obj
@@ -725,6 +771,7 @@ ddl_dml/redisClient.obj: ddl_dml/redisClient.cpp.obj
 ddl_dml/redisClient.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/redisClient.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/redisClient.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/redisClient.cpp.obj
 .PHONY : ddl_dml/redisClient.cpp.obj
 
 ddl_dml/redisClient.i: ddl_dml/redisClient.cpp.i
@@ -735,6 +782,7 @@ ddl_dml/redisClient.i: ddl_dml/redisClient.cpp.i
 ddl_dml/redisClient.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/redisClient.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/redisClient.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/redisClient.cpp.i
 .PHONY : ddl_dml/redisClient.cpp.i
 
 ddl_dml/redisClient.s: ddl_dml/redisClient.cpp.s
@@ -745,6 +793,7 @@ ddl_dml/redisClient.s: ddl_dml/redisClient.cpp.s
 ddl_dml/redisClient.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/redisClient.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/redisClient.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/redisClient.cpp.s
 .PHONY : ddl_dml/redisClient.cpp.s
 
 ddl_dml/redisDb.obj: ddl_dml/redisDb.cpp.obj
@@ -755,6 +804,7 @@ ddl_dml/redisDb.obj: ddl_dml/redisDb.cpp.obj
 ddl_dml/redisDb.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/redisDb.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/redisDb.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/redisDb.cpp.obj
 .PHONY : ddl_dml/redisDb.cpp.obj
 
 ddl_dml/redisDb.i: ddl_dml/redisDb.cpp.i
@@ -765,6 +815,7 @@ ddl_dml/redisDb.i: ddl_dml/redisDb.cpp.i
 ddl_dml/redisDb.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/redisDb.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/redisDb.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/redisDb.cpp.i
 .PHONY : ddl_dml/redisDb.cpp.i
 
 ddl_dml/redisDb.s: ddl_dml/redisDb.cpp.s
@@ -775,6 +826,7 @@ ddl_dml/redisDb.s: ddl_dml/redisDb.cpp.s
 ddl_dml/redisDb.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/redisDb.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/redisDb.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/redisDb.cpp.s
 .PHONY : ddl_dml/redisDb.cpp.s
 
 ddl_dml/watchedFlow.obj: ddl_dml/watchedFlow.cpp.obj
@@ -785,6 +837,7 @@ ddl_dml/watchedFlow.obj: ddl_dml/watchedFlow.cpp.obj
 ddl_dml/watchedFlow.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/watchedFlow.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/watchedFlow.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/watchedFlow.cpp.obj
 .PHONY : ddl_dml/watchedFlow.cpp.obj
 
 ddl_dml/watchedFlow.i: ddl_dml/watchedFlow.cpp.i
@@ -795,6 +848,7 @@ ddl_dml/watchedFlow.i: ddl_dml/watchedFlow.cpp.i
 ddl_dml/watchedFlow.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/watchedFlow.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/watchedFlow.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/watchedFlow.cpp.i
 .PHONY : ddl_dml/watchedFlow.cpp.i
 
 ddl_dml/watchedFlow.s: ddl_dml/watchedFlow.cpp.s
@@ -805,6 +859,7 @@ ddl_dml/watchedFlow.s: ddl_dml/watchedFlow.cpp.s
 ddl_dml/watchedFlow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/watchedFlow.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/watchedFlow.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/watchedFlow.cpp.s
 .PHONY : ddl_dml/watchedFlow.cpp.s
 
 ddl_dml/watchedObj.obj: ddl_dml/watchedObj.cpp.obj
@@ -815,6 +870,7 @@ ddl_dml/watchedObj.obj: ddl_dml/watchedObj.cpp.obj
 ddl_dml/watchedObj.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/watchedObj.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/watchedObj.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/watchedObj.cpp.obj
 .PHONY : ddl_dml/watchedObj.cpp.obj
 
 ddl_dml/watchedObj.i: ddl_dml/watchedObj.cpp.i
@@ -825,6 +881,7 @@ ddl_dml/watchedObj.i: ddl_dml/watchedObj.cpp.i
 ddl_dml/watchedObj.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/watchedObj.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/watchedObj.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/watchedObj.cpp.i
 .PHONY : ddl_dml/watchedObj.cpp.i
 
 ddl_dml/watchedObj.s: ddl_dml/watchedObj.cpp.s
@@ -835,7 +892,35 @@ ddl_dml/watchedObj.s: ddl_dml/watchedObj.cpp.s
 ddl_dml/watchedObj.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ddl_dml.dir\build.make CMakeFiles/ddl_dml.dir/ddl_dml/watchedObj.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/ddl_dml/watchedObj.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/ddl_dml/watchedObj.cpp.s
 .PHONY : ddl_dml/watchedObj.cpp.s
+
+demo.obj: demo.cpp.obj
+
+.PHONY : demo.obj
+
+# target to build an object file
+demo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/demo.cpp.obj
+.PHONY : demo.cpp.obj
+
+demo.i: demo.cpp.i
+
+.PHONY : demo.i
+
+# target to preprocess a source file
+demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/demo.cpp.i
+.PHONY : demo.cpp.i
+
+demo.s: demo.cpp.s
+
+.PHONY : demo.s
+
+# target to generate assembly for a file
+demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/demo.cpp.s
+.PHONY : demo.cpp.s
 
 execute/Executor.obj: execute/Executor.cpp.obj
 
@@ -844,6 +929,7 @@ execute/Executor.obj: execute/Executor.cpp.obj
 # target to build an object file
 execute/Executor.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/execute/Executor.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/execute/Executor.cpp.obj
 .PHONY : execute/Executor.cpp.obj
 
 execute/Executor.i: execute/Executor.cpp.i
@@ -853,6 +939,7 @@ execute/Executor.i: execute/Executor.cpp.i
 # target to preprocess a source file
 execute/Executor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/execute/Executor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/execute/Executor.cpp.i
 .PHONY : execute/Executor.cpp.i
 
 execute/Executor.s: execute/Executor.cpp.s
@@ -862,6 +949,7 @@ execute/Executor.s: execute/Executor.cpp.s
 # target to generate assembly for a file
 execute/Executor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/execute/Executor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/execute/Executor.cpp.s
 .PHONY : execute/Executor.cpp.s
 
 execute/ProcessFunc.obj: execute/ProcessFunc.cpp.obj
@@ -871,6 +959,7 @@ execute/ProcessFunc.obj: execute/ProcessFunc.cpp.obj
 # target to build an object file
 execute/ProcessFunc.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/execute/ProcessFunc.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/execute/ProcessFunc.cpp.obj
 .PHONY : execute/ProcessFunc.cpp.obj
 
 execute/ProcessFunc.i: execute/ProcessFunc.cpp.i
@@ -880,6 +969,7 @@ execute/ProcessFunc.i: execute/ProcessFunc.cpp.i
 # target to preprocess a source file
 execute/ProcessFunc.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/execute/ProcessFunc.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/execute/ProcessFunc.cpp.i
 .PHONY : execute/ProcessFunc.cpp.i
 
 execute/ProcessFunc.s: execute/ProcessFunc.cpp.s
@@ -889,6 +979,7 @@ execute/ProcessFunc.s: execute/ProcessFunc.cpp.s
 # target to generate assembly for a file
 execute/ProcessFunc.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/execute/ProcessFunc.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/execute/ProcessFunc.cpp.s
 .PHONY : execute/ProcessFunc.cpp.s
 
 execute/StateNode.obj: execute/StateNode.cpp.obj
@@ -898,6 +989,7 @@ execute/StateNode.obj: execute/StateNode.cpp.obj
 # target to build an object file
 execute/StateNode.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/execute/StateNode.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/execute/StateNode.cpp.obj
 .PHONY : execute/StateNode.cpp.obj
 
 execute/StateNode.i: execute/StateNode.cpp.i
@@ -907,6 +999,7 @@ execute/StateNode.i: execute/StateNode.cpp.i
 # target to preprocess a source file
 execute/StateNode.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/execute/StateNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/execute/StateNode.cpp.i
 .PHONY : execute/StateNode.cpp.i
 
 execute/StateNode.s: execute/StateNode.cpp.s
@@ -916,6 +1009,7 @@ execute/StateNode.s: execute/StateNode.cpp.s
 # target to generate assembly for a file
 execute/StateNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/execute/StateNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/execute/StateNode.cpp.s
 .PHONY : execute/StateNode.cpp.s
 
 main.obj: main.cpp.obj
@@ -984,6 +1078,7 @@ sql/ddl_manager.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/sql/ddl_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/sql/ddl_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/sql/ddl_manager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/sql/ddl_manager.cpp.obj
 .PHONY : sql/ddl_manager.cpp.obj
 
 sql/ddl_manager.i: sql/ddl_manager.cpp.i
@@ -998,6 +1093,7 @@ sql/ddl_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/sql/ddl_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/sql/ddl_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/sql/ddl_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/sql/ddl_manager.cpp.i
 .PHONY : sql/ddl_manager.cpp.i
 
 sql/ddl_manager.s: sql/ddl_manager.cpp.s
@@ -1012,6 +1108,7 @@ sql/ddl_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/sql/ddl_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/sql/ddl_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/sql/ddl_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/sql/ddl_manager.cpp.s
 .PHONY : sql/ddl_manager.cpp.s
 
 sql/dml_manager.obj: sql/dml_manager.cpp.obj
@@ -1023,6 +1120,7 @@ sql/dml_manager.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyDatabase.dir\build.make CMakeFiles/MyDatabase.dir/sql/dml_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/sql/dml_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/sql/dml_manager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/sql/dml_manager.cpp.obj
 .PHONY : sql/dml_manager.cpp.obj
 
 sql/dml_manager.i: sql/dml_manager.cpp.i
@@ -1034,6 +1132,7 @@ sql/dml_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyDatabase.dir\build.make CMakeFiles/MyDatabase.dir/sql/dml_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/sql/dml_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/sql/dml_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/sql/dml_manager.cpp.i
 .PHONY : sql/dml_manager.cpp.i
 
 sql/dml_manager.s: sql/dml_manager.cpp.s
@@ -1045,6 +1144,7 @@ sql/dml_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyDatabase.dir\build.make CMakeFiles/MyDatabase.dir/sql/dml_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/sql/dml_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/sql/dml_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/sql/dml_manager.cpp.s
 .PHONY : sql/dml_manager.cpp.s
 
 storage/attrfilehandle.obj: storage/attrfilehandle.cpp.obj
@@ -1059,6 +1159,7 @@ storage/attrfilehandle.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/attrfilehandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/attrfilehandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/attrfilehandle.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/attrfilehandle.cpp.obj
 .PHONY : storage/attrfilehandle.cpp.obj
 
 storage/attrfilehandle.i: storage/attrfilehandle.cpp.i
@@ -1073,6 +1174,7 @@ storage/attrfilehandle.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/attrfilehandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/attrfilehandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/attrfilehandle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/attrfilehandle.cpp.i
 .PHONY : storage/attrfilehandle.cpp.i
 
 storage/attrfilehandle.s: storage/attrfilehandle.cpp.s
@@ -1087,6 +1189,7 @@ storage/attrfilehandle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/attrfilehandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/attrfilehandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/attrfilehandle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/attrfilehandle.cpp.s
 .PHONY : storage/attrfilehandle.cpp.s
 
 storage/bufhashtable.obj: storage/bufhashtable.cpp.obj
@@ -1104,6 +1207,7 @@ storage/bufhashtable.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\concurrent_test.dir\build.make CMakeFiles/concurrent_test.dir/storage/bufhashtable.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/bufhashtable.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/bufhashtable.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/bufhashtable.cpp.obj
 .PHONY : storage/bufhashtable.cpp.obj
 
 storage/bufhashtable.i: storage/bufhashtable.cpp.i
@@ -1121,6 +1225,7 @@ storage/bufhashtable.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\concurrent_test.dir\build.make CMakeFiles/concurrent_test.dir/storage/bufhashtable.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/bufhashtable.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/bufhashtable.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/bufhashtable.cpp.i
 .PHONY : storage/bufhashtable.cpp.i
 
 storage/bufhashtable.s: storage/bufhashtable.cpp.s
@@ -1138,6 +1243,7 @@ storage/bufhashtable.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\concurrent_test.dir\build.make CMakeFiles/concurrent_test.dir/storage/bufhashtable.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/bufhashtable.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/bufhashtable.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/bufhashtable.cpp.s
 .PHONY : storage/bufhashtable.cpp.s
 
 storage/bufmgr.obj: storage/bufmgr.cpp.obj
@@ -1154,6 +1260,7 @@ storage/bufmgr.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/bufmgr.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/bufmgr.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/bufmgr.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/bufmgr.cpp.obj
 .PHONY : storage/bufmgr.cpp.obj
 
 storage/bufmgr.i: storage/bufmgr.cpp.i
@@ -1170,6 +1277,7 @@ storage/bufmgr.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/bufmgr.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/bufmgr.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/bufmgr.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/bufmgr.cpp.i
 .PHONY : storage/bufmgr.cpp.i
 
 storage/bufmgr.s: storage/bufmgr.cpp.s
@@ -1186,6 +1294,7 @@ storage/bufmgr.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/bufmgr.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/bufmgr.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/bufmgr.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/bufmgr.cpp.s
 .PHONY : storage/bufmgr.cpp.s
 
 storage/ix_indexhandle.obj: storage/ix_indexhandle.cpp.obj
@@ -1199,6 +1308,7 @@ storage/ix_indexhandle.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/storage/ix_indexhandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/ix_indexhandle.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/ix_indexhandle.cpp.obj
 .PHONY : storage/ix_indexhandle.cpp.obj
 
 storage/ix_indexhandle.i: storage/ix_indexhandle.cpp.i
@@ -1212,6 +1322,7 @@ storage/ix_indexhandle.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/storage/ix_indexhandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/ix_indexhandle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/ix_indexhandle.cpp.i
 .PHONY : storage/ix_indexhandle.cpp.i
 
 storage/ix_indexhandle.s: storage/ix_indexhandle.cpp.s
@@ -1225,6 +1336,7 @@ storage/ix_indexhandle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/storage/ix_indexhandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/ix_indexhandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/ix_indexhandle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/ix_indexhandle.cpp.s
 .PHONY : storage/ix_indexhandle.cpp.s
 
 storage/ix_indexscan.obj: storage/ix_indexscan.cpp.obj
@@ -1238,6 +1350,7 @@ storage/ix_indexscan.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/storage/ix_indexscan.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/ix_indexscan.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/ix_indexscan.cpp.obj
 .PHONY : storage/ix_indexscan.cpp.obj
 
 storage/ix_indexscan.i: storage/ix_indexscan.cpp.i
@@ -1251,6 +1364,7 @@ storage/ix_indexscan.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/storage/ix_indexscan.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/ix_indexscan.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/ix_indexscan.cpp.i
 .PHONY : storage/ix_indexscan.cpp.i
 
 storage/ix_indexscan.s: storage/ix_indexscan.cpp.s
@@ -1264,6 +1378,7 @@ storage/ix_indexscan.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/storage/ix_indexscan.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/ix_indexscan.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/ix_indexscan.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/ix_indexscan.cpp.s
 .PHONY : storage/ix_indexscan.cpp.s
 
 storage/ix_manager.obj: storage/ix_manager.cpp.obj
@@ -1276,6 +1391,7 @@ storage/ix_manager.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/storage/ix_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/ix_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/ix_manager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/ix_manager.cpp.obj
 .PHONY : storage/ix_manager.cpp.obj
 
 storage/ix_manager.i: storage/ix_manager.cpp.i
@@ -1288,6 +1404,7 @@ storage/ix_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/storage/ix_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/ix_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/ix_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/ix_manager.cpp.i
 .PHONY : storage/ix_manager.cpp.i
 
 storage/ix_manager.s: storage/ix_manager.cpp.s
@@ -1300,6 +1417,7 @@ storage/ix_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\index_test.dir\build.make CMakeFiles/index_test.dir/storage/ix_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/ix_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/ix_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/ix_manager.cpp.s
 .PHONY : storage/ix_manager.cpp.s
 
 storage/pagehandle.obj: storage/pagehandle.cpp.obj
@@ -1316,6 +1434,7 @@ storage/pagehandle.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/pagehandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/pagehandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/pagehandle.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/pagehandle.cpp.obj
 .PHONY : storage/pagehandle.cpp.obj
 
 storage/pagehandle.i: storage/pagehandle.cpp.i
@@ -1332,6 +1451,7 @@ storage/pagehandle.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/pagehandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/pagehandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/pagehandle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/pagehandle.cpp.i
 .PHONY : storage/pagehandle.cpp.i
 
 storage/pagehandle.s: storage/pagehandle.cpp.s
@@ -1348,6 +1468,7 @@ storage/pagehandle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/pagehandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/pagehandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/pagehandle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/pagehandle.cpp.s
 .PHONY : storage/pagehandle.cpp.s
 
 storage/pf_filehandle.obj: storage/pf_filehandle.cpp.obj
@@ -1364,6 +1485,7 @@ storage/pf_filehandle.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/pf_filehandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/pf_filehandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/pf_filehandle.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/pf_filehandle.cpp.obj
 .PHONY : storage/pf_filehandle.cpp.obj
 
 storage/pf_filehandle.i: storage/pf_filehandle.cpp.i
@@ -1380,6 +1502,7 @@ storage/pf_filehandle.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/pf_filehandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/pf_filehandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/pf_filehandle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/pf_filehandle.cpp.i
 .PHONY : storage/pf_filehandle.cpp.i
 
 storage/pf_filehandle.s: storage/pf_filehandle.cpp.s
@@ -1396,6 +1519,7 @@ storage/pf_filehandle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/pf_filehandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/pf_filehandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/pf_filehandle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/pf_filehandle.cpp.s
 .PHONY : storage/pf_filehandle.cpp.s
 
 storage/pf_manager.obj: storage/pf_manager.cpp.obj
@@ -1412,6 +1536,7 @@ storage/pf_manager.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/pf_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/pf_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/pf_manager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/pf_manager.cpp.obj
 .PHONY : storage/pf_manager.cpp.obj
 
 storage/pf_manager.i: storage/pf_manager.cpp.i
@@ -1428,6 +1553,7 @@ storage/pf_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/pf_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/pf_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/pf_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/pf_manager.cpp.i
 .PHONY : storage/pf_manager.cpp.i
 
 storage/pf_manager.s: storage/pf_manager.cpp.s
@@ -1444,6 +1570,7 @@ storage/pf_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/pf_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/pf_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/pf_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/pf_manager.cpp.s
 .PHONY : storage/pf_manager.cpp.s
 
 storage/pf_test1.obj: storage/pf_test1.cpp.obj
@@ -1512,6 +1639,7 @@ storage/rid.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rid.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rid.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rid.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rid.cpp.obj
 .PHONY : storage/rid.cpp.obj
 
 storage/rid.i: storage/rid.cpp.i
@@ -1526,6 +1654,7 @@ storage/rid.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rid.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rid.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rid.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rid.cpp.i
 .PHONY : storage/rid.cpp.i
 
 storage/rid.s: storage/rid.cpp.s
@@ -1540,6 +1669,7 @@ storage/rid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rid.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rid.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rid.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rid.cpp.s
 .PHONY : storage/rid.cpp.s
 
 storage/rm_bitmap.obj: storage/rm_bitmap.cpp.obj
@@ -1554,6 +1684,7 @@ storage/rm_bitmap.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_bitmap.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_bitmap.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_bitmap.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_bitmap.cpp.obj
 .PHONY : storage/rm_bitmap.cpp.obj
 
 storage/rm_bitmap.i: storage/rm_bitmap.cpp.i
@@ -1568,6 +1699,7 @@ storage/rm_bitmap.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_bitmap.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_bitmap.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_bitmap.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_bitmap.cpp.i
 .PHONY : storage/rm_bitmap.cpp.i
 
 storage/rm_bitmap.s: storage/rm_bitmap.cpp.s
@@ -1582,6 +1714,7 @@ storage/rm_bitmap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_bitmap.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_bitmap.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_bitmap.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_bitmap.cpp.s
 .PHONY : storage/rm_bitmap.cpp.s
 
 storage/rm_filehandle.obj: storage/rm_filehandle.cpp.obj
@@ -1596,6 +1729,7 @@ storage/rm_filehandle.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_filehandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_filehandle.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_filehandle.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_filehandle.cpp.obj
 .PHONY : storage/rm_filehandle.cpp.obj
 
 storage/rm_filehandle.i: storage/rm_filehandle.cpp.i
@@ -1610,6 +1744,7 @@ storage/rm_filehandle.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_filehandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_filehandle.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_filehandle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_filehandle.cpp.i
 .PHONY : storage/rm_filehandle.cpp.i
 
 storage/rm_filehandle.s: storage/rm_filehandle.cpp.s
@@ -1624,6 +1759,7 @@ storage/rm_filehandle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_filehandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_filehandle.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_filehandle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_filehandle.cpp.s
 .PHONY : storage/rm_filehandle.cpp.s
 
 storage/rm_filescan.obj: storage/rm_filescan.cpp.obj
@@ -1638,6 +1774,7 @@ storage/rm_filescan.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_filescan.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_filescan.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_filescan.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_filescan.cpp.obj
 .PHONY : storage/rm_filescan.cpp.obj
 
 storage/rm_filescan.i: storage/rm_filescan.cpp.i
@@ -1652,6 +1789,7 @@ storage/rm_filescan.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_filescan.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_filescan.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_filescan.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_filescan.cpp.i
 .PHONY : storage/rm_filescan.cpp.i
 
 storage/rm_filescan.s: storage/rm_filescan.cpp.s
@@ -1666,6 +1804,7 @@ storage/rm_filescan.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_filescan.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_filescan.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_filescan.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_filescan.cpp.s
 .PHONY : storage/rm_filescan.cpp.s
 
 storage/rm_manager.obj: storage/rm_manager.cpp.obj
@@ -1680,6 +1819,7 @@ storage/rm_manager.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_manager.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_manager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_manager.cpp.obj
 .PHONY : storage/rm_manager.cpp.obj
 
 storage/rm_manager.i: storage/rm_manager.cpp.i
@@ -1694,6 +1834,7 @@ storage/rm_manager.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_manager.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_manager.cpp.i
 .PHONY : storage/rm_manager.cpp.i
 
 storage/rm_manager.s: storage/rm_manager.cpp.s
@@ -1708,6 +1849,7 @@ storage/rm_manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_manager.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_manager.cpp.s
 .PHONY : storage/rm_manager.cpp.s
 
 storage/rm_record.obj: storage/rm_record.cpp.obj
@@ -1722,6 +1864,7 @@ storage/rm_record.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_record.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_record.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_record.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_record.cpp.obj
 .PHONY : storage/rm_record.cpp.obj
 
 storage/rm_record.i: storage/rm_record.cpp.i
@@ -1736,6 +1879,7 @@ storage/rm_record.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_record.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_record.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_record.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_record.cpp.i
 .PHONY : storage/rm_record.cpp.i
 
 storage/rm_record.s: storage/rm_record.cpp.s
@@ -1750,6 +1894,7 @@ storage/rm_record.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_record.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_record.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_record.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_record.cpp.s
 .PHONY : storage/rm_record.cpp.s
 
 storage/rm_test1.obj: storage/rm_test1.cpp.obj
@@ -1791,6 +1936,7 @@ storage/rm_varlenattr.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_varlenattr.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_varlenattr.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_varlenattr.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_varlenattr.cpp.obj
 .PHONY : storage/rm_varlenattr.cpp.obj
 
 storage/rm_varlenattr.i: storage/rm_varlenattr.cpp.i
@@ -1805,6 +1951,7 @@ storage/rm_varlenattr.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_varlenattr.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_varlenattr.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_varlenattr.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_varlenattr.cpp.i
 .PHONY : storage/rm_varlenattr.cpp.i
 
 storage/rm_varlenattr.s: storage/rm_varlenattr.cpp.s
@@ -1819,6 +1966,7 @@ storage/rm_varlenattr.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\hw1_test.dir\build.make CMakeFiles/hw1_test.dir/storage/rm_varlenattr.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dbcreate.dir\build.make CMakeFiles/dbcreate.dir/storage/rm_varlenattr.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sql_test.dir\build.make CMakeFiles/sql_test.dir/storage/rm_varlenattr.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\demo.dir\build.make CMakeFiles/demo.dir/storage/rm_varlenattr.cpp.s
 .PHONY : storage/rm_varlenattr.cpp.s
 
 test/concurrent_test.obj: test/concurrent_test.cpp.obj
@@ -1942,6 +2090,7 @@ help:
 	@echo ... dbcreate
 	@echo ... dbdestroy
 	@echo ... ddl_dml
+	@echo ... demo
 	@echo ... hw1_test
 	@echo ... index_test
 	@echo ... pf_test1
@@ -2003,6 +2152,9 @@ help:
 	@echo ... ddl_dml/watchedObj.obj
 	@echo ... ddl_dml/watchedObj.i
 	@echo ... ddl_dml/watchedObj.s
+	@echo ... demo.obj
+	@echo ... demo.i
+	@echo ... demo.s
 	@echo ... execute/Executor.obj
 	@echo ... execute/Executor.i
 	@echo ... execute/Executor.s

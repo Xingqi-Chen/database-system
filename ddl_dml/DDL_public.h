@@ -143,9 +143,15 @@ static AttrInfo* transDatatype2AttrInfo(vector<ColDef>& cols) {
         strcopy(cols[i].name, res[i].attrName);
         switch (cols[i].datatype)
         {
-            case 1:res[i].attrType = AttrType::INT; break;
-            case 2:res[i].attrType = AttrType::FLOAT; break;
-            case 3:res[i].attrType = AttrType::VARCHAR; break;
+            case 1:res[i].attrType = AttrType::INT;
+                res[i].attrLength = 4;
+                break;
+            case 2:res[i].attrType = AttrType::FLOAT;
+                res[i].attrLength = 4;
+                break;
+            case 3:res[i].attrType = AttrType::VARCHAR;
+                res[i].attrLength = sizeof(RM_VarLenAttr);
+                break;
             default:if (cols[i].datatype < 0) {
                     res[i].attrType = AttrType::STRING;
                     res[i].attrLength = -cols[i].datatype;
@@ -199,7 +205,8 @@ public:
             case DDL_SQL_TYPE::DDL_TYPE_CREATE_INDEX:
 
 #ifndef DML_TEST
-                SqlGlobal::getInstance()->ddl_mgr->dropIndex(createindex->tablename, createindex->indexname);
+                //SqlGlobal::getInstance()->ddl_mgr->dropIndex(createindex->tablename, createindex->indexname);
+                SqlGlobal::getInstance()->ddl_mgr->createIndex(createindex->tablename, createindex->indexname);
 #endif // !DML_TEST
 
                 cout << "´´½¨Ë÷ÒýÓï¾ä" << endl;

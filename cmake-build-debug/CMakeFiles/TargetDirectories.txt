@@ -10,5 +10,6 @@ F:/beta/cmake-build-debug/CMakeFiles/ddl_dml.dir
 F:/beta/cmake-build-debug/CMakeFiles/dbdestroy.dir
 F:/beta/cmake-build-debug/CMakeFiles/dbcreate.dir
 F:/beta/cmake-build-debug/CMakeFiles/sql_test.dir
+F:/beta/cmake-build-debug/CMakeFiles/demo.dir
 F:/beta/cmake-build-debug/CMakeFiles/edit_cache.dir
 F:/beta/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -99,14 +99,16 @@ bool SqlGlobal::hasIndex(string tablename, string attribute)
 	else
 	    return false;
 #else
-    /*tablename = "student";
-    attribute = "id";*/
-    cout<<tablename<<" "<<attribute<<endl;
-    int result = ddl_mgr->indexExists(tablename.c_str(),attribute.c_str());
-    cout<<"index:";
-    cout<<result<<endl;
-    if(result == 0)
-        return true;
+	vector<string> attrs = getAttribute(tablename);
+	int position = 0;
+	for(string attr:attrs){
+	    if(attr == attribute)
+	        break;
+	    position++;
+	}
+    int result = ixManager->hasIndex(tablename,to_string(position));
+    if(result == 1)
+        return false;
     else
         return false;
 #endif

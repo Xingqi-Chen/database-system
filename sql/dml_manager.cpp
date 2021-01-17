@@ -6,7 +6,7 @@
 #include "dml.h"
 
 DML_Manager::DML_Manager(RM_Manager &_rmManager, DDL_Manager &_ddlManager, IX_Manager &_ixManager)
-: rmManager(&_rmManager), ddlManager(&_ddlManager), ixManager(&_ixManager) {
+        : rmManager(&_rmManager), ddlManager(&_ddlManager), ixManager(&_ixManager) {
     // Don't need to do anything
 }
 
@@ -78,8 +78,9 @@ RC DML_Manager::insert(const char *relName, int nValues, const Value *values) {
     for(int i = 0; i < nValues; ++i) {
         if(values[i].type == VARCHAR) {
             RM_VarLenAttr rmVarLenAttr;
+            int length = strlen((char*)values[i].value);
             if((rc = rmFileHandle.insertVarValue(rid, attrcatRecords[i].offset, (char*)(values[i].value),
-                                                 attrcatRecords[i].attrLength, rmVarLenAttr))) {
+                                                 length, rmVarLenAttr))) {
                 delete [] attrcatRecords;
                 delete [] recordData;
                 return rc;

@@ -521,6 +521,48 @@
 					<DistClean command="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;F:/beta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="demo">
+				<Option output="F:/beta/cmake-build-debug/demo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/beta/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;F:/beta/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo"/>
+					<CompileFile command="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;F:/beta/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;F:/beta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;F:/beta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="demo/fast">
+				<Option output="F:/beta/cmake-build-debug/demo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/beta/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;F:/beta/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo/fast"/>
+					<CompileFile command="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;F:/beta/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;F:/beta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;F:/beta/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="F:/beta/cmake-build-debug"/>
 				<Option type="4"/>
@@ -552,6 +594,7 @@
 			<Option target="concurrent_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/atomic/RWLock.h">
 			<Option target="pf_test2"/>
@@ -563,6 +606,7 @@
 			<Option target="concurrent_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/dbcreate.cpp">
 			<Option target="dbcreate"/>
@@ -573,34 +617,42 @@
 		<Unit filename="F:/beta/ddl_dml/ConnectorOptimizer.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/ConnectorOptimizer.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/DDL_public.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/DML_gram.flex.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/DML_gram.l">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/DML_gram.tab.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/DML_gram.tab.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/DML_gram.y">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/Main.cpp">
 			<Option target="ddl_dml"/>
@@ -608,90 +660,115 @@
 		<Unit filename="F:/beta/ddl_dml/Node.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/Node.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/PhysicalPlan.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/PhysicalPlan.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/SqlGlobal.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/SqlGlobal.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/SqlGrammer.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/SqlGrammer.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/Transaction.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/Transaction.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/Translator.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/Translator.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/basicFlow.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/basicFlow.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/redisClient.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/redisClient.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/redisDb.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/redisDb.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/watchedFlow.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/watchedFlow.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/watchedObj.cpp">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/ddl_dml/watchedObj.h">
 			<Option target="ddl_dml"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
+		</Unit>
+		<Unit filename="F:/beta/demo.cpp">
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/error_message/all_error.h">
 			<Option target="MyDatabase"/>
@@ -699,6 +776,7 @@
 			<Option target="hw1_test"/>
 			<Option target="concurrent_test"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/error_message/ddl_error.h">
 			<Option target="MyDatabase"/>
@@ -706,6 +784,7 @@
 			<Option target="hw1_test"/>
 			<Option target="concurrent_test"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/error_message/dml_error.h">
 			<Option target="MyDatabase"/>
@@ -713,6 +792,7 @@
 			<Option target="hw1_test"/>
 			<Option target="concurrent_test"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/error_message/ix_error.h">
 			<Option target="MyDatabase"/>
@@ -720,6 +800,7 @@
 			<Option target="hw1_test"/>
 			<Option target="concurrent_test"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/error_message/pf_error.h">
 			<Option target="MyDatabase"/>
@@ -727,6 +808,7 @@
 			<Option target="hw1_test"/>
 			<Option target="concurrent_test"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/error_message/rm_error.h">
 			<Option target="MyDatabase"/>
@@ -734,30 +816,39 @@
 			<Option target="hw1_test"/>
 			<Option target="concurrent_test"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/execute/Execute_Global.h">
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/execute/Execute_extend.h">
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/execute/Executor.cpp">
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/execute/Executor.h">
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/execute/ProcessFunc.cpp">
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/execute/ProcessFunc.h">
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/execute/StateNode.cpp">
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/execute/StateNode.h">
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/global.h">
 			<Option target="pf_test2"/>
@@ -768,6 +859,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/main.cpp">
 			<Option target="MyDatabase"/>
@@ -779,6 +871,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/playground.cpp">
 			<Option target="playground"/>
@@ -790,6 +883,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/sql/ddl_manager.cpp">
 			<Option target="MyDatabase"/>
@@ -798,16 +892,19 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/sql/dml.h">
 			<Option target="MyDatabase"/>
 			<Option target="index_test"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/sql/dml_manager.cpp">
 			<Option target="MyDatabase"/>
 			<Option target="index_test"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/attrfilehandle.cpp">
 			<Option target="MyDatabase"/>
@@ -816,6 +913,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/bufhashtable.cpp">
 			<Option target="pf_test2"/>
@@ -827,6 +925,7 @@
 			<Option target="concurrent_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/bufhashtable.h">
 			<Option target="pf_test2"/>
@@ -838,6 +937,7 @@
 			<Option target="concurrent_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/bufmgr.cpp">
 			<Option target="pf_test2"/>
@@ -848,6 +948,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/bufmgr.h">
 			<Option target="pf_test2"/>
@@ -858,6 +959,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/ix.h">
 			<Option target="MyDatabase"/>
@@ -865,6 +967,7 @@
 			<Option target="index_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/ix_indexhandle.cpp">
 			<Option target="MyDatabase"/>
@@ -872,6 +975,7 @@
 			<Option target="index_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/ix_indexscan.cpp">
 			<Option target="MyDatabase"/>
@@ -879,6 +983,7 @@
 			<Option target="index_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/ix_internal.h">
 			<Option target="MyDatabase"/>
@@ -886,12 +991,14 @@
 			<Option target="index_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/ix_manager.cpp">
 			<Option target="rm_test1"/>
 			<Option target="index_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/pagehandle.cpp">
 			<Option target="pf_test2"/>
@@ -902,6 +1009,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/pf.h">
 			<Option target="pf_test2"/>
@@ -912,6 +1020,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/pf_filehandle.cpp">
 			<Option target="pf_test2"/>
@@ -922,6 +1031,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/pf_internal.h">
 			<Option target="pf_test2"/>
@@ -932,6 +1042,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/pf_manager.cpp">
 			<Option target="pf_test2"/>
@@ -942,6 +1053,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/pf_test1.cpp">
 			<Option target="pf_test1"/>
@@ -956,6 +1068,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rid.h">
 			<Option target="MyDatabase"/>
@@ -964,6 +1077,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rm.h">
 			<Option target="MyDatabase"/>
@@ -972,6 +1086,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rm_bitmap.cpp">
 			<Option target="MyDatabase"/>
@@ -980,6 +1095,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rm_bitmap.h">
 			<Option target="MyDatabase"/>
@@ -988,6 +1104,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rm_filehandle.cpp">
 			<Option target="MyDatabase"/>
@@ -996,6 +1113,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rm_filescan.cpp">
 			<Option target="MyDatabase"/>
@@ -1004,6 +1122,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rm_internal.h">
 			<Option target="MyDatabase"/>
@@ -1012,6 +1131,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rm_manager.cpp">
 			<Option target="MyDatabase"/>
@@ -1020,6 +1140,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rm_record.cpp">
 			<Option target="MyDatabase"/>
@@ -1028,6 +1149,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/storage/rm_test1.cpp">
 			<Option target="rm_test1"/>
@@ -1039,6 +1161,7 @@
 			<Option target="hw1_test"/>
 			<Option target="dbcreate"/>
 			<Option target="sql_test"/>
+			<Option target="demo"/>
 		</Unit>
 		<Unit filename="F:/beta/test/concurrent_test.cpp">
 			<Option target="concurrent_test"/>

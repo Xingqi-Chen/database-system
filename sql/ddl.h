@@ -79,13 +79,13 @@ public:
     RC openDb(const char *dbName);                  // 打开一个数据库
     RC closeDb();                                   // 关闭数据库
     RC createTable(const char *relName,             // 表名
-                    const int attrCount,            // 属性的数量
+                   const int attrCount,            // 属性的数量
                    AttrInfo   *attributes);         // 属性的数据(属性名, 属性长度, 属性类型)
     RC dropTable(const char *relName);              // 删除一个表，如果属性列上存在索引则删除索引
     RC dropIndex(const char *relName,               // 删除表的一个索引
                  const char *attrName);
     RC createIndex(const char *relName,             // 创建表属性的索引
-                    const char *attrName);
+                   const char *attrName);
     RC getRelInfo(const char *relName, RelcatRecord &relinfo) const;    // 返回属性信息和表信息
     RC getAttrInfo(const char *relName, AttrcatRecord *attrinfo) const; // 返回表中所有属性的信息
     RC getAttrInfo(const char *relName, const char *attrName, AttrcatRecord &attrInfo); // 返回表中属性attrName属性的信息
@@ -100,6 +100,8 @@ public:
 
     RC indexExists(const char *relName, const char *attrName);
     RC relExists(const char *relationName);
+
+    RC getVarAttrVal(char *relName, RM_VarLenAttr *varLenAttr, char *&pval);    // 获取变长属性的值
 private:
     RC getRelcatRec(const char *relName, RM_Record &relcatRecord);
     RC getAttrcatRec(const char *relName, const char *attrName, RM_Record &attrcatRecord);

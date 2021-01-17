@@ -94,7 +94,7 @@ RC DDL_Manager::createTable(const char *relName, const int attrCount, AttrInfo *
     }
     // 创建的表信息直接写回文件, 防止找不到数据字典
     if((rc = relFileHandle.forcePages()) ||
-            (rc = attrFileHandle.forcePages())) {
+       (rc = attrFileHandle.forcePages())) {
         return rc;
     }
     return 0;
@@ -110,7 +110,7 @@ RC DDL_Manager::closeDb() {
     int rc;
     // 关闭数据字典文件
     if((rc = rmManager->closeFile(relFileHandle)) ||
-            (rc = rmManager->closeFile(attrFileHandle))) {
+       (rc = rmManager->closeFile(attrFileHandle))) {
         return rc;
     }
     // 将bDbOpen置false
@@ -240,7 +240,17 @@ RC DDL_Manager::printAllData(char *relName, int lines) const {
             Value value;
             value.value = pData + attrInfos[i].offset;
             value.type = attrInfos[i].attrType;
-            cout << value;
+            if(value.type == VARCHAR) {
+                RM_VarLenAttr *varLenAttr = (RM_VarLenAttr*)value.value;
+                char *pval;
+                if((rc = rmFileHandle.getVarValue(*varLenAttr, pval))) {
+                    return rc;
+                }
+                cout << "varchar: " << pval << "\n";
+            }
+            else {
+                cout << value;
+            }
         }
     }
     delete [] attrInfos;
@@ -380,7 +390,7 @@ RC DDL_Manager::dropTable(const char *relName) {
     }
     // relcat和attrcat文件的对应的表项删除完成, 将信息写回磁盘
     if((rc = relFileHandle.forcePages()) ||
-            (rc = attrFileHandle.forcePages())) {
+       (rc = attrFileHandle.forcePages())) {
         return rc;
     }
     // 删除表文件
@@ -447,7 +457,7 @@ RC DDL_Manager::dropIndex(const char *relName, const char *attrName) {
 
     // 强制写回
     if((rc = relFileHandle.forcePages()) ||
-            (rc = attrFileHandle.forcePages())) {
+       (rc = attrFileHandle.forcePages())) {
         return rc;
     }
     // 删除索引文件
@@ -531,7 +541,7 @@ RC DDL_Manager::createIndex(const char *relName, const char *attrName) {
     }
     // 强制写回
     if((rc = relFileHandle.forcePages()) ||
-            (rc = attrFileHandle.forcePages())) {
+       (rc = attrFileHandle.forcePages())) {
         return rc;
     }
     // 创建索引
@@ -547,14 +557,14 @@ RC DDL_Manager::createIndex(const char *relName, const char *attrName) {
     RM_FileHandle rmFileHandle;
     RM_FileScan rmFileScan;
     if((rc = rmManager->openFile(relName, rmFileHandle)) ||
-            (rc = rmFileScan.openScan(rmFileHandle, attrType, attrLength, attrOffset, NO_OP, (void*)&rc))) {
+       (rc = rmFileScan.openScan(rmFileHandle, attrType, attrLength, attrOffset, NO_OP, (void*)&rc))) {
         return rc;
     }
     while((rc = rmFileScan.getNextRec(rec)) == 0) {
         char *recordData;
         RID rid;
         if((rc = rec.getData(recordData)) ||
-                (rc = rec.getRid(rid))) {
+           (rc = rec.getRid(rid))) {
             return rc;
         }
         if(attrType == INT) {
@@ -585,7 +595,7 @@ RC DDL_Manager::createIndex(const char *relName, const char *attrName) {
     }
     // 关闭表文件, 关闭索引文件
     if((rc = rmManager->closeFile(rmFileHandle)) ||
-            (rc = ixManager->closeIndex(ixIH))) {
+       (rc = ixManager->closeIndex(ixIH))) {
         return rc;
     }
     return 0; // ok
@@ -874,6 +884,22 @@ RC DDL_Manager::createDb(const char *dbName) {
 RC DDL_Manager::destroyDb(const char *dbName) {
     string command = ".\\dbdestroy " + string(dbName);
     return system(command.c_str());
+}
+
+RC DDL_Manager::getVarAttrVal(char *relName, RM_VarLenAttr *varLenAttr, char *&pval) {
+    int rc;
+    RM_FileHandle rmFileHandle;
+    if((rc = rmManager->openFile(relName, rmFileHandle))) {
+        return rc;
+    }
+    if((rc = rmFileHandle.getVarValue(*varLenAttr, pval))) {
+        return rc;
+    }
+    // 关闭表
+    if((rc = rmManager->closeFile(rmFileHandle))) {
+        return rc;
+    }
+    return 0;
 }
 
 
